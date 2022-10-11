@@ -1,0 +1,15 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+
+  background-color: $footer-bg;
+  &__text {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color:#3E1E97;
+  }
+}

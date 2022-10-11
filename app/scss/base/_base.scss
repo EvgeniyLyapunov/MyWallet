@@ -1,0 +1,23 @@
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin-bottom: 60px;
+
+  font-family: "San-Francisco", sans-serif;
+  background-color: $main-bg;
+}
+
+.container {
+  width: 100vw;
+  padding: 0 15px;
+}
