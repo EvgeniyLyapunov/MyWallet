@@ -1,0 +1,23 @@
+.balance {
+ &__wrapper {
+  display: flex;
+  flex-direction: column;
+ }
+ &__list {
+  display: flex;
+  flex-direction: column;
+ }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  &__title {
+
+  }
+  &__date {
+
+  }
+  &__amount {
+    
+  }
+}

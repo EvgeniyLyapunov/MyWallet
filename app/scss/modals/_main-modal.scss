@@ -1,0 +1,6 @@
+.modal {
+  display: none;
+  &__active {
+    display: block;
+  }
+}

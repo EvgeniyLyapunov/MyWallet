@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
     burgerStickBottom.classList.toggle("hamburger__stick-bottom_active");
   }
 
-  const btns = document.querySelectorAll(".action__btn");
+  const btns = document.querySelectorAll(".btn");
   btns.forEach((btn) => {
     btn.addEventListener("touchstart", (e) => {
       e.preventDefault();
@@ -47,10 +47,19 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   
   function pressBtn(button) {
-    button.classList.add("action__btn_active");
+    button.classList.add("btn_active");
     setTimeout(() => {
-      button.classList.remove("action__btn_active");
-    }, 250);
+      button.classList.remove("btn_active");
+    }, 300);
   }
+
+  // const body = document.querySelector("body"),
+  //       header = document.querySelector(".header"),
+  //       main =document.querySelector("main"),
+  //       footer = document.querySelector(".footer");
+
+  // const modalHeight = body.offsetHeight - (header.clientHeight + footer.clientHeight);
+  // console.log(modalHeight);
+  // console.log(document.querySelector("main").offsetHeight);
 
 });
