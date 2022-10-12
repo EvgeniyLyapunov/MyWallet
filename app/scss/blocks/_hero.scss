@@ -1,0 +1,24 @@
+.hero {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &__title {
+    position: relative;
+    margin-bottom: 70px;
+    font-size: 60px;
+    color: $title-color;
+    text-align: center;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 80px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 130px;
+      height: 130px;
+      background-image: url("../../images/img/main-bg.png");
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: contain;
+    }
+  }
+}

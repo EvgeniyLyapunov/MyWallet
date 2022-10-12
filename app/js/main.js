@@ -34,7 +34,23 @@ window.addEventListener("DOMContentLoaded", () => {
     burgerStickBottom.classList.toggle("hamburger__stick-bottom_active");
   }
 
-
-
+  const btns = document.querySelectorAll(".action__btn");
+  btns.forEach((btn) => {
+    btn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      pressBtn(btn);
+    });
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      pressBtn(btn);
+    });
+  });
+  
+  function pressBtn(button) {
+    button.classList.add("action__btn_active");
+    setTimeout(() => {
+      button.classList.remove("action__btn_active");
+    }, 250);
+  }
 
 });

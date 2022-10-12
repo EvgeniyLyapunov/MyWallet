@@ -4,6 +4,11 @@ a {
   color: inherit;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -20,4 +25,12 @@ body {
 .container {
   width: 100vw;
   padding: 0 15px;
+}
+
+@media (min-width: 475px) {
+  .container {
+    width: 475px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 }
