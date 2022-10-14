@@ -4,6 +4,11 @@ a {
   color: inherit;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 button {
   border: none;
   background-color: transparent;
@@ -16,6 +21,7 @@ html {
 }
 
 body {
+  position: relative;
   margin-bottom: 60px;
 
   font-family: "San-Francisco", sans-serif;

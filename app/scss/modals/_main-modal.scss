@@ -1,6 +1,19 @@
 .modal {
+  position: absolute;
+  top: 99px;
+  right: 0;
+  left: 0;
+  bottom: 60px;
+  min-height: 74vh;
+  overflow: auto;
   display: none;
-  &__active {
-    display: block;
+  &__close {
+    position: absolute;
   }
+}
+.hide {
+  display: none;
+}
+.visible {
+  display: block;
 }

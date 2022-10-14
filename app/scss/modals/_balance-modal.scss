@@ -1,23 +1,44 @@
 .balance {
+  position: relative;
  &__wrapper {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 25px;
  }
  &__list {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ }
+ &__card {
+  margin-bottom: 25px;
+  &:last-child {
+    margin-bottom: 0;
+  }
  }
 }
 .card {
   display: flex;
   flex-direction: column;
+  width: 90%;
+  padding: 10px;
+  background-color: #B8A3F4;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; //#28
   &__title {
-
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   &__date {
-
+    font-size: 14px;
+    margin-bottom: 20px;
   }
   &__amount {
-    
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 28px;
   }
 }
