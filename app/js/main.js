@@ -10,14 +10,14 @@ window.addEventListener("DOMContentLoaded", () => {
         burgerStickMiddle = menuOpen.querySelector(".hamburger__stick-middle"),
         burgerStickBottom = menuOpen.querySelector(".hamburger__stick-bottom");
 
-  menuOpen.addEventListener("click", (event) => {
+  menuOpen.addEventListener("click", () => {
     setTimeout(() => {
       menu.classList.toggle("header__menu_active");
     }, 100);
     burgerActive();
   });
 
-  menuClose.addEventListener("click", (event) => {
+  menuClose.addEventListener("click", () => {
     setTimeout(() => {
       menu.classList.toggle("header__menu_active");
     }, 200);
@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //   });
   // });
   
+  // анимация нажатия кнопки
   function pressBtn(button) {
     button.classList.add("btn_active");
     setTimeout(() => {
@@ -55,29 +56,36 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 300);
   }
 
-  // const body = document.querySelector("body"),
-  //       header = document.querySelector(".header"),
-  //       main =document.querySelector("main"),
-  //       footer = document.querySelector(".footer");
-
-  // const modalHeight = body.offsetHeight - (header.clientHeight + footer.clientHeight);
-  // console.log(modalHeight);
-  // console.log(document.querySelector("main").offsetHeight);
 
   // modals
   const viewBalanceBtn = document.querySelector("#viewBalance"),
         mainSection = document.querySelector("main"),
-        modal = document.querySelector(".modal"),
-        modalCloseBtn = document.querySelector(".modal__close");
+        footerSection = document.querySelector("#footer-container"),
+        toHomeBtn = document.querySelector(".btn-to-home"),
+        modal = document.querySelector(".modal");
 
-  viewBalanceBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    pressBtn(event.target);
+
+  // открытие модального окна просмотра баланса
+  viewBalanceBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    pressBtn(e.target);
     setTimeout(() => {
       modal.classList.add("visible");
       mainSection.classList.add("hide");
+      footerSection.classList.add("footer__container");
+      toHomeBtn.classList.remove("hide");
     }, 300);
-    
+  });
+
+  toHomeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    pressBtn(e.target);
+    setTimeout(() => {
+      modal.classList.remove("visible");
+      mainSection.classList.remove("hide");
+      footerSection.classList.remove("footer__container");
+      toHomeBtn.classList.add("hide");
+    }, 300);
   });
 
 });
