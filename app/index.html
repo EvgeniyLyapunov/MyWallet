@@ -74,6 +74,68 @@
     </div>
   </div>
 
+  <div class="modal-changes">
+    <div class="container">
+      <div class="modal-changes__wrapper">
+        <form class="modal-changes__form" action="" method="post">
+        <!-- select-storage radio-buttons slider -->
+        <div class="modal-changes__select-storage select-storage">
+          <div class="select-storage__prev-btn"></div>
+          <ul class="select-storage__list">
+            <li class="select-storage__item">
+              <label class="select-storage__label">
+                <input class="select-storage__radio" type="radio" name="storage" value="0">
+                <span>Кошелёк</span>
+              </label>
+            </li>
+            <li class="select-storage__item">
+              <label class="select-storage__label">
+                <input class="select-storage__radio" type="radio" name="storage" value="1">
+                <span>Тинькофф</span>
+              </label>
+            </li>
+            <li class="select-storage__item">
+              <label class="select-storage__label">
+                <input class="select-storage__radio" type="radio" name="storage" value="2">
+                <span>Node.js</span>
+              </label>
+            </li>
+          </ul>
+          <div class="select-storage__next-btn"></div>
+        </div>
+        <!-- this section binded with concret storage - select type mony-->
+        <div class="modal-changes__money-type money-type">
+          <label class="money-type__label">
+            <input class="money-type__input" type="radio" name="type" value="income">
+            <span>Cash</span>
+          </label>
+          <label class="money-type__label">
+            <input class="money-type__input" type="radio" name="type" value="expense">
+            <span>Bank</span>
+          </label>
+        </div>
+        <!-- select type operation radio-buttons -->
+        <div class="modal-changes__type operation-type">
+          <label class="operation-type__label">
+            <input class="operation-type__input" type="radio" name="type" value="income">
+            <span>Доход</span>
+          </label>
+          <label class="operation-type__label">
+            <input class="operation-type__input" type="radio" name="type" value="expense">
+            <span>Расход</span>
+          </label>
+        </div>
+        <!-- Input enter amount -->
+        <input class="modal-changes__input-amount" type="number" name="amount" required placeholder="сумма">
+        <button class="modal-changes__save-btn btn">Сохранить</button>
+        </form>
+
+        <!-- here will maybe block card info -->
+
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container" id="footer-container">
       <span class="footer__text">Jay Radha Shyam!</span>
