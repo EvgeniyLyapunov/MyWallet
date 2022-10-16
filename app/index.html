@@ -42,13 +42,13 @@
           <button class="btn action__btn" id="viewBalance">Смотреть баланс</button>
         </div>
         <div class="action__block">
-          <button class="btn action__btn">Внести изменения</button>
+          <button class="btn action__btn" id="addChanges">Внести изменения</button>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="modal">
+  <div class="modal modal-show">
     <div class="container">
       <div class="modal__balance balance">
         <div class="balance__wrapper">
@@ -74,43 +74,51 @@
     </div>
   </div>
 
-  <div class="modal-changes">
+  <div class="modal modal-changes">
     <div class="container">
       <div class="modal-changes__wrapper">
         <form class="modal-changes__form" action="" method="post">
         <!-- select-storage radio-buttons slider -->
         <div class="modal-changes__select-storage select-storage">
-          <div class="select-storage__prev-btn"></div>
-          <ul class="select-storage__list">
-            <li class="select-storage__item">
-              <label class="select-storage__label">
-                <input class="select-storage__radio" type="radio" name="storage" value="0">
-                <span>Кошелёк</span>
-              </label>
-            </li>
-            <li class="select-storage__item">
-              <label class="select-storage__label">
-                <input class="select-storage__radio" type="radio" name="storage" value="1">
-                <span>Тинькофф</span>
-              </label>
-            </li>
-            <li class="select-storage__item">
-              <label class="select-storage__label">
-                <input class="select-storage__radio" type="radio" name="storage" value="2">
-                <span>Node.js</span>
-              </label>
-            </li>
-          </ul>
-          <div class="select-storage__next-btn"></div>
+          <div class="select-storage__descr">выбор хранилища</div>
+          <div class="select-storage__inner">
+            <svg class="select-storage__prev-btn"  viewBox="0 0 512 512">
+              <path d="M354.76,510.52l60.76-60.71a5,5,0,0,0,0-7.13L232.26,259.56a5,5,0,0,1,0-7.12L415.52,69.32a5,5,0,0,0,0-7.13L354.76,1.48a5,5,0,0,0-7.13,0l-251.15,251a5,5,0,0,0,0,7.12l251.15,251A5,5,0,0,0,354.76,510.52Z"/>
+            </svg>
+            <ul class="select-storage__list">
+              <li class="select-storage__item">
+                <label class="select-storage__label">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="0">
+                  <span class="select-storage__span">Кошелёк</span>
+                </label>
+              </li>
+              <li class="select-storage__item hide">
+                <label class="select-storage__label">
+                  <input class="select-storage__radio" type="radio" name="storage" value="1">
+                  <span class="select-storage__span">Тинькофф</span>
+                </label>
+              </li>
+              <li class="select-storage__item hide">
+                <label class="select-storage__label">
+                  <input class="select-storage__radio" type="radio" name="storage" value="2">
+                  <span class="select-storage__span">Node.js</span>
+                </label>
+              </li>
+            </ul>
+            <svg class="select-storage__next-btn" viewBox="0 0 512 512">
+              <path d="M157.24,510.52,96.48,449.81a5,5,0,0,1,0-7.13L279.74,259.56a5,5,0,0,0,0-7.12L96.48,69.32a5,5,0,0,1,0-7.13L157.24,1.48a5,5,0,0,1,7.13,0l251.15,251a5,5,0,0,1,0,7.12l-251.15,251A5,5,0,0,1,157.24,510.52Z"/>
+            </svg>
+  
+          </div>
         </div>
         <!-- this section binded with concret storage - select type mony-->
         <div class="modal-changes__money-type money-type">
           <label class="money-type__label">
-            <input class="money-type__input" type="radio" name="type" value="income">
+            <input class="money-type__input" type="radio" name="money" value="income">
             <span>Cash</span>
           </label>
           <label class="money-type__label">
-            <input class="money-type__input" type="radio" name="type" value="expense">
+            <input class="money-type__input" type="radio" name="money" value="expense">
             <span>Bank</span>
           </label>
         </div>
@@ -131,6 +139,8 @@
         </form>
 
         <!-- here will maybe block card info -->
+
+        <button class="modal-changes__add-storage-btn btn ">Новое хранилище</button>
 
       </div>
     </div>

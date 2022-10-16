@@ -1,0 +1,75 @@
+.modal-changes {
+  &__wrapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__select-storage {
+    margin-bottom: 15px;
+  }
+}
+.select-storage {
+  display: flex;
+  flex-direction: column;
+  &__descr {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: $title-color;
+    text-align: center;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__prev-btn, &__next-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    fill: $main-button-color;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__label {
+    position: relative;
+    display: block;
+    padding-left: 70px;
+  }
+  &__span {
+    font-size: 24px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 3px;
+      left: 0;
+      width: 60px;
+      height: 32px;
+      border: 3px solid $button-color;
+      border-radius: 20px;
+      transition: 0.3s transform ease-in-out;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 7px;
+      left: 6px;
+      width: 24px;
+      height: 24px;
+      // border: 3px solid $button-color;
+      border-radius: 20px;
+      background-color: $button-color;
+      transition: 0.3s transform ease-in-out;
+    }
+  }
+  &__radio:checked + &__span::after {
+      transform: translateX(24px);
+      background-color: $main-button-color;
+  }
+}

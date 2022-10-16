@@ -59,10 +59,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // modals
   const viewBalanceBtn = document.querySelector("#viewBalance"),
+        addChangesBtn = document.querySelector("#addChanges"),
         mainSection = document.querySelector("main"),
         footerSection = document.querySelector("#footer-container"),
         toHomeBtn = document.querySelector(".btn-to-home"),
-        modal = document.querySelector(".modal");
+        modalShow = document.querySelector(".modal-show"),
+        modalChanges = document.querySelector(".modal-changes");
 
 
   // открытие модального окна просмотра баланса
@@ -70,7 +72,19 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     pressBtn(e.target);
     setTimeout(() => {
-      modal.classList.add("visible");
+      modalShow.classList.add("visible");
+      mainSection.classList.add("hide");
+      footerSection.classList.add("footer__container");
+      toHomeBtn.classList.remove("hide");
+    }, 300);
+  });
+
+  // открытие модального окна внесения изменений
+  addChangesBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    pressBtn(e.target);
+    setTimeout(() => {
+      modalChanges.classList.add("visible");
       mainSection.classList.add("hide");
       footerSection.classList.add("footer__container");
       toHomeBtn.classList.remove("hide");
@@ -81,7 +95,8 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     pressBtn(e.target);
     setTimeout(() => {
-      modal.classList.remove("visible");
+      modalShow.classList.remove("visible");
+      modalChanges.classList.remove("visible");
       mainSection.classList.remove("hide");
       footerSection.classList.remove("footer__container");
       toHomeBtn.classList.add("hide");
