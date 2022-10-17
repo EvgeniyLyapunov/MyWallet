@@ -92,15 +92,15 @@
                   <span class="select-storage__span">Кошелёк</span>
                 </label>
               </li>
-              <li class="select-storage__item hide">
+              <li class="select-storage__item">
                 <label class="select-storage__label">
-                  <input class="select-storage__radio" type="radio" name="storage" value="1">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="1">
                   <span class="select-storage__span">Тинькофф</span>
                 </label>
               </li>
-              <li class="select-storage__item hide">
+              <li class="select-storage__item">
                 <label class="select-storage__label">
-                  <input class="select-storage__radio" type="radio" name="storage" value="2">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="2">
                   <span class="select-storage__span">Node.js</span>
                 </label>
               </li>
@@ -111,31 +111,40 @@
   
           </div>
         </div>
-        <!-- this section binded with concret storage - select type mony-->
+        <!-- this section binded with concret storage - select type money-->
         <div class="modal-changes__money-type money-type">
-          <label class="money-type__label">
-            <input class="money-type__input" type="radio" name="money" value="income">
-            <span>Cash</span>
-          </label>
-          <label class="money-type__label">
-            <input class="money-type__input" type="radio" name="money" value="expense">
-            <span>Bank</span>
-          </label>
+          <div class="money-type__descr">выбор типа денег (нал / карта)</div>
+          <div class="money-type__wrapper">
+            <label class="money-type__label">
+              <input class="money-type__radio visually-hidden" type="radio" name="money" value="income">
+              <span class="money-type__span">Cash</span>
+            </label>
+            <label class="money-type__label">
+              <input class="money-type__radio visually-hidden" type="radio" name="money" value="expense">
+              <span class="money-type__span">Bank</span>
+            </label>
+          </div>
         </div>
         <!-- select type operation radio-buttons -->
         <div class="modal-changes__type operation-type">
-          <label class="operation-type__label">
-            <input class="operation-type__input" type="radio" name="type" value="income">
-            <span>Доход</span>
-          </label>
-          <label class="operation-type__label">
-            <input class="operation-type__input" type="radio" name="type" value="expense">
-            <span>Расход</span>
-          </label>
+          <div class="operation-type__descr">выбор операции (доход / расход)</div>
+          <div class="operation-type__wrapper">
+            <label class="operation-type__label">
+              <input class="operation-type__radio visually-hidden" type="radio" name="type" value="income">
+              <span class="operation-type__span">Доход</span>
+            </label>
+            <label class="operation-type__label">
+              <input class="operation-type__radio visually-hidden" type="radio" name="type" value="expense">
+              <span class="operation-type__span">Расход</span>
+            </label>
+          </div>
         </div>
         <!-- Input enter amount -->
         <input class="modal-changes__input-amount" type="number" name="amount" required placeholder="сумма">
-        <button class="modal-changes__save-btn btn">Сохранить</button>
+        <div class="modal-changes__submit-block">
+          <button class="modal-changes__save-btn btn">Сохранить</button>
+          <input class="modal-changes__reset-btn btn" type="reset">
+        </div>
         </form>
 
         <!-- here will maybe block card info -->

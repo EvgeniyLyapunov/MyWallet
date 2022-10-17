@@ -3,6 +3,7 @@
 window.addEventListener("DOMContentLoaded", () => {
 
   // burger-menu
+
   const menuOpen = document.querySelector(".hamburger"),
         menuClose = document.querySelector(".header__menu-close"),
         menu = document.querySelector(".header__menu"),
@@ -35,19 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
     burgerStickBottom.classList.toggle("hamburger__stick-bottom_active");
   }
 
-  // buttons presses
-  // const btns = document.querySelectorAll(".btn");
-  // btns.forEach((btn) => {
-  //   btn.addEventListener("touchstart", (e) => {
-  //     e.preventDefault();
-  //     pressBtn(btn);
-  //   });
-  //   btn.addEventListener("click", (e) => {
-  //     e.preventDefault();
-  //     pressBtn(btn);
-  //   });
-  // });
-  
+
   // анимация нажатия кнопки
   function pressBtn(button) {
     button.classList.add("btn_active");
@@ -58,6 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   // modals
+
   const viewBalanceBtn = document.querySelector("#viewBalance"),
         addChangesBtn = document.querySelector("#addChanges"),
         mainSection = document.querySelector("main"),
@@ -66,31 +56,27 @@ window.addEventListener("DOMContentLoaded", () => {
         modalShow = document.querySelector(".modal-show"),
         modalChanges = document.querySelector(".modal-changes");
 
+  // функция открытия модального окна
+  function openModal(btn, modal) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      pressBtn(e.target);
+      setTimeout(() => {
+        modal.classList.add("visible");
+        mainSection.classList.add("hide");
+        footerSection.classList.add("footer__container");
+        toHomeBtn.classList.remove("hide");
+      }, 300);
+    });
+  }
 
   // открытие модального окна просмотра баланса
-  viewBalanceBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    pressBtn(e.target);
-    setTimeout(() => {
-      modalShow.classList.add("visible");
-      mainSection.classList.add("hide");
-      footerSection.classList.add("footer__container");
-      toHomeBtn.classList.remove("hide");
-    }, 300);
-  });
+  openModal(viewBalanceBtn, modalShow);
 
   // открытие модального окна внесения изменений
-  addChangesBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    pressBtn(e.target);
-    setTimeout(() => {
-      modalChanges.classList.add("visible");
-      mainSection.classList.add("hide");
-      footerSection.classList.add("footer__container");
-      toHomeBtn.classList.remove("hide");
-    }, 300);
-  });
+  openModal(addChangesBtn, modalChanges);
 
+  // кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     pressBtn(e.target);
@@ -102,5 +88,45 @@ window.addEventListener("DOMContentLoaded", () => {
       toHomeBtn.classList.add("hide");
     }, 300);
   });
+
+
+  // слайдер выбора хранилища в окне внесения изменений
+
+  const slides = document.querySelectorAll(".select-storage__item"),
+        prevBtn = document.querySelector(".select-storage__prev-btn"),
+        nextBtn = document.querySelector(".select-storage__next-btn");
+  let slaydeIndex = 1;
+
+  function slydePositionNumber(n) {
+    if(n > slides.length) {
+      slaydeIndex = 1;
+    }
+    if(n === 0) {
+      slaydeIndex = slides.length;
+    }
+  }
+
+  function showSlide() {
+    slides.forEach((item) => {
+      item.classList.add("hide");
+      item.classList.remove("visible");
+    });
+    slides[slaydeIndex - 1].classList.remove("hide");
+    slides[slaydeIndex - 1].classList.add("visible");
+  }
+
+  showSlide();
+
+  nextBtn.addEventListener("click", () => {
+    slydePositionNumber(slaydeIndex += 1);
+    showSlide();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    slydePositionNumber(slaydeIndex -= 1);
+    showSlide();
+  });
+
+
 
 });

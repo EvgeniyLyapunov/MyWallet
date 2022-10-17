@@ -1,14 +1,61 @@
 .modal-changes {
   &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 25px;
     padding-bottom: 25px;
   }
   &__form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
   }
   &__select-storage {
     margin-bottom: 15px;
+  }
+  &__money-type {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__type {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__submit-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__input-amount {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 100%;
+    height: 70px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFF0A0;
+    background-color: #58B364;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.8s box-shadow ease-in-out;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &::placeholder {
+      color: #9BF7A7;
+      font-weight: 500;
+    }
+  }
+  &__reset-btn {
+    border: none;
   }
 }
 .select-storage {
@@ -43,7 +90,9 @@
     padding-left: 70px;
   }
   &__span {
+    display: block;
     font-size: 24px;
+    color: $main-text-color;
     &::before {
       position: absolute;
       content: "";
@@ -51,7 +100,7 @@
       left: 0;
       width: 60px;
       height: 32px;
-      border: 3px solid $button-color;
+      border: 3px solid $radio-btn;
       border-radius: 20px;
       transition: 0.3s transform ease-in-out;
     }
@@ -64,7 +113,109 @@
       height: 24px;
       // border: 3px solid $button-color;
       border-radius: 20px;
-      background-color: $button-color;
+      background-color: $radio-btn;
+      transition: 0.3s transform ease-in-out;
+    }
+  }
+  &__radio:checked + &__span::after {
+      transform: translateX(24px);
+      background-color: $main-button-color;
+  }
+}
+.money-type {
+  &__descr {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: $title-color;
+    text-align: center;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__label {
+    position: relative;
+    display: block;
+    padding-left: 70px;
+  }
+  &__span {
+    display: block;
+    font-size: 24px;
+    color: $main-text-color;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 3px;
+      left: 0;
+      width: 60px;
+      height: 32px;
+      border: 3px solid $radio-btn;
+      border-radius: 20px;
+      transition: 0.3s transform ease-in-out;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 7px;
+      left: 6px;
+      width: 24px;
+      height: 24px;
+      // border: 3px solid $button-color;
+      border-radius: 20px;
+      background-color: $radio-btn;
+      transition: 0.3s transform ease-in-out;
+    }
+  }
+  &__radio:checked + &__span::after {
+      transform: translateX(24px);
+      background-color: $main-button-color;
+  }
+}
+.operation-type {
+  &__descr {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: $title-color;
+    text-align: center;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__label {
+    position: relative;
+    display: block;
+    padding-left: 70px;
+  }
+  &__span {
+    display: block;
+    font-size: 24px;
+    color: $main-text-color;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 3px;
+      left: 0;
+      width: 60px;
+      height: 32px;
+      border: 3px solid $radio-btn;
+      border-radius: 20px;
+      transition: 0.3s transform ease-in-out;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 7px;
+      left: 6px;
+      width: 24px;
+      height: 24px;
+      // border: 3px solid $button-color;
+      border-radius: 20px;
+      background-color: $radio-btn;
       transition: 0.3s transform ease-in-out;
     }
   }
