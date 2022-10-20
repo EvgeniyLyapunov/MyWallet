@@ -48,6 +48,7 @@
     </section>
   </main>
 
+  <!-- modal-show -->
   <div class="modal modal-show">
     <div class="container">
       <div class="modal__balance balance">
@@ -74,10 +75,11 @@
     </div>
   </div>
 
+  <!-- modal-changes -->
   <div class="modal modal-changes">
     <div class="container">
       <div class="modal-changes__wrapper">
-        <form class="modal-changes__form" action="" method="post">
+        <form class="modal-changes__form" action="#" method="post">
         <!-- select-storage radio-buttons slider -->
         <div class="modal-changes__select-storage select-storage">
           <div class="select-storage__descr">выбор хранилища</div>
@@ -108,7 +110,6 @@
             <svg class="select-storage__next-btn" viewBox="0 0 512 512">
               <path d="M157.24,510.52,96.48,449.81a5,5,0,0,1,0-7.13L279.74,259.56a5,5,0,0,0,0-7.12L96.48,69.32a5,5,0,0,1,0-7.13L157.24,1.48a5,5,0,0,1,7.13,0l251.15,251a5,5,0,0,1,0,7.12l-251.15,251A5,5,0,0,1,157.24,510.52Z"/>
             </svg>
-  
           </div>
         </div>
         <!-- this section binded with concret storage - select type money-->
@@ -140,7 +141,7 @@
           </div>
         </div>
         <!-- Input enter amount -->
-        <input class="modal-changes__input-amount" type="number" name="amount" required placeholder="сумма">
+        <input class="modal-changes__input-amount" type="number" name="amount" required placeholder="Сумма">
         <div class="modal-changes__submit-block">
           <button class="modal-changes__save-btn btn">Сохранить</button>
           <input class="modal-changes__reset-btn btn" type="reset">
@@ -148,8 +149,74 @@
         </form>
 
         <!-- here will maybe block card info -->
+        <button class="modal-changes__new-storage-btn btn ">Новое хранилище</button>
+      </div>
+    </div>
+  </div>
 
-        <button class="modal-changes__add-storage-btn btn ">Новое хранилище</button>
+  <!-- modal-new-storage -->
+  <div class="modal new-storage">
+    <div class="container">
+      <div class="new-storage__wrapper">
+        <form action="#" class="new-storage__form">
+          <label class="new-storage__label-name">
+            <span class="new-storage__span-name">Новое хранилище</span>
+            <input class="new-storage__input-name" type="text" name="newStorageName" required placeholder="Введите название хранилища">
+          </label>
+          <!-- select type of money (cash or card) -->
+          <div class="new-storage__money-type money-type">
+            <div class="money-type__descr">выбор типа денег (нал / карта)</div>
+            <div class="money-type__wrapper">
+              <label class="money-type__label">
+                <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="income">
+                <span class="money-type__span">Cash</span>
+              </label>
+              <label class="money-type__label">
+                <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="expense">
+                <span class="money-type__span">Bank</span>
+              </label>
+            </div>
+          </div>
+        <!-- select-storage radio-buttons slider -->
+        <div class="new-storage__select-storage select-storage">
+          <div class="select-storage__descr">выбор базового хранилища</div>
+          <div class="select-storage__inner">
+            <svg class="select-storage__new-prev-btn"  viewBox="0 0 512 512">
+              <path d="M354.76,510.52l60.76-60.71a5,5,0,0,0,0-7.13L232.26,259.56a5,5,0,0,1,0-7.12L415.52,69.32a5,5,0,0,0,0-7.13L354.76,1.48a5,5,0,0,0-7.13,0l-251.15,251a5,5,0,0,0,0,7.12l251.15,251A5,5,0,0,0,354.76,510.52Z"/>
+            </svg>
+            <ul class="select-storage__list">
+              <li class="select-storage__new-item">
+                <label class="select-storage__label">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="0">
+                  <span class="select-storage__span">Кошелёк</span>
+                </label>
+              </li>
+              <li class="select-storage__new-item">
+                <label class="select-storage__label">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="1">
+                  <span class="select-storage__span">Тинькофф</span>
+                </label>
+              </li>
+              <li class="select-storage__new-item">
+                <label class="select-storage__label">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="2">
+                  <span class="select-storage__span">Node.js</span>
+                </label>
+              </li>
+            </ul>
+            <svg class="select-storage__new-next-btn" viewBox="0 0 512 512">
+              <path d="M157.24,510.52,96.48,449.81a5,5,0,0,1,0-7.13L279.74,259.56a5,5,0,0,0,0-7.12L96.48,69.32a5,5,0,0,1,0-7.13L157.24,1.48a5,5,0,0,1,7.13,0l251.15,251a5,5,0,0,1,0,7.12l-251.15,251A5,5,0,0,1,157.24,510.52Z"/>
+            </svg>
+          </div>
+        </div>
+        <!-- submit buttons block -->
+        <div class="new-storage__submit-block">
+          <button class="new-storage__save-btn btn">Сохранить</button>
+          <input class="new-storage__reset-btn btn" type="reset">
+        </div>
+        </form>
+
+        <button class="new-storage__modal-changes-btn btn ">Вернуться в окно Внесения изменений</button>
 
       </div>
     </div>

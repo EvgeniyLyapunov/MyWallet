@@ -53,8 +53,12 @@ window.addEventListener("DOMContentLoaded", () => {
         mainSection = document.querySelector("main"),
         footerSection = document.querySelector("#footer-container"),
         toHomeBtn = document.querySelector(".btn-to-home"),
+        toNewStorageBtn = document.querySelector(".modal-changes__new-storage-btn"),
+        toAddChangeFromNewStorageBtn = document.querySelector(".new-storage__modal-changes-btn"),
+        modalWindows = document.querySelectorAll(".modal"),
         modalShow = document.querySelector(".modal-show"),
-        modalChanges = document.querySelector(".modal-changes");
+        modalChanges = document.querySelector(".modal-changes"),
+        modalNewStorage = document.querySelector(".new-storage");
 
   // функция открытия модального окна
   function openModal(btn, modal) {
@@ -62,6 +66,10 @@ window.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       pressBtn(e.target);
       setTimeout(() => {
+        modalWindows.forEach(window => {
+          window.classList.add("hide");
+          window.classList.remove("visible");
+        });
         modal.classList.add("visible");
         mainSection.classList.add("hide");
         footerSection.classList.add("footer__container");
@@ -76,13 +84,21 @@ window.addEventListener("DOMContentLoaded", () => {
   // открытие модального окна внесения изменений
   openModal(addChangesBtn, modalChanges);
 
+  // открытие модального окна создания нового хранилища
+  openModal(toNewStorageBtn, modalNewStorage);
+
+  // открытие модального окна внесения изменений из окна создания нового хранилища
+  openModal(toAddChangeFromNewStorageBtn, modalChanges);
+
   // кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     pressBtn(e.target);
     setTimeout(() => {
-      modalShow.classList.remove("visible");
-      modalChanges.classList.remove("visible");
+      modalWindows.forEach(window => {
+        window.classList.add("hide");
+        window.classList.remove("visible");
+      });
       mainSection.classList.remove("hide");
       footerSection.classList.remove("footer__container");
       toHomeBtn.classList.add("hide");
@@ -91,42 +107,45 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   // слайдер выбора хранилища в окне внесения изменений
+  function sliderSelectStorage(slideItems, prev, next) {
 
-  const slides = document.querySelectorAll(".select-storage__item"),
-        prevBtn = document.querySelector(".select-storage__prev-btn"),
-        nextBtn = document.querySelector(".select-storage__next-btn");
-  let slaydeIndex = 1;
+    const slides = document.querySelectorAll(slideItems, ),
+        prevBtn = document.querySelector(prev),
+        nextBtn = document.querySelector(next);
+    let slaydeIndex = 1;
 
-  function slydePositionNumber(n) {
-    if(n > slides.length) {
-      slaydeIndex = 1;
+    function slydePositionNumber(n) {
+      if(n > slides.length) {
+        slaydeIndex = 1;
+      }
+      if(n === 0) {
+        slaydeIndex = slides.length;
+      }
     }
-    if(n === 0) {
-      slaydeIndex = slides.length;
-    }
-  }
 
-  function showSlide() {
-    slides.forEach((item) => {
-      item.classList.add("hide");
-      item.classList.remove("visible");
+    function showSlide() {
+      slides.forEach((item) => {
+        item.classList.add("hide");
+        item.classList.remove("visible");
+      });
+      slides[slaydeIndex - 1].classList.remove("hide");
+      slides[slaydeIndex - 1].classList.add("visible");
+    }
+
+    showSlide();
+
+    nextBtn.addEventListener("click", () => {
+      slydePositionNumber(slaydeIndex += 1);
+      showSlide();
     });
-    slides[slaydeIndex - 1].classList.remove("hide");
-    slides[slaydeIndex - 1].classList.add("visible");
+
+    prevBtn.addEventListener("click", () => {
+      slydePositionNumber(slaydeIndex -= 1);
+      showSlide();
+    });
   }
-
-  showSlide();
-
-  nextBtn.addEventListener("click", () => {
-    slydePositionNumber(slaydeIndex += 1);
-    showSlide();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    slydePositionNumber(slaydeIndex -= 1);
-    showSlide();
-  });
-
-
+  
+  sliderSelectStorage(".select-storage__item", ".select-storage__prev-btn", ".select-storage__next-btn");
+  sliderSelectStorage(".select-storage__new-item", ".select-storage__new-prev-btn", ".select-storage__new-next-btn");
 
 });

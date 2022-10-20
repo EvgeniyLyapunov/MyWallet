@@ -1,0 +1,74 @@
+.new-storage {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__label-name {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+  }
+  &__span-name {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: $title-color;
+    text-align: center;
+  }
+  &__input-name {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFF0A0;
+    background-color: #58B364;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.8s box-shadow ease-in-out;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &::placeholder {
+      color: #9BF7A7;
+      font-weight: 500;
+    }
+  }
+  &__money-type {
+    margin-bottom: 15px;
+  }
+  &__select-storage {
+    margin-bottom: 35px;
+  }
+  &__submit-block {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__reset-btn {
+    border: none;
+  }
+}
+.select-storage {
+  &__new-prev-btn, &__new-next-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    fill: $main-button-color;
+  }
+}
