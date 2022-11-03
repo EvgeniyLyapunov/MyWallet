@@ -10,6 +10,10 @@
     &:first-child {
       margin-bottom: 35px;
     }
+    &-changes {
+      color:  $button-color;
+      background-color: $btn-text-color;
+    }
   }
 
 }

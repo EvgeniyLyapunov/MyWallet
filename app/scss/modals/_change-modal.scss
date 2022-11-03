@@ -40,23 +40,27 @@
     margin-bottom: 25px;
     font-weight: 700;
     font-size: 24px;
-    color: #FFF0A0;
-    background-color: #58B364;
+    color: #fff;
+    background-color: $burger-button-color;
     border: none;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.8s box-shadow ease-in-out;
     &:focus {
       outline: none;
-      box-shadow: none;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     }
     &::placeholder {
-      color: #9BF7A7;
+      color: $footer-bg;
       font-weight: 500;
     }
   }
   &__reset-btn {
     border: none;
+  }
+  &__new-storage-btn {
+    color:  $button-color;
+    background-color: $btn-text-color;
   }
 }
 .select-storage {
@@ -65,7 +69,7 @@
   &__descr {
     margin-bottom: 10px;
     font-size: 15px;
-    color: $title-color;
+    color: $footer-bg;
     text-align: center;
   }
   &__inner {
@@ -77,7 +81,7 @@
     display: block;
     width: 50px;
     height: 50px;
-    fill: $main-button-color;
+    fill: $burger-button-color;
   }
   &__list {
     display: flex;
@@ -92,7 +96,7 @@
   &__span {
     display: block;
     font-size: 24px;
-    color: $main-text-color;
+    color: #fff;
     &::before {
       position: absolute;
       content: "";
@@ -100,7 +104,7 @@
       left: 0;
       width: 60px;
       height: 32px;
-      border: 3px solid $radio-btn;
+      border: 3px solid #fff;
       border-radius: 20px;
       transition: 0.3s transform ease-in-out;
     }
@@ -111,22 +115,21 @@
       left: 6px;
       width: 24px;
       height: 24px;
-      // border: 3px solid $button-color;
       border-radius: 20px;
-      background-color: $radio-btn;
+      background-color: #fff;
       transition: 0.3s transform ease-in-out;
     }
   }
   &__radio:checked + &__span::after {
       transform: translateX(24px);
-      background-color: $main-button-color;
+      background-color: $title-color;
   }
 }
 .money-type {
   &__descr {
     margin-bottom: 10px;
     font-size: 15px;
-    color: $title-color;
+    color: $footer-bg;
     text-align: center;
   }
   &__wrapper {
@@ -143,7 +146,7 @@
   &__span {
     display: block;
     font-size: 24px;
-    color: $main-text-color;
+    color: #fff;
     &::before {
       position: absolute;
       content: "";
@@ -151,7 +154,7 @@
       left: 0;
       width: 60px;
       height: 32px;
-      border: 3px solid $radio-btn;
+      border: 3px solid #fff;
       border-radius: 20px;
       transition: 0.3s transform ease-in-out;
     }
@@ -164,20 +167,20 @@
       height: 24px;
       // border: 3px solid $button-color;
       border-radius: 20px;
-      background-color: $radio-btn;
+      background-color: #fff;
       transition: 0.3s transform ease-in-out;
     }
   }
   &__radio:checked + &__span::after {
       transform: translateX(24px);
-      background-color: $main-button-color;
+      background-color: $title-color;
   }
 }
 .operation-type {
   &__descr {
     margin-bottom: 10px;
     font-size: 15px;
-    color: $title-color;
+    color: $footer-bg;
     text-align: center;
   }
   &__wrapper {
@@ -194,7 +197,7 @@
   &__span {
     display: block;
     font-size: 24px;
-    color: $main-text-color;
+    color: #fff;
     &::before {
       position: absolute;
       content: "";
@@ -202,7 +205,7 @@
       left: 0;
       width: 60px;
       height: 32px;
-      border: 3px solid $radio-btn;
+      border: 3px solid #fff;
       border-radius: 20px;
       transition: 0.3s transform ease-in-out;
     }
@@ -213,14 +216,13 @@
       left: 6px;
       width: 24px;
       height: 24px;
-      // border: 3px solid $button-color;
       border-radius: 20px;
-      background-color: $radio-btn;
+      background-color: #fff;
       transition: 0.3s transform ease-in-out;
     }
   }
   &__radio:checked + &__span::after {
       transform: translateX(24px);
-      background-color: $main-button-color;
+      background-color: $title-color;
   }
 }

@@ -22,7 +22,7 @@
     display: block;
     margin-bottom: 10px;
     font-size: 15px;
-    color: $title-color;
+    color: $footer-bg;
     text-align: center;
   }
   &__input-name {
@@ -35,8 +35,8 @@
     margin-bottom: 25px;
     font-weight: 700;
     font-size: 24px;
-    color: #FFF0A0;
-    background-color: #58B364;
+    color: #fff;
+    background-color: $burger-button-color;
     border: none;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -46,7 +46,7 @@
       box-shadow: none;
     }
     &::placeholder {
-      color: #9BF7A7;
+      color: $footer-bg;
       font-weight: 500;
     }
   }
@@ -63,12 +63,19 @@
   &__reset-btn {
     border: none;
   }
+  &__modal-changes-btn {
+    min-width: 180px;    
+  }
+  &__modal-changes-btn {
+    color:  $button-color;
+    background-color: $btn-text-color;
+  }
 }
 .select-storage {
   &__new-prev-btn, &__new-next-btn {
     display: block;
     width: 50px;
     height: 50px;
-    fill: $main-button-color;
+    fill: $burger-button-color;
   }
 }
