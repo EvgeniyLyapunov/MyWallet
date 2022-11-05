@@ -1,0 +1,96 @@
+.modal-log {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+	&__title {
+		width: 40%;
+		font-size: 35px;
+		text-align-last: left;
+		color: $title-color;
+
+		background-image: url("../../images/icons/open-door.png");
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: contain;
+	}
+  &__form {
+		display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__label-name {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+  }
+  &__span-name {
+		display: block;
+		margin-bottom: 10px;
+		font-size: 15px;
+		color: $footer-bg;
+		text-align: center;
+  }
+	&__input-name {
+		position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    background-color: $burger-button-color;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.8s box-shadow ease-in-out;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &::placeholder {
+      color: $footer-bg;
+      font-weight: 500;
+    }
+	}
+	&__label-check {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 25px;
+	} 
+	&__checkbox-span {
+		display: block;
+		width:170px;
+		color: $radio-btn-color;
+		text-align: right;
+		background-image: url("../../images/icons/checkbox-passive.svg");
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size:25px 25px;
+	}
+	&__checkbox:checked + &__checkbox-span {
+		background-image: url("../../images/icons/checkbox-active.svg");
+	}
+	&__submit-block {
+		display: flex;
+		justify-content: space-around;
+	}
+	&__btn {
+		min-width: 160px;
+		&-reset {
+			border: none;
+		}
+	}
+	&__modal-reg-btn {
+		color:  $button-color;
+    background-color: $btn-text-color;
+	}
+}

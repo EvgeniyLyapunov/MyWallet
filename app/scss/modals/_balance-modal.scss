@@ -26,7 +26,7 @@
   width: 90%;
   padding: 15px;
   color: #000;
-  background-color: $footer-bg;
+  background-color: $burger-button-color;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; //#28
   &::before {
@@ -36,7 +36,7 @@
     right: 4px;
     bottom: 4px;
     left: 4px;
-    border: 2px solid $burger-button-color;
+    border: 2px solid $title-color;
     border-radius: 8px;
   }
   &__title {

@@ -58,7 +58,10 @@ window.addEventListener("DOMContentLoaded", () => {
         modalWindows = document.querySelectorAll(".modal"),
         modalShow = document.querySelector(".modal-show"),
         modalChanges = document.querySelector(".modal-changes"),
-        modalNewStorage = document.querySelector(".new-storage");
+        modalNewStorage = document.querySelector(".new-storage"),
+        modalLog = document.querySelector(".modal-log"),
+        toLogModalBtn = document.querySelector("#to-log-btn");
+
 
   // функция открытия модального окна
   function openModal(btn, modal) {
@@ -89,6 +92,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // открытие модального окна внесения изменений из окна создания нового хранилища
   openModal(toAddChangeFromNewStorageBtn, modalChanges);
+
+  // открытие модального окна входа/выхода в аккаунт
+  openModal(toLogModalBtn, modalLog);
 
   // кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {

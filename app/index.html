@@ -21,8 +21,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </div>
         <div class="header__btn-wrapper">
-          <button class="btn header__btn header__btn-login">Вход / выход</button>
-          <button class="btn header__btn header__btn-registration"">Создать аккаунт</button>
+          <button class="btn header__btn header__btn-login" id="to-log-btn">Вход / выход</button>
+          <button class="btn header__btn header__btn-registration" id="to-ger-btn">Создать аккаунт</button>
           <div class="header__btn-divider"></div>
           <button class="btn header__btn-about">О проекте</button>
         </div>
@@ -227,13 +227,34 @@
 
   <!-- modal login - logout -->
 
-  <!-- <div class="modal modal-auth">
+  <div class="modal modal-log">
     <div class="container">
-      <div class="modal-auth__wrapper">
+      <div class="modal-log__wrapper">
+        <h2 class="modal-log__title">Вход</h2>
+        <form class="modal-log__form" action="#" method="post">
+          <label class="modal-log__label-name">
+            <span class="modal-log__span-name">Ваш nickname</span>
+            <input class="modal-log__input-name" type="text" name="modalLogName" required placeholder="Введите ваш nickname">
+          </label>
+          <label class="modal-log__label-name">
+            <span class="modal-log__span-name">Ваш пароль</span>
+            <input class="modal-log__input-name" type="password" name="modalLogName" required placeholder="Введите ваш пароль">
+          </label>
+          <label class="modal-log__label-check">
+            <input class="modal-log__checkbox visually-hidden" type="checkbox" name="modalLogCheck">
+            <span class="modal-log__checkbox-span">Запомнить меня?</span>
+          </label>
+          <!-- submit buttons block -->
+          <div class="modal-log__submit-block">
+            <button class="modal-log__btn modal-log__btn-enter  btn">Войти</button>
+            <input class="modal-log__btn modal-log__btn-reset btn" type="reset">
+          </div>
+        </form>
 
+        <button class="modal-log__modal-reg-btn btn ">Регистрация</button>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
   <footer class="footer">
