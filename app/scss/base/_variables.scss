@@ -1,14 +1,34 @@
 // background colors
-$main-bg:#1E387F;
-$header-bg:#88A0E1;
-$footer-bg:#A0B1E1;
+$main-bg:#1e387f;
+$header-bg:#88a0e1;
+$footer-bg:#a0b1e1;
 
-$title-color:#FFC88D;
+// burger menu
+$burger-menu-bg: #586893;
+$burger-button-open-color:#586893;
+$burger-button-close-color:#a0b1e1;
 
-$burger-button-color:#586893;
-$main-button-color:#BFAF6A;
-$button-color: #FFEFAC;
-$main-text-color:#BF966A;
+// card balans
+$card-balans-bg: #586893;
+$card-balans-border-color: #ffc88d;
+$card-balans-title-color: #fff;
+$card-balans-date-color: #ffc88d;
+$card-balans-amount-color: #1e387f;
 
-$btn-text-color:#BF966A;
+// title and subtitle
+$title-color:#ffc88d;
+$element-title-color: #a0b1e1;
+
+// buttons
+$btn-text-color:#bf966a;
+$button-color: #ffefac;
+
+// radio-buttons
+$select-storage-btn-color: #586893;
 $radio-btn-color:#dcdcdc;
+$radio-btn-checked-color: #ffc88d;
+
+//input
+$input-text-color: #fff;
+$input-bg-color: #586893;
+$input-placeholder-bg-color: #a0b1e1;

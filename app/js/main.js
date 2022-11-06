@@ -11,14 +11,20 @@ window.addEventListener("DOMContentLoaded", () => {
         burgerStickMiddle = menuOpen.querySelector(".hamburger__stick-middle"),
         burgerStickBottom = menuOpen.querySelector(".hamburger__stick-bottom");
 
-  menuOpen.addEventListener("click", () => {
+  menuOpen.addEventListener("click", burgerMenuOpen);
+
+  menuClose.addEventListener("click", burgerClose);
+
+  // функция открытия бургер меню
+  function burgerMenuOpen() {
     setTimeout(() => {
       menu.classList.toggle("header__menu_active");
     }, 100);
     burgerActive();
-  });
+  }
 
-  menuClose.addEventListener("click", () => {
+  // функция закрытия бургер меню
+  function burgerClose() {
     setTimeout(() => {
       menu.classList.toggle("header__menu_active");
     }, 200);
@@ -27,15 +33,14 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       menuClose.classList.remove("header__menu-close_animation");
     }, 600);
-    
-  });
+  }
 
+  // функция анимации поведения кнопки бургер меню при открытии и закрвтии
   function burgerActive() {
     burgerStickTop.classList.toggle("hamburger__stick-top_active");
     burgerStickMiddle.classList.toggle("hamburger__stick-middle_active");
     burgerStickBottom.classList.toggle("hamburger__stick-bottom_active");
   }
-
 
   // анимация нажатия кнопки
   function pressBtn(button) {
@@ -48,24 +53,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // modals
 
-  const viewBalanceBtn = document.querySelector("#viewBalance"),
-        addChangesBtn = document.querySelector("#addChanges"),
-        mainSection = document.querySelector("main"),
+  const mainSection = document.querySelector("main"),
         footerSection = document.querySelector("#footer-container"),
         toHomeBtn = document.querySelector(".btn-to-home"),
-        toNewStorageBtn = document.querySelector(".modal-changes__new-storage-btn"),
-        toAddChangeFromNewStorageBtn = document.querySelector(".new-storage__modal-changes-btn"),
-        modalWindows = document.querySelectorAll(".modal"),
-        modalShow = document.querySelector(".modal-show"),
-        modalChanges = document.querySelector(".modal-changes"),
-        modalNewStorage = document.querySelector(".new-storage"),
-        modalLog = document.querySelector(".modal-log"),
-        toLogModalBtn = document.querySelector("#to-log-btn");
-
-
+        modalWindows = document.querySelectorAll(".modal");
+        
   // функция открытия модального окна
-  function openModal(btn, modal) {
-    btn.addEventListener("click", (e) => {
+  function openModal(btn, modalW, ...close) {
+    const button = document.querySelector(btn),
+          modal = document.querySelector(modalW);
+
+    button.addEventListener("click", (e) => {
       e.preventDefault();
       pressBtn(e.target);
       setTimeout(() => {
@@ -78,23 +76,27 @@ window.addEventListener("DOMContentLoaded", () => {
         footerSection.classList.add("footer__container");
         toHomeBtn.classList.remove("hide");
       }, 300);
+
+      if(close.length != 0) {
+        burgerClose();
+      }
     });
   }
 
   // открытие модального окна просмотра баланса
-  openModal(viewBalanceBtn, modalShow);
+  openModal("#viewBalance", ".modal-show");
 
   // открытие модального окна внесения изменений
-  openModal(addChangesBtn, modalChanges);
+  openModal("#addChanges", ".modal-changes");
 
   // открытие модального окна создания нового хранилища
-  openModal(toNewStorageBtn, modalNewStorage);
+  openModal(".modal-changes__new-storage-btn", ".new-storage");
 
   // открытие модального окна внесения изменений из окна создания нового хранилища
-  openModal(toAddChangeFromNewStorageBtn, modalChanges);
+  openModal(".new-storage__modal-changes-btn", ".modal-changes");
 
   // открытие модального окна входа/выхода в аккаунт
-  openModal(toLogModalBtn, modalLog);
+  openModal("#to-log-btn", ".modal-log", true);
 
   // кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {

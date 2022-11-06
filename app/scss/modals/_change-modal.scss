@@ -31,29 +31,8 @@
     align-items: center;
   }
   &__input-amount {
-    position: relative;
     z-index: 5;
-    display: block;
-    width: 100%;
-    height: 60px;
-    padding: 0 15px;
-    margin-bottom: 25px;
-    font-weight: 700;
-    font-size: 24px;
-    color: #fff;
-    background-color: $burger-button-color;
-    border: none;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: 0.8s box-shadow ease-in-out;
-    &:focus {
-      outline: none;
-      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    }
-    &::placeholder {
-      color: $footer-bg;
-      font-weight: 500;
-    }
+    @include baseInput;
   }
   &__reset-btn {
     border: none;
@@ -66,11 +45,8 @@
 .select-storage {
   display: flex;
   flex-direction: column;
-  &__descr {
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: $footer-bg;
-    text-align: center;
+  &__element-title {
+   @include elementTitle;
   }
   &__inner {
     display: flex;
@@ -81,7 +57,7 @@
     display: block;
     width: 50px;
     height: 50px;
-    fill: $burger-button-color;
+    fill: $select-storage-btn-color;
   }
   &__list {
     display: flex;
@@ -93,7 +69,7 @@
     display: block;
     padding-left: 70px;
   }
-  &__span {
+  &__name {
     display: block;
     font-size: 24px;
     color: $radio-btn-color;
@@ -120,17 +96,14 @@
       transition: 0.3s transform ease-in-out;
     }
   }
-  &__radio:checked + &__span::after {
+  &__radio:checked + &__name::after {
       transform: translateX(24px);
-      background-color: $title-color;
+      background-color: $radio-btn-checked-color;
   }
 }
 .money-type {
-  &__descr {
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: $footer-bg;
-    text-align: center;
+  &__element-title {
+    @include elementTitle;
   }
   &__wrapper {
     position: relative;
@@ -143,7 +116,7 @@
     display: block;
     padding-left: 70px;
   }
-  &__span {
+  &__name {
     display: block;
     font-size: 24px;
     color:  $radio-btn-color;
@@ -171,17 +144,14 @@
       transition: 0.3s transform ease-in-out;
     }
   }
-  &__radio:checked + &__span::after {
+  &__radio:checked + &__name::after {
       transform: translateX(24px);
-      background-color: $title-color;
+      background-color: $radio-btn-checked-color;
   }
 }
 .operation-type {
-  &__descr {
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: $footer-bg;
-    text-align: center;
+  &__element-title {
+    @include elementTitle;
   }
   &__wrapper {
     position: relative;
@@ -194,7 +164,7 @@
     display: block;
     padding-left: 70px;
   }
-  &__span {
+  &__name {
     display: block;
     font-size: 24px;
     color:  $radio-btn-color;
@@ -221,8 +191,8 @@
       transition: 0.3s transform ease-in-out;
     }
   }
-  &__radio:checked + &__span::after {
+  &__radio:checked + &__name::after {
       transform: translateX(24px);
-      background-color: $title-color;
+      background-color: $radio-btn-checked-color;
   }
 }

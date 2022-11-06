@@ -25,8 +25,7 @@
   flex-direction: column;
   width: 90%;
   padding: 15px;
-  color: #000;
-  background-color: $burger-button-color;
+  background-color: $card-balans-bg;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; //#28
   &::before {
@@ -36,14 +35,14 @@
     right: 4px;
     bottom: 4px;
     left: 4px;
-    border: 2px solid $title-color;
+    border: 2px solid $card-balans-border-color;
     border-radius: 8px;
   }
   &__title {
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 24px;
-    color: #fff;
+    color: $card-balans-title-color;
   }
   &__date {
     margin-bottom: 20px;
@@ -54,6 +53,6 @@
     align-self: flex-end;
     font-weight: 700;
     font-size: 28px;
-    color: $main-bg;
+    color: $card-balans-amount-color
   }
 }
