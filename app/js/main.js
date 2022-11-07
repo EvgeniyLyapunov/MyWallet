@@ -98,6 +98,9 @@ window.addEventListener("DOMContentLoaded", () => {
   // открытие модального окна входа/выхода в аккаунт
   openModal("#to-log-btn", ".modal-log", true);
 
+  // открытие модального окна регистрации аккаунта
+  openModal("#to-reg-btn", ".modal-reg", true);
+
   // кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {
     e.preventDefault();

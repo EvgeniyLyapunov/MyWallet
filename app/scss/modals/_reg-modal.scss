@@ -1,4 +1,4 @@
-.modal-log {
+.modal-reg {
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -6,13 +6,13 @@
     padding-top: 20px;
     padding-bottom: 25px;
   }
-	&__title {
-		width: 160px;
-		margin-bottom: 20px;
+  &__title {
+		width: 285px;
+    margin-bottom: 20px;
 		font-size: 35px;
 		text-align-last: left;
 		color: $title-color;
-		background-image: url("../../images/icons/open-door.png");
+		background-image: url("../../images/icons/reg.png");
 		background-repeat: no-repeat;
 		background-position: right center;
 		background-size: contain;
@@ -23,16 +23,12 @@
     width: 100%;
     margin-bottom: 30px;
   }
-  &__label-name {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-  }
-  &__element-title {
-		@include elementTitle;
-  }
-	&__input-name {
+  &__input-name {
 		@include baseInput;
+    margin-bottom: 35px;
+    &_mb {
+      margin-bottom: 20px;
+    }
 	}
 	&__label-check {
 		display: flex;
@@ -64,7 +60,9 @@
 			border: none;
 		}
 	}
-	&__modal-reg-btn {
+	&__modal-log-btn {
+    padding-left: 55px;
+    padding-right: 55px;
 		color:  $button-color;
     background-color: $btn-text-color;
 	}

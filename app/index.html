@@ -252,8 +252,32 @@
             <input class="modal-log__btn modal-log__btn-reset btn" type="reset">
           </div>
         </form>
-
         <button class="modal-log__modal-reg-btn btn ">Регистрация</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal registration --> 
+
+  <div class="modal modal-reg">
+    <div class="container">
+      <div class="modal-reg__wrapper">
+        <h2 class="modal-reg__title">Регистрация</h2>
+        <form action="#" method="post" class="modal-reg__form">
+          <input class="modal-reg__input-name" type="text" name="modalRegName" required placeholder="Введите ваш nickname">
+          <input class="modal-reg__input-name" type="password" name="modalRegPass" required placeholder="Введите ваш пароль">
+          <input class="modal-reg__input-name modal-reg__input-name_mb" type="password" name="modalRegConfirmPass" required placeholder="Повторите ваш пароль">
+          <label class="modal-reg__label-check">
+            <input class="modal-reg__checkbox visually-hidden" type="checkbox" name="modalRegCheck">
+            <span class="modal-reg__checkbox-span">Запомнить меня?</span>
+          </label>
+          <!-- submit buttons block -->
+          <div class="modal-reg__submit-block">
+            <button class="modal-reg__btn modal-reg__btn-enter  btn">Регистрация</button>
+            <input class="modal-reg__btn modal-reg__btn-reset btn" type="reset">
+          </div>
+        </form>
+        <button class="modal-reg__modal-log-btn btn ">Войти</button>
       </div>
     </div>
   </div>
