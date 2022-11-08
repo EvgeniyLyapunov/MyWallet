@@ -9,6 +9,7 @@ const uglify       = require("gulp-uglify-es").default; // для минифик
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin     = require("gulp-imagemin");
 const del          = require("del"); // для удаления папки dest
+const webpack      = require("webpack-stream");
 
 function browsersync() {
   browserSync.init({
@@ -17,6 +18,32 @@ function browsersync() {
     }
   });
 }
+
+let isDev = true;
+let isProd = !isDev;
+
+let webConfig = {
+  output: {
+    filename: "main.min.js"
+  },
+  watch: false,
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  },
+  mode: isDev ? "development" : "production",
+  devtool: isDev ? "eval-source-map" : "source-map"
+};
 
 function cleanDist() {
   return del("dist");
@@ -39,12 +66,11 @@ function images() {
 }
 
 function scripts() {
-  return src([
-    "app/js/main.js" // здесь можно прописывать доп библиотеки js, установленные через npm
-  ])
-  .pipe(concat("main.min.js"))
-  .pipe(uglify())
-  .pipe(dest("app/js"))
+  return src("./app/js/main.js")
+  .pipe(webpack(webConfig))
+  // .pipe(concat("main.min.js"))
+  // .pipe(uglify())
+  .pipe(dest("./app/js"))
   .pipe(browserSync.stream());
 }
 
