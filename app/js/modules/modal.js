@@ -53,7 +53,7 @@ function modal() {
   // открытие модального окна регистрации аккаунта
   openModal("#to-reg-btn", ".modal-reg", true);
 
-  // кнопка в футере - домой
+  //кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     pressBtn(e.target);

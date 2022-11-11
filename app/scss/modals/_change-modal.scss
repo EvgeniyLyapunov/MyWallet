@@ -3,9 +3,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 7px;
+    padding-top: 20px;
     padding-bottom: 25px;
   }
+  &__title {
+		width: 270px;
+    margin-bottom: 20px;
+		font-size: 35px;
+		text-align-last: left;
+		color: $title-color;
+		background-image: url("../../images/icons/calculator_coin.svg");
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: contain;
+	}
   &__form {
     display: flex;
     flex-direction: column;
@@ -13,7 +24,7 @@
     margin-bottom: 30px;
   }
   &__select-storage {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   &__money-type {
     margin-bottom: 15px;
@@ -27,8 +38,30 @@
   }
   &__submit-block {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    &-info {
+      display: block;
+      width: 120px;
+      color: $element-title-color;
+    }
+  }
+  &__plus-btn {
+    width: 90px;
+    height: 60px;
+    background-image: url("../../images/icons/plus.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+  }
+  &__minus-btn {
+    width: 90px;
+    height: 60px;
+    margin-right: 30px;
+    background-image: url("../../images/icons/minus.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
   }
   &__input-amount {
     z-index: 5;
@@ -37,9 +70,22 @@
   &__reset-btn {
     border: none;
   }
+  &__new-storage-btn-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
   &__new-storage-btn {
+    align-self: start;
+    flex-shrink: 0;
+    margin-right: 15px;
     color:  $button-color;
     background-color: $btn-text-color;
+  }
+  &__new-storage-btn-info {
+    display: block;
+    text-align: center;
+    color: $element-title-color;
   }
 }
 .select-storage {
@@ -60,46 +106,66 @@
     fill: $select-storage-btn-color;
   }
   &__list {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  &__item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    min-height: 120px;
+    padding: 10px;
+    background-color: $card-select-storage-bg;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; //#85
+    border-radius: 8px;
+    .storage {
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 0 0 0 10px;
+      }
+      &__info-balans {
+        margin-bottom: 5px;
+      }
+      &__info-heading {
+        margin-right: 10px;
+        color: $card-select-storage-info-heading;
+      }
+      &__info-value {
+        color: $card-select-storage-info-value;
+      }
+    } 
+  }
   &__label {
     position: relative;
-    display: block;
-    padding-left: 70px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
   }
   &__name {
     display: block;
+    padding-left: 35px;
     font-size: 24px;
     color: $radio-btn-color;
-    &::before {
-      position: absolute;
-      content: "";
-      top: 3px;
-      left: 0;
-      width: 60px;
-      height: 32px;
-      border: 3px solid $radio-btn-color;
-      border-radius: 20px;
-      transition: 0.3s transform ease-in-out;
-    }
-    &::after {
-      position: absolute;
-      content: "";
-      top: 7px;
-      left: 6px;
-      width: 24px;
-      height: 24px;
-      border-radius: 20px;
-      background-color: $radio-btn-color;
-      transition: 0.3s transform ease-in-out;
-    }
+    background-image: url("../../images/icons/checkbox-passive.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size:25px 25px;
   }
-  &__radio:checked + &__name::after {
-      transform: translateX(24px);
-      background-color: $radio-btn-checked-color;
-  }
+  &__radio:checked + &__name {
+    background-image: url("../../images/icons/checkbox-active.svg");  }
 }
 .money-type {
   &__element-title {

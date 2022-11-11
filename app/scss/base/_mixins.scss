@@ -7,6 +7,7 @@
   margin-bottom: 25px;
   font-weight: 700;
   font-size: 24px;
+  line-height: 50px;
   color: $input-text-color;
   background-color: $input-bg-color;
   border: none;
@@ -21,6 +22,7 @@
     color: $input-placeholder-bg-color;
     font-weight: 500;
     font-size: 18px;
+    transform: translateY(-3px);
   }
 }
 
