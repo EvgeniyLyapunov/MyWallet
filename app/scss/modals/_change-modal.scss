@@ -26,16 +26,6 @@
   &__select-storage {
     margin-bottom: 30px;
   }
-  &__money-type {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-  }
-  &__type {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-  }
   &__submit-block {
     display: flex;
     justify-content: space-evenly;
@@ -46,29 +36,23 @@
       color: $element-title-color;
     }
   }
-  &__plus-btn {
+  &__btn {
     width: 90px;
     height: 60px;
-    background-image: url("../../images/icons/plus.svg");
     background-repeat:no-repeat;
     background-position: center;
     background-size: 30px 30px;
   }
+  &__plus-btn {
+    background-image: url("../../images/icons/plus.svg");
+  }
   &__minus-btn {
-    width: 90px;
-    height: 60px;
     margin-right: 30px;
     background-image: url("../../images/icons/minus.svg");
-    background-repeat:no-repeat;
-    background-position: center;
-    background-size: 30px 30px;
   }
   &__input-amount {
     z-index: 5;
     @include baseInput;
-  }
-  &__reset-btn {
-    border: none;
   }
   &__new-storage-btn-block {
     display: flex;
@@ -88,6 +72,7 @@
     color: $element-title-color;
   }
 }
+
 .select-storage {
   display: flex;
   flex-direction: column;
@@ -165,100 +150,6 @@
     background-size:25px 25px;
   }
   &__radio:checked + &__name {
-    background-image: url("../../images/icons/checkbox-active.svg");  }
-}
-.money-type {
-  &__element-title {
-    @include elementTitle;
-  }
-  &__wrapper {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  &__label {
-    position: relative;
-    display: block;
-    padding-left: 70px;
-  }
-  &__name {
-    display: block;
-    font-size: 24px;
-    color:  $radio-btn-color;
-    &::before {
-      position: absolute;
-      content: "";
-      top: 3px;
-      left: 0;
-      width: 60px;
-      height: 32px;
-      border: 3px solid $radio-btn-color;
-      border-radius: 20px;
-      transition: 0.3s transform ease-in-out;
-    }
-    &::after {
-      position: absolute;
-      content: "";
-      top: 7px;
-      left: 6px;
-      width: 24px;
-      height: 24px;
-      // border: 3px solid $button-color;
-      border-radius: 20px;
-      background-color:  $radio-btn-color;
-      transition: 0.3s transform ease-in-out;
-    }
-  }
-  &__radio:checked + &__name::after {
-      transform: translateX(24px);
-      background-color: $radio-btn-checked-color;
-  }
-}
-.operation-type {
-  &__element-title {
-    @include elementTitle;
-  }
-  &__wrapper {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  &__label {
-    position: relative;
-    display: block;
-    padding-left: 70px;
-  }
-  &__name {
-    display: block;
-    font-size: 24px;
-    color:  $radio-btn-color;
-    &::before {
-      position: absolute;
-      content: "";
-      top: 3px;
-      left: 0;
-      width: 60px;
-      height: 32px;
-      border: 3px solid  $radio-btn-color;
-      border-radius: 20px;
-      transition: 0.3s transform ease-in-out;
-    }
-    &::after {
-      position: absolute;
-      content: "";
-      top: 7px;
-      left: 6px;
-      width: 24px;
-      height: 24px;
-      border-radius: 20px;
-      background-color: $radio-btn-color;
-      transition: 0.3s transform ease-in-out;
-    }
-  }
-  &__radio:checked + &__name::after {
-      transform: translateX(24px);
-      background-color: $radio-btn-checked-color;
+    background-image: url("../../images/icons/checkbox-active.svg");
   }
 }

@@ -22,5 +22,8 @@
     "gulp-uglify-es": "^3.0.0",
     "sass": "^1.55.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "just-validate": "^3.8.1"
   }
 }

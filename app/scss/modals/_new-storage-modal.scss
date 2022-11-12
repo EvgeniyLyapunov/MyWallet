@@ -6,19 +6,22 @@
     padding-top: 25px;
     padding-bottom: 25px;
   }
+  &__title {
+		width: 300px;
+    margin-bottom: 30px;
+		font-size: 28px;
+		text-align-last: left;
+		color: $title-color;
+		background-image: url("../../images/icons/finance-saving.svg");
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: contain;
+	}
   &__form {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 30px;
-  }
-  &__label-name {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  &__element-title {
-    @include elementTitle;
   }
   &__input-name {
     @include baseInput;
@@ -50,5 +53,40 @@
     width: 50px;
     height: 50px;
     fill: $select-storage-btn-color;
+  }
+}
+
+.money-type {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  &__element-title {
+    @include elementTitle;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    margin-bottom: 10px;
+  }
+  &__name {
+    display: block;
+    padding-left: 35px;
+    font-size: 24px;
+    color: $radio-btn-color;
+    background-image: url("../../images/icons/checkbox-passive.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size:25px 25px;
+  }
+  &__radio:checked + &__name {
+    background-image: url("../../images/icons/checkbox-active.svg");
   }
 }
