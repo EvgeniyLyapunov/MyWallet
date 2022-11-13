@@ -14,5 +14,4 @@ async function getData(urlPath) {
   return await result.json();
 }
 
-export {postData};
-export {getData};
+export {postData, getData};

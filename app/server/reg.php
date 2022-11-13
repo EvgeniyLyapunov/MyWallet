@@ -25,8 +25,7 @@
       echo json_encode([
         'status' => 'ok',
         'id' => $record['id'],
-        'nickname' => $record['nickname'],
-        'pass' => $record['pass']
+        'nickname' => $record['nickname']
       ]);
     } else {
       echo json_encode(['status' => 'Данные успешно не добавлены']);
