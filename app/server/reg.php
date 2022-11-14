@@ -7,12 +7,12 @@
   $nickname = mysqli_real_escape_string($connection, $_POST["nickname"]);
   $pass = mysqli_real_escape_string($connection, $_POST["pass"]);
 
-  $querySelectBefore = "SELECT * FROM user WHERE (nickname = '$nickname') AND (pass = '$pass')";
+  $querySelectBefore = "SELECT * FROM user WHERE (nickname = '$nickname')";
   $resultBefore = mysqli_query($connection, $querySelectBefore);
 
   if(mysqli_num_rows($resultBefore) != 0) {
     echo json_encode([
-      'status' => 'Пользователь c таким email уже существует, попробуйте авторизоваться']);
+      'status' => 'Пользователь c таким ником уже существует']);
   } else {
     $queryInsert = "INSERT INTO user (nickname, pass) VALUES ('$nickname', '$pass')";
     $result = mysqli_query($connection, $queryInsert);
@@ -28,7 +28,7 @@
         'nickname' => $record['nickname']
       ]);
     } else {
-      echo json_encode(['status' => 'Данные успешно не добавлены']);
+      echo json_encode(['status' => 'Ошибка сервера, попробуйте ещё раз.']);
     }
   }
 

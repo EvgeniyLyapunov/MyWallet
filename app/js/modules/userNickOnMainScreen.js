@@ -11,6 +11,10 @@ function userNickOnMainScreen() {
 }
 
 function createNickElement(nickname) {
+  const div = document.querySelector(".nickname-style");
+  if(div) {
+    div.remove();
+  }
   const nickElem = document.createElement("div");
   nickElem.textContent = `${nickname}`;
   nickElem.classList.add("nickname-style");

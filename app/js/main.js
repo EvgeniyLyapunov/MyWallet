@@ -6,7 +6,8 @@ import {openModal} from "./modules/modal";
 import slider from "./modules/slider";
 import logRegBtn from "./modules/logRegBtn";
 import formSubmitOff from "./modules/submitEvents/formSubmitOff";
-import registration from "./modules/registration";
+import regSubmit from "./modules/submitEvents/regSubmit";
+import logSubmit from "./modules/submitEvents/logSubmit";
 
 
 userNickOnMainScreen();
@@ -36,6 +37,6 @@ formSubmitOff(".new-storage__form", ".new-storage__input-name");
 formSubmitOff(".modal-log__form", "#log-name", "#log-pass");
 formSubmitOff("#reg-form", "#reg-name", "#reg-pass", "#reg-confirm-pass");
 
-registration();
-
+regSubmit("#reg-form", ".modal-reg__btn-enter", "server/reg.php");
+logSubmit(".modal-log__form", ".modal-log__btn-enter", "server/log.php");
   
