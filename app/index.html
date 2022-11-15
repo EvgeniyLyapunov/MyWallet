@@ -257,7 +257,7 @@
             <input class="modal-log__input-name" type="password" name="pass" required placeholder="Введите ваш пароль" id="log-pass">
           </label>
           <label class="modal-log__label-check">
-            <input class="modal-log__checkbox visually-hidden" type="checkbox" name="modalLogCheck">
+            <input class="modal-log__checkbox visually-hidden" type="checkbox" name="rememberMeCheck">
             <span class="modal-log__checkbox-span">Запомнить меня?</span>
           </label>
           <!-- submit buttons block -->
@@ -266,7 +266,7 @@
             <input class="modal-log__btn modal-log__btn-reset btn" type="reset">
           </div>
         </form>
-        <button class="modal-log__modal-reg-btn btn ">Регистрация</button>
+        <button class="modal-log__modal-reg-btn btn ">У меня пока нет аккаунта</button>
       </div>
     </div>
   </div>
@@ -278,9 +278,15 @@
       <div class="modal-reg__wrapper">
         <h2 class="modal-reg__title">Регистрация</h2>
         <form action="#" method="post" class="modal-reg__form" id="reg-form">
-          <input class="modal-reg__input-name" type="text" name="nickname" required placeholder="Введите ваш nickname" id="reg-name">
-          <input class="modal-reg__input-name" type="password" name="pass" required placeholder="Введите ваш пароль" id="reg-pass">
-          <input class="modal-reg__input-name modal-reg__input-name_mb" type="password" name="confirmPass" required placeholder="Повторите ваш пароль" id="reg-confirm-pass">
+          <label class="modal-reg__input-label" for="reg-name">
+            <input class="modal-reg__input-name" type="text" name="nickname" required placeholder="Введите ваш nickname" id="reg-name">
+          </label>
+          <label class="modal-reg__input-label" for="reg-pass">
+            <input class="modal-reg__input-name" type="password" name="pass" required placeholder="Введите ваш пароль" id="reg-pass">
+          </label>
+          <label class="modal-reg__input-label" for="reg-confirm-pass">
+            <input class="modal-reg__input-name modal-reg__input-name_mb" type="password" name="confirmPass" required placeholder="Повторите ваш пароль" id="reg-confirm-pass">
+          </label>
           <label class="modal-reg__label-check">
             <input class="modal-reg__checkbox visually-hidden" type="checkbox" name="rememberMeCheck" id="reg-check">
             <span class="modal-reg__checkbox-span">Запомнить меня?</span>
@@ -291,7 +297,7 @@
             <input class="modal-reg__btn modal-reg__btn-reset btn" type="reset">
           </div>
         </form>
-        <button class="modal-reg__modal-log-btn btn ">Войти</button>
+        <button class="modal-reg__modal-log-btn btn ">У меня уже есть аккаунт</button>
       </div>
     </div>
   </div>

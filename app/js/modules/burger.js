@@ -1,5 +1,7 @@
 "use strickt";
 
+import checkAuth from "../services/checkAuth";
+
 // burger-menu
 
 const menuOpen = document.querySelector(".hamburger"),
@@ -7,7 +9,9 @@ const menuOpen = document.querySelector(".hamburger"),
       menu = document.querySelector(".header__menu"),
       burgerStickTop = document.querySelector(".hamburger__stick-top"),
       burgerStickMiddle = document.querySelector(".hamburger__stick-middle"),
-      burgerStickBottom = document.querySelector(".hamburger__stick-bottom");
+      burgerStickBottom = document.querySelector(".hamburger__stick-bottom"),
+      btnLog = document.querySelector("#to-log-btn"),
+      btnReg = document.querySelector("#to-reg-btn");
 
 function burger() {
   menuOpen.addEventListener("click", burgerMenuOpen);
@@ -18,6 +22,18 @@ function burger() {
 
 // функция открытия бургер меню
 function burgerMenuOpen() {
+  let nick = checkAuth();
+
+  if(nick) {
+    btnLog.textContent = "Выход";
+    btnReg.textContent = `${nick}`;
+    btnReg.disabled = true;
+  } else {
+    btnLog.textContent = "Вход";
+    btnReg.textContent = "Создать аккаунт";
+    btnReg.disabled = false;
+  }
+
   setTimeout(() => {
     menu.classList.toggle("header__menu_active");
   }, 100);

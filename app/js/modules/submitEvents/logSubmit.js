@@ -21,6 +21,9 @@ function logSubmit(formSelector, btnSelector, urlPath) {
       rememberMe = false;
     }
 
+    console.log(Object.fromEntries(formData.entries()));
+    console.log(rememberMe);
+
     let answer = await postData(urlPath, json);
 
     if(answer.status === "ok") {

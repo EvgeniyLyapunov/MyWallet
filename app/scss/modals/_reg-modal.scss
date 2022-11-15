@@ -23,6 +23,10 @@
     width: 100%;
     margin-bottom: 30px;
   }
+	&__input-label {
+		display: flex;
+		flex-direction: column-reverse;
+	}
   &__input-name {
 		@include baseInput;
     margin-bottom: 35px;
@@ -63,7 +67,22 @@
 	&__modal-log-btn {
     padding-left: 55px;
     padding-right: 55px;
-		color:  $button-color;
-    background-color: $btn-text-color;
+		text-decoration: underline;
+		color:  #a0b1e1;
+    background-color: transparent;
+		box-shadow: none;
 	}
+}
+.is-invalid {
+  border: 2px solid #FF5C00;
+  margin-top: 5px;
+	padding-left: 13px;
+}
+
+.is-label-invalid {
+  margin-top: -17px;
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
 }

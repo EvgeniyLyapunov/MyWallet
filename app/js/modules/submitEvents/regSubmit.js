@@ -14,17 +14,14 @@ function regSubmit(formSelector, btnSelector, urlPath) {
   const validate = new JustValidate(formSelector, {
     errorFieldCssClass: 'is-invalid',
     errorFieldStyle: {
-      border: '1px solid #FF5C00',
+      border: '1px solid #FF5C00'
     },
     errorLabelCssClass: 'is-label-invalid',
     errorLabelStyle: {
-      color: '#FF5C00',
+      color: '#FF5C00'
     },
     focusInvalidField: true,
-    lockForm: true,
-    tooltip: {
-      position: 'top',
-    }
+    lockForm: true
   });
 
   validate
@@ -45,8 +42,8 @@ function regSubmit(formSelector, btnSelector, urlPath) {
     },
     {
       rule: 'maxLength',
-      value: 30,
-      errorMessage: 'Слишком длинный ник'
+      value: 15,
+      errorMessage: 'Максимум 15 букв - длина ника'
     }
   ])
   .addField("#reg-pass", [
@@ -81,7 +78,7 @@ function regSubmit(formSelector, btnSelector, urlPath) {
 
   inputs.forEach(item => {
     item.addEventListener("blur", () => {
-      validate.clearErrors();
+      validate.refresh();
     });
   });
 

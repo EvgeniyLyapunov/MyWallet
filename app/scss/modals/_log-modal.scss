@@ -65,7 +65,9 @@
 		}
 	}
 	&__modal-reg-btn {
-		color:  $button-color;
-    background-color: $btn-text-color;
+		text-decoration: underline;
+		color:  #a0b1e1;
+    background-color: transparent;
+		box-shadow: none;
 	}
 }
