@@ -8,6 +8,7 @@ import logRegBtn from "./modules/logRegBtn";
 import formSubmitOff from "./modules/submitEvents/formSubmitOff";
 import regSubmit from "./modules/submitEvents/regSubmit";
 import logSubmit from "./modules/submitEvents/logSubmit";
+import newStorageSubmit from "./modules/submitEvents/newStorageSubmit";
 
 
 userNickOnMainScreen();
@@ -40,3 +41,4 @@ formSubmitOff("#reg-form", "#reg-name", "#reg-pass", "#reg-confirm-pass");
 regSubmit("#reg-form", ".modal-reg__btn-enter", "server/reg.php");
 logSubmit(".modal-log__form", ".modal-log__btn-enter", "server/log.php");
   
+newStorageSubmit();

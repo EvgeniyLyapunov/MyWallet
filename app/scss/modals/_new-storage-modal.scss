@@ -3,8 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 30px;
   }
   &__title {
 		width: 300px;
@@ -21,16 +20,22 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 30px;
+    padding: 15px 10px 35px 10px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color:#223c83;
   }
   &__input-name {
     @include baseInput;
+    width: 90%;
+    margin: 0 auto 25px;
   }
   &__money-type {
     margin-bottom: 15px;
   }
   &__select-storage {
-    margin-bottom: 35px;
+    margin-bottom: 28px;
   }
   &__submit-block {
     display: flex;
@@ -40,11 +45,12 @@
     border: none;
   }
   &__modal-changes-btn {
-    min-width: 180px;    
-  }
-  &__modal-changes-btn {
-    color:  $button-color;
-    background-color: $btn-text-color;
+    padding-bottom: 0;
+    padding-top: 0;
+		text-decoration: underline;
+		color:  #a0b1e1;
+    background-color: transparent;
+		box-shadow: none;
   }
 }
 .select-storage {

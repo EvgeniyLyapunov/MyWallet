@@ -99,16 +99,22 @@
                     <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="0">
                     <span class="select-storage__name">Кошелёк</span>
                   </label>
-                  <div class="storage__info">
-                    <div class="storage__info-balans">
-                      <span class="storage__info-heading">Остаток:</span>
-                      <span class="storage__info-value">50 000 p.</span>
+                  <div class="storage__options">
+                    <div class="storage__info">
+                      <div class="storage__info-balans">
+                        <span class="storage__info-heading">Остаток:</span>
+                        <span class="storage__info-value">50 000 p.</span>
+                      </div>
+                      <div class="storage__info-type">
+                        <span class="storage__info-heading">Тип денег:</span>
+                        <span class="storage__info-value">Наличные</span>
+                      </div>
                     </div>
-                    <div class="storage__info-type">
-                      <span class="storage__info-heading">Тип денег:</span>
-                      <span class="storage__info-value">Наличные</span>
+                    <div class="storage__menu-btn">
+                      <img class="storage__menu-btn-img" src="images/icons/menu-more-options.svg" alt="">
                     </div>
                   </div>
+                  
                 </div>
               </li>
               <li class="select-storage__item storage">
@@ -117,16 +123,22 @@
                     <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="0">
                     <span class="select-storage__name">Тинькофф</span>
                   </label>
-                  <div class="storage__info">
-                    <div class="storage__info-balans">
-                      <span class="storage__info-heading">Остаток:</span>
-                      <span class="storage__info-value">250 000 p.</span>
+                  <div class="storage__options">
+                    <div class="storage__info">
+                      <div class="storage__info-balans">
+                        <span class="storage__info-heading">Остаток:</span>
+                        <span class="storage__info-value">250 000 p.</span>
+                      </div>
+                      <div class="storage__info-type">
+                        <span class="storage__info-heading">Тип денег:</span>
+                        <span class="storage__info-value">Безнал</span>
+                      </div>
                     </div>
-                    <div class="storage__info-type">
-                      <span class="storage__info-heading">Тип денег:</span>
-                      <span class="storage__info-value">Безнал</span>
+                    <div class="storage__menu-btn">
+                      <img class="storage__menu-btn-img" src="images/icons/menu-more-options.svg" alt="">
                     </div>
                   </div>
+                  
                 </div>
               </li>
               <li class="select-storage__item storage">
@@ -135,16 +147,22 @@
                     <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="0">
                     <span class="select-storage__name">Бюджет</span>
                   </label>
-                  <div class="storage__info">
-                    <div class="storage__info-balans">
-                      <span class="storage__info-heading">Остаток:</span>
-                      <span class="storage__info-value">18 000 p.</span>
+                  <div class="storage__options">
+                    <div class="storage__info">
+                      <div class="storage__info-balans">
+                        <span class="storage__info-heading">Остаток:</span>
+                        <span class="storage__info-value">18 000 p.</span>
+                      </div>
+                      <div class="storage__info-type">
+                        <span class="storage__info-heading">Тип денег:</span>
+                        <span class="storage__info-value">Наличные</span>
+                      </div>
                     </div>
-                    <div class="storage__info-type">
-                      <span class="storage__info-heading">Тип денег:</span>
-                      <span class="storage__info-value">Наличные</span>
+                    <div class="storage__menu-btn">
+                      <img class="storage__menu-btn-img" src="images/icons/menu-more-options.svg" alt="">
                     </div>
                   </div>
+                  
                 </div>
               </li>
             </ul>
@@ -165,8 +183,7 @@
 
         <!-- here will maybe block card info -->
         <div class="modal-changes__new-storage-btn-block">
-          <button class="modal-changes__new-storage-btn btn ">Новое хранилище</button>
-          <span class="modal-changes__new-storage-btn-info">Создать новое хранилище</span>
+          <button class="modal-changes__new-storage-btn btn ">Создать новое хранилище</button>
         </div>
       </div>
     </div>
@@ -178,20 +195,20 @@
     <div class="container">
       <div class="new-storage__wrapper">
         <h2 class="new-storage__title">Новое хранилище</h2>
-        <form action="#" class="new-storage__form">
+        <form action="#" class="new-storage__form" id="newStorageForm">
           <label class="new-storage__label-name">
-            <input class="new-storage__input-name" type="text" name="newStorageName" required placeholder="Введите название хранилища">
+            <input class="new-storage__input-name" type="text" name="newStorageName" required placeholder="Введите название хранилища" id="newStorageName">
           </label>
           <!-- select type of money (cash or card) -->
           <div class="new-storage__money-type money-type">
             <span class="money-type__element-title">выбор типа денег<br> (нал&nbsp;/ карта)</span>
-            <div class="money-type__wrapper">
+            <div class="money-type__wrapper" id="money-type-group">
               <label class="money-type__label">
-                <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="income">
+                <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="cash">
                 <span class="money-type__name">Cash</span>
               </label>
               <label class="money-type__label">
-                <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="expense">
+                <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="bank">
                 <span class="money-type__name">Bank</span>
               </label>
             </div>
@@ -203,22 +220,22 @@
             <svg class="select-storage__new-prev-btn"  viewBox="0 0 512 512">
               <path d="M354.76,510.52l60.76-60.71a5,5,0,0,0,0-7.13L232.26,259.56a5,5,0,0,1,0-7.12L415.52,69.32a5,5,0,0,0,0-7.13L354.76,1.48a5,5,0,0,0-7.13,0l-251.15,251a5,5,0,0,0,0,7.12l251.15,251A5,5,0,0,0,354.76,510.52Z"/>
             </svg>
-            <ul class="select-storage__list">
+            <ul class="select-storage__list" id="select-storage-group">
               <li class="select-storage__new-item">
                 <label class="select-storage__label">
-                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="0">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="baseStorage" value="0">
                   <span class="select-storage__name">Кошелёк</span>
                 </label>
               </li>
               <li class="select-storage__new-item">
                 <label class="select-storage__label">
-                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="1">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="baseStorage" value="1">
                   <span class="select-storage__name">Тинькофф</span>
                 </label>
               </li>
               <li class="select-storage__new-item">
                 <label class="select-storage__label">
-                  <input class="select-storage__radio visually-hidden" type="radio" name="storage" value="2">
+                  <input class="select-storage__radio visually-hidden" type="radio" name="baseStorage" value="2">
                   <span class="select-storage__name">Бюджет</span>
                 </label>
               </li>
@@ -230,12 +247,12 @@
         </div>
         <!-- submit buttons block -->
         <div class="new-storage__submit-block">
-          <button class="new-storage__save-btn btn">Сохранить</button>
           <input class="new-storage__reset-btn btn" type="reset">
+          <button class="new-storage__save-btn btn">Сохранить</button>
         </div>
         </form>
 
-        <button class="new-storage__modal-changes-btn btn ">Назад</button>
+        <button class="new-storage__modal-changes-btn btn ">Назад в редактор баланса</button>
 
       </div>
     </div>
