@@ -29,25 +29,27 @@ function openModal(btn, modalW, ...close) {
       if(div) {
         div.remove();
       }
+      forms.forEach(item => item.reset());
       burgerClose(".header__menu-close", ".header__menu");
+      toMainScreen();
       return;
     }
 
-    // let userAuth = checkAuth();
-    // if((!userAuth && button.classList.contains("action__btn-viewbalance"))
-    //  || (!userAuth && button.classList.contains("action__btn-changes"))) {
-    //   setTimeout(() => {
-    //     modalWindows.forEach(window => {
-    //       window.classList.add("hide");
-    //       window.classList.remove("visible");
-    //     });
-    //     modalNoAuth.classList.add("visible");
-    //     mainSection.classList.add("hide");
-    //     footerSection.classList.add("footer__container");
-    //     toHomeBtn.classList.remove("hide");
-    //   }, 300);
-    //   return;
-    // }
+    let userAuth = checkAuth();
+    if((!userAuth && button.classList.contains("action__btn-viewbalance"))
+     || (!userAuth && button.classList.contains("action__btn-changes"))) {
+      setTimeout(() => {
+        modalWindows.forEach(window => {
+          window.classList.add("hide");
+          window.classList.remove("visible");
+        });
+        modalNoAuth.classList.add("visible");
+        mainSection.classList.add("hide");
+        footerSection.classList.add("footer__container");
+        toHomeBtn.classList.remove("hide");
+      }, 300);
+      return;
+    }
 
     setTimeout(() => {
       modalWindows.forEach(window => {

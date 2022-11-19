@@ -52,7 +52,7 @@ function newStorageSubmit() {
       if(localStorage.getItem("userData")) {
         newStorageData.userId = JSON.parse(localStorage.getItem("userData")).id;
       } else if(sessionStorage.getItem("userData")) {
-        newStorageData.userId = JSON.parse(localStorage.getItem("userData")).id;
+        newStorageData.userId = JSON.parse(sessionStorage.getItem("userData")).id;
       }
 
       const now = new Date();
@@ -63,17 +63,16 @@ function newStorageSubmit() {
         hour: 'numeric',
         minute: 'numeric',
       };
-      newStorageData.lastModifiedDate = now.toLocaleString("ru", options);
+      newStorageData.lastModifiedDate = now.toLocaleString("ru", options).toString();
 
-      console.log(newStorageData);
+      const json = JSON.stringify(newStorageData);
 
+      let answer = await postData("server/newstorage.php", json);
 
-
-      const json = JSON.stringify(Object.fromEntries(formData.entries()));
-
-      // console.log(Object.fromEntries(formData.entries()));
-
-      // let answer = await postData("server/newstorage.php", json);
+      console.log(answer);
+      // if(answer.status === "ok") {
+      //   console.log(answer);
+      // }
     });
   });
   

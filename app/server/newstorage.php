@@ -13,16 +13,33 @@
     $baseStorage = mysqli_real_escape_string($connection, "0");
   }
 
-  $queryInsert = "INSERT INTO storages (name, moneyType, lastModifiedDate, userId, baseStorage)
+  $queryInsert = "INSERT INTO `storages`(`name`, `moneyType`, `lastModifiedDate`, `userId`, `baseStorageId`)
                     VALUES ('$name', '$moneyType', '$lastModifiedDate', '$userId', '$baseStorage')";
 
   $result = mysqli_query($connection, $queryInsert);
 
   if($result) {
-    $querySelectAll = "SELECT * FROM storages WHERE (userId = '$userId')";
+    $querySelectAll = "SELECT * FROM `storages` WHERE (`userId` = '$userId')";
     $result = mysqli_query($connection, $querySelectAll);
-    $record = mysqli_fetch_assoc($result);
+    // $record = mysqli_fetch_assoc($result);
+
+    $data = array();
+    $i = 0;
+    while($row = mysqli_fetch_assoc($result)) {
+      $data[$i] = $row;
+      $i++;
+    }
+
+    echo json_encode($data);
+
+    // echo json_encode([
+    // 'status' => 'ok',
+    //   'data' => $data
+    // ]);
+  } else {
+    echo json_encode(['status' => 'Ошибка сервера, попробуйте ещё раз.']);
   }
 
-
+  mysqli_close($connection);
 ?>
+
