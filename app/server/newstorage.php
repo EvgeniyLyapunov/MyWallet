@@ -30,12 +30,11 @@
       $i++;
     }
 
-    echo json_encode($data);
+    echo json_encode([
+    'status' => 'ok',
+      'data' => $data
+    ]);
 
-    // echo json_encode([
-    // 'status' => 'ok',
-    //   'data' => $data
-    // ]);
   } else {
     echo json_encode(['status' => 'Ошибка сервера, попробуйте ещё раз.']);
   }

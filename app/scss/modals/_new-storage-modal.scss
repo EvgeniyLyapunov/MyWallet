@@ -26,6 +26,10 @@
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     background-color:#223c83;
   }
+  &__label-name {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   &__input-name {
     @include baseInput;
     width: 90%;
@@ -72,8 +76,11 @@
   &__wrapper {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column-reverse;
     align-items: center;
+  }
+  &__radio-block {
+    display: flex;
   }
   &__label {
     position: relative;

@@ -1,13 +1,18 @@
 "use strict";
 
 import JustValidate from 'just-validate';
+import swal from 'sweetalert';
+
 import {postData} from "../../services/dataBaseQueries";
+import pressBtn from "../../modules/buttonPressAnim";
 import {toMainScreen} from "./../modal";
+
 
 function newStorageSubmit() {
   const form = document.querySelector(".new-storage__form"),
         inputs = form.querySelectorAll("input"),
         btnSubmit = form.querySelector(".new-storage__save-btn");
+  let storage;
 
   const validate = new JustValidate("#newStorageForm", {
     errorFieldCssClass: 'is-invalid',
@@ -34,7 +39,7 @@ function newStorageSubmit() {
       errorMessage: 'Длина названия - максимум 15 букв'
     }
   ])
-  .addRequiredGroup('#money-type-group');
+  .addRequiredGroup('#money-type-group', 'Обязательное поле');
  
   inputs.forEach(item => {
     item.addEventListener("blur", () => {
@@ -45,13 +50,16 @@ function newStorageSubmit() {
   btnSubmit.addEventListener("click", (e) => {
     validate.onSuccess(async () => {
       e.preventDefault();
+      pressBtn(e.target);
 
       const formData = new FormData(form);
       let newStorageData = Object.fromEntries(formData.entries());
 
       if(localStorage.getItem("userData")) {
+        storage = 'localStorage';
         newStorageData.userId = JSON.parse(localStorage.getItem("userData")).id;
       } else if(sessionStorage.getItem("userData")) {
+        storage = 'sessionStorage';
         newStorageData.userId = JSON.parse(sessionStorage.getItem("userData")).id;
       }
 
@@ -69,10 +77,19 @@ function newStorageSubmit() {
 
       let answer = await postData("server/newstorage.php", json);
 
-      console.log(answer);
-      // if(answer.status === "ok") {
-      //   console.log(answer);
-      // }
+      if(answer.status === "ok") {
+        swal({
+          buttons: false,
+          timer: 1000,
+          icon: "success",
+        });
+        // modal window 0k
+
+        if(storage === 'localStorage') {
+          localStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
+        }
+
+      }
     });
   });
   
