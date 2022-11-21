@@ -3,6 +3,7 @@
 import pressBtn from "./buttonPressAnim";
 import {burgerClose} from "./burger";
 import checkAuth from "./../services/checkAuth";
+import createCardsOfStorages from "./viewBalance";
 
 
 const mainSection = document.querySelector("main"),
@@ -61,6 +62,10 @@ function openModal(btn, modalW, ...close) {
       footerSection.classList.add("footer__container");
       toHomeBtn.classList.remove("hide");
     }, 300);
+
+    if(modal.classList.contains("modal-show")) {
+      createCardsOfStorages();
+    }
 
     if(close.length != 0) {
       forms.forEach(item => item.reset());

@@ -14,6 +14,8 @@ function newStorageSubmit() {
         btnSubmit = form.querySelector(".new-storage__save-btn");
   let storage;
 
+  // валидация формы
+
   const validate = new JustValidate("#newStorageForm", {
     errorFieldCssClass: 'is-invalid',
     errorFieldStyle: {
@@ -47,14 +49,19 @@ function newStorageSubmit() {
     });
   });
 
+  // обработка click "Сохранить"
+
   btnSubmit.addEventListener("click", (e) => {
     validate.onSuccess(async () => {
       e.preventDefault();
       pressBtn(e.target);
 
       const formData = new FormData(form);
+
+      // обЪект нового хранилища для дополнения данных из формы 
       let newStorageData = Object.fromEntries(formData.entries());
 
+      // добавляю id пользователя
       if(localStorage.getItem("userData")) {
         storage = 'localStorage';
         newStorageData.userId = JSON.parse(localStorage.getItem("userData")).id;
@@ -63,6 +70,7 @@ function newStorageSubmit() {
         newStorageData.userId = JSON.parse(sessionStorage.getItem("userData")).id;
       }
 
+      // добавляю время последнего изменения (здесь - создания)
       const now = new Date();
       var options = {
         year: 'numeric',
@@ -73,28 +81,40 @@ function newStorageSubmit() {
       };
       newStorageData.lastModifiedDate = now.toLocaleString("ru", options).toString();
 
+      // Json для отправки на сервер в базу данных
       const json = JSON.stringify(newStorageData);
 
+      // отправка на сервер и получение в ответ список всех хранилищ включая созданное
       let answer = await postData("server/newstorage.php", json);
 
       if(answer.status === "ok") {
+        // модальное окошко что всё сохранилось успешно
         swal({
+          title: `${answer.status}`,
           buttons: false,
-          timer: 1000,
+          timer: 1500,
           icon: "success",
         });
-        // modal window 0k
+
+        form.reset();
 
         if(storage === 'localStorage') {
           localStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
+        } else {
+          sessionStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
         }
 
+      }else {
+        // модальное окошко что всё неуспешно
+        swal({
+          title: `${answer.status}`,
+          buttons: false,
+          timer: 1500,
+          icon: "error",
+        });
       }
     });
   });
-  
-
-
 }
 
 export default newStorageSubmit;
