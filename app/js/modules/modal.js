@@ -3,7 +3,7 @@
 import pressBtn from "./buttonPressAnim";
 import {burgerClose} from "./burger";
 import checkAuth from "./../services/checkAuth";
-import createCardsOfStorages from "./viewBalance";
+import createCards from "./viewBalance";
 
 
 const mainSection = document.querySelector("main"),
@@ -36,22 +36,6 @@ function openModal(btn, modalW, ...close) {
       return;
     }
 
-    let userAuth = checkAuth();
-    if((!userAuth && button.classList.contains("action__btn-viewbalance"))
-     || (!userAuth && button.classList.contains("action__btn-changes"))) {
-      setTimeout(() => {
-        modalWindows.forEach(window => {
-          window.classList.add("hide");
-          window.classList.remove("visible");
-        });
-        modalNoAuth.classList.add("visible");
-        mainSection.classList.add("hide");
-        footerSection.classList.add("footer__container");
-        toHomeBtn.classList.remove("hide");
-      }, 300);
-      return;
-    }
-
     setTimeout(() => {
       modalWindows.forEach(window => {
         window.classList.add("hide");
@@ -62,10 +46,6 @@ function openModal(btn, modalW, ...close) {
       footerSection.classList.add("footer__container");
       toHomeBtn.classList.remove("hide");
     }, 300);
-
-    if(modal.classList.contains("modal-show")) {
-      createCardsOfStorages();
-    }
 
     if(close.length != 0) {
       forms.forEach(item => item.reset());

@@ -33,18 +33,20 @@
     <section class="hero">
       <div class="container hero__container">
         <h1 class="hero__title">My Wallet</h1>
+        <span class="hero__by">by</span>
+        <div class="hero__logo">
+          <img class="hero__logo-lws" src="./images/img/little-wing-studio.svg" alt="логотип студии">
+        </div>
         <div class="hero__icon">
           <img class="hero__img" src="images/img/main-bg.png" alt="картинка блокнота для записи">
         </div>
       </div>
     </section>
+
     <section class="action">
       <div class="container action__container">
         <div class="action__block">
-          <button class="btn action__btn action__btn-viewbalance" id="viewBalance">Смотреть баланс</button>
-        </div>
-        <div class="action__block">
-          <button class="btn action__btn action__btn-changes" id="addChanges">Внести изменения</button>
+          <button class="btn action__btn action__btn-viewbalance" id="viewBalance">Кошелёк</button>
         </div>
       </div>
     </section>
@@ -57,20 +59,56 @@
       <div class="modal__balance balance">
         <div class="balance__wrapper" id="balance-wrapper">
           <!-- <ul class="balance__list">
+
             <li class="balance__card card">
-              <h2 class="card__title">Кошелёк</h2>
-              <div class="card__date">13.10.22</div>
-              <div class="card__amount">50000</div>
+              <div class="card__top-block">
+                <div class="card__name-date">
+                  <h2 class="card__title">Бюджет</h2>
+                  <div class="card__date">13.10.22, 20:44</div>
+                </div>
+                <div class="card__base-info">
+                  <div class="card__base-label">Базовый кошелёк</div>
+                  <div class="card__base-name">Тинькофф</div>
+                </div>
+              </div>
+              <div class="card__down-block">
+                <div class="card__type-money card__type-money_bank"></div>
+                <div class="card__amount">7000</div>
+              </div>
             </li>
+
             <li class="balance__card card">
-              <h2 class="card__title">Тинькофф</h2>
-              <div class="card__date">13.10.22</div>
-              <div class="card__amount">140000</div>
+              <div class="card__top-block">
+                <div class="card__name-date">
+                  <h2 class="card__title">Тинькофф</h2>
+                  <div class="card__date">13.10.22, 20:44</div>
+                </div>
+                <div class="card__base-info">
+                  <div class="card__base-label">Базовый кошелёк</div>
+                  <div class="card__base-name">нет</div>
+                </div>
+              </div>
+              <div class="card__down-block">
+                <div class="card__type-money card__type-money_bank"></div>
+                <div class="card__amount">103000</div>
+              </div>
             </li>
+
             <li class="balance__card card">
-              <h2 class="card__title">Node.js</h2>
-              <div class="card__date">13.10.22</div>
-              <div class="card__amount">21000</div>
+              <div class="card__top-block">
+                <div class="card__name-date">
+                  <h2 class="card__title">Кошелёк</h2>
+                  <div class="card__date">13.10.22, 20:44</div>
+                </div>
+                <div class="card__base-info">
+                  <div class="card__base-label">Базовый кошелёк</div>
+                  <div class="card__base-name">нет</div>
+                </div>
+              </div>
+              <div class="card__down-block">
+                <div class="card__type-money card__type-money_cash"></div>
+                <div class="card__amount">37000</div>
+              </div>
             </li>
           </ul> -->
         </div>
@@ -194,68 +232,25 @@
   <div class="modal new-storage">
     <div class="container">
       <div class="new-storage__wrapper">
-        <h2 class="new-storage__title">Новое хранилище</h2>
+        <h2 class="new-storage__title">Новый кошелёк</h2>
         <form action="#" class="new-storage__form" id="newStorageForm">
-          <label class="new-storage__label-name">
-            <input class="new-storage__input-name" type="text" name="newStorageName" required placeholder="Введите название хранилища" id="newStorageName">
+          <label class="new-storage__form-label-name step visually-hidden" data-step="1" >
+            <span>Название кошелька:</span>
+            <input class="new-storage__form-input-name" type="text" name="newStorageName" required id="newStorageName">
           </label>
-          <!-- select type of money (cash or card) -->
-          <div class="new-storage__money-type money-type">
-            <span class="money-type__element-title">выбор типа денег<br> (нал&nbsp;/ карта)</span>
-            <div class="money-type__wrapper" id="money-type-group">
-              <div class="money-type__radio-block">
-                <label class="money-type__label">
-                  <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="cash">
-                  <span class="money-type__name">Cash</span>
-                </label>
-                <label class="money-type__label">
-                  <input class="money-type__radio visually-hidden" type="radio" name="moneyType" value="bank">
-                  <span class="money-type__name">Bank</span>
-                </label>
-              </div>
-            </div>
+          <div class="new-storage__form-block-money step " data-step="2">
+            <span class="new-storage__form-subtitle">Деньги: наличные или банк</span>
+            <label class="new-storage__form-label-radio new-storage__form-label-radio-mb">
+              <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="cash">
+              <span class="new-storage__form-money-name new-storage__form-money-name-cash">наличные</span>
+            </label>
+            <label class="new-storage__form-label-radio">
+              <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="bank">
+              <span class="new-storage__form-money-name new-storage__form-money-name-bank">банк</span>
+            </label>
           </div>
-        <!-- select-storage radio-buttons slider -->
-        <div class="new-storage__select-storage select-storage">
-          <span class="select-storage__element-title">выбор базового хранилища</span>
-          <div class="select-storage__inner">
-            <svg class="select-storage__new-prev-btn"  viewBox="0 0 512 512">
-              <path d="M354.76,510.52l60.76-60.71a5,5,0,0,0,0-7.13L232.26,259.56a5,5,0,0,1,0-7.12L415.52,69.32a5,5,0,0,0,0-7.13L354.76,1.48a5,5,0,0,0-7.13,0l-251.15,251a5,5,0,0,0,0,7.12l251.15,251A5,5,0,0,0,354.76,510.52Z"/>
-            </svg>
-            <ul class="select-storage__list" id="select-storage-group">
-              <li class="select-storage__new-item">
-                <label class="select-storage__label">
-                  <input class="select-storage__radio visually-hidden" type="radio" name="baseStorage" value="0">
-                  <span class="select-storage__name">Кошелёк</span>
-                </label>
-              </li>
-              <li class="select-storage__new-item">
-                <label class="select-storage__label">
-                  <input class="select-storage__radio visually-hidden" type="radio" name="baseStorage" value="1">
-                  <span class="select-storage__name">Тинькофф</span>
-                </label>
-              </li>
-              <li class="select-storage__new-item">
-                <label class="select-storage__label">
-                  <input class="select-storage__radio visually-hidden" type="radio" name="baseStorage" value="2">
-                  <span class="select-storage__name">Бюджет</span>
-                </label>
-              </li>
-            </ul>
-            <svg class="select-storage__new-next-btn" viewBox="0 0 512 512">
-              <path d="M157.24,510.52,96.48,449.81a5,5,0,0,1,0-7.13L279.74,259.56a5,5,0,0,0,0-7.12L96.48,69.32a5,5,0,0,1,0-7.13L157.24,1.48a5,5,0,0,1,7.13,0l251.15,251a5,5,0,0,1,0,7.12l-251.15,251A5,5,0,0,1,157.24,510.52Z"/>
-            </svg>
-          </div>
-        </div>
-        <!-- submit buttons block -->
-        <div class="new-storage__submit-block">
-          <input class="new-storage__reset-btn btn" type="reset">
-          <button class="new-storage__save-btn btn">Сохранить</button>
-        </div>
+          <button class="new-storage__form-btn btn">Дальше</button>
         </form>
-
-        <button class="new-storage__modal-changes-btn btn ">Назад в редактор баланса</button>
-
       </div>
     </div>
   </div>
@@ -317,21 +312,6 @@
           </div>
         </form>
         <button class="modal-reg__modal-log-btn btn ">У меня уже есть аккаунт</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal modal-no-auth">
-    <div class="container">
-      <div class="modal-no-auth__wrapper">
-        <div class="modal-no-auth__imgbox">
-          <img class="modal-no-auth__image" src="images/icons/ok.svg" alt="ok icon">
-        </div>
-        <div class="modal-no-auth__textbox">
-          <span class="modal-no-auth__text modal-no-auth__textbox-1">Всё работает, осталось только <br>  зарегистрироваться или авторизоваться.</span>
-          <span class="modal-no-auth__text modal-no-auth__textbox-2">Для этого нужно нажать <br> на три палочки сверху справа.</span>
-          <span class="modal-no-auth__text modal-no-auth__textbox-3">Всегда с уважением, <b>MyWallet</b>.</span>
-        </div>
       </div>
     </div>
   </div>

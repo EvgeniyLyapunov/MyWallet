@@ -1,6 +1,7 @@
 "use strickt";
 
-import {postData} from "../../services/dataBaseQueries";
+import {postData, getData} from "../../services/dataBaseQueries";
+import {createCards} from "../viewBalance";
 import {toMainScreen} from "./../modal";
 import {userNickOnMainScreen} from "./../userNickOnMainScreen";
 
@@ -24,22 +25,30 @@ function logSubmit(formSelector, btnSelector, urlPath) {
     let answer = await postData(urlPath, json);
 
     if(answer.status === "ok") {
+      let data = await getData(`./server/getDataById.php?id=${answer.id}`);
       if(rememberMe) {
         localStorage.setItem("userData", `${JSON.stringify(answer)}`);
+        data.data.length > 0 ? localStorage.setItem("balanceData", `${JSON.stringify(data.data)}`) : false;
         form.reset();
         userNickOnMainScreen();
         toMainScreen();
+        createCards();
       } else {
         sessionStorage.setItem("userData", `${JSON.stringify(answer)}`);
+        data.data.length > 0 ? sessionStorage.setItem("balanceData", `${JSON.stringify(data.data)}`): false;
         form.reset();
         userNickOnMainScreen();
         toMainScreen();
+        createCards();
       }
     } else {
-      // TODO написать окошко с сообщением о неудачной попытке регистрации на сервере
-      alert(answer.status);
-      form.reset();
-      toMainScreen();
+      swal({
+        text: `${answer.status}`,
+        icon: 'error',
+      }).then((value) => {
+        form.reset();
+        toMainScreen();
+      });
     }
   });
 }

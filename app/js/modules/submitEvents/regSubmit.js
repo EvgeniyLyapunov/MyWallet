@@ -1,6 +1,8 @@
 "use strickt";
 
 import JustValidate from 'just-validate';
+import swal from 'sweetalert';
+
 import {postData} from "../../services/dataBaseQueries";
 import {toMainScreen} from "./../modal";
 import {userNickOnMainScreen} from "./../userNickOnMainScreen";
@@ -114,10 +116,13 @@ function regSubmit(formSelector, btnSelector, urlPath) {
           toMainScreen();
         }
       } else {
-        // TODO написать окошко с сообщением о неудачной попытке регистрации на сервере
-        alert(answer.status);
-        form.reset();
-        toMainScreen();
+        swal({
+          text: `${answer.status}`,
+          icon: 'error',
+        }).then((value) => {
+          form.reset();
+          toMainScreen();
+        });
       }
     });
   });

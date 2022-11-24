@@ -1,6 +1,6 @@
 .hero {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 30px;
   &__container {
     display: flex;
     flex-direction: column;
@@ -8,14 +8,33 @@
   }
   &__title {
     position: relative;
-    margin-bottom: 30px;
     font-size: 60px;
+    line-height: 60px;
     color: $title-color;
     text-align: center;
   }
+  &__by {
+    display: block;
+    width: 50px;
+    height: 24px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: $title-color;
+  }
+  &__logo {
+    width: 150px;
+    min-height: 35px;
+    margin-bottom: 40px;
+    &-lws {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
   &__icon {
-    width: 130px;
-    height: 130px;
+    width: 200px;
+    height: 200px;
   }
   &__img {
     width: 100%;

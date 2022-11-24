@@ -10,14 +10,20 @@ import regSubmit from "./modules/submitEvents/regSubmit";
 import logSubmit from "./modules/submitEvents/logSubmit";
 import newStorageSubmit from "./modules/submitEvents/newStorageSubmit";
 
+import {viewBalance} from "./modules/viewBalance";
+import viewChanges from "./modules/viewChanges";
+
 
 userNickOnMainScreen();
 
 burger();
 // открытие модального окна просмотра баланса
-openModal("#viewBalance", ".modal-show");
+viewBalance();
 // открытие модального окна внесения изменений
-openModal("#addChanges", ".modal-changes");
+// viewChanges("#addChanges");
+// openModal("#addChanges", ".modal-changes");
+
+viewChanges();
 // открытие модального окна создания нового хранилища
 openModal(".modal-changes__new-storage-btn", ".new-storage");
 // открытие модального окна внесения изменений из окна создания нового хранилища
