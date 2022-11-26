@@ -42,8 +42,9 @@
     &-label-radio {
       display: block;
       align-self: center;
+      margin-bottom: 20px;
       &-mb {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
       }
     }
     &-money-name {
@@ -75,10 +76,76 @@
       border: 2px solid $radio-btn-checked-color;
       border-radius: 10px;
     }
+    &-base-storage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-bs-subtitle {
+      width: 180px;
+      margin-bottom: 40px;
+      text-align: left;
+      background-image: url('../../images/icons/i.svg');
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &-label-select {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    &-subtitle-select {
+      display: block;
+      margin-bottom: 5px;
+      position: relative;
+      width: 320px;
+      color: $element-title-color;
+      font-size: 14px;
+      &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        bottom: -45px;
+        right: 10px;
+        background-image: url('../../images/icons/arrow_click.svg');
+        background-position: center;
+        background-size:contain;
+        background-repeat: no-repeat;
+      }
+    }
+    &-select {
+      display: block;
+      width: 320px;
+      height: 50px;
+      padding: 0 15px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 50px;
+      color: $input-text-color;
+      background-color: $input-bg-color;
+      border: none;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      transition: 0.8s box-shadow ease-in-out;
+      
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
     &-btn {
       width: 200px;
       align-self: end;
     }
   }
-
 }
+
+
+

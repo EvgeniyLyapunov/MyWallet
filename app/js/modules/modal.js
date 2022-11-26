@@ -2,6 +2,7 @@
 
 import pressBtn from "./buttonPressAnim";
 import {burgerClose} from "./burger";
+import { newStorageViewToStart } from "./submitEvents/newStorageSubmit";
 import checkAuth from "./../services/checkAuth";
 import createCards from "./viewBalance";
 
@@ -62,8 +63,9 @@ function openModal(btn, modalW, ...close) {
       modalWindows.forEach(window => {
         window.classList.add("hide");
         window.classList.remove("visible");
-        forms.forEach(item => item.reset());
       });
+      forms.forEach(item => item.reset());
+      newStorageViewToStart();
       mainSection.classList.remove("hide");
       footerSection.classList.remove("footer__container");
       toHomeBtn.classList.add("hide");
@@ -76,6 +78,7 @@ function toMainScreen() {
     window.classList.add("hide");
     window.classList.remove("visible");
   });
+  forms.forEach(item => item.reset());
   mainSection.classList.remove("hide");
   footerSection.classList.remove("footer__container");
   toHomeBtn.classList.add("hide");

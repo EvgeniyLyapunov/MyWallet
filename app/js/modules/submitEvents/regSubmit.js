@@ -82,6 +82,9 @@ function regSubmit(formSelector, btnSelector, urlPath) {
     item.addEventListener("blur", () => {
       validate.refresh();
     });
+    item.addEventListener("focus", () => {
+      validate.refresh();
+    });
   });
 
     

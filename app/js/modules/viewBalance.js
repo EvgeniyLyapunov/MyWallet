@@ -15,6 +15,7 @@ function viewBalance() {
 
 function createCards() {
   const data = getDataFromStorage();
+  console.log(data.length);
 
   if(data.length == 0) {
     return;
@@ -135,11 +136,13 @@ function openViewBalansWindow() {
     }
   }
 
+
+
   const openViewBalancePromise = new Promise(function(resolve) {
+    createCards();
     openModalWindow(".modal-show");
     resolve(viewBalanceInfo);
   }).then(value => value());
-  // openModalWindow(".modal-show");
 }
 
 export {viewBalance, createCards};

@@ -7,7 +7,6 @@ import {toMainScreen} from './modal';
 import {getData} from '../services/dataBaseQueries';
 
 function viewChanges() {
-  console.log();
 
   // openModalWindow(".modal-changes");
 }
