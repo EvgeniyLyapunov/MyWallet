@@ -70,18 +70,22 @@
     <div class="container">
       <div class="modal-changes__wrapper">
         <h2 class="modal-changes__title">Изменить баланс</h2>
-        <h3 class="modal-changes__subtitle">кошелёк: БЮДЖЕТ</h3>
+        <h3 class="modal-changes__subtitle">
+          кошелёк: <span class="modal-changes__subtitle-current">БЮДЖЕТ</span>
+        </h3>
         <form class="modal-changes__form" action="#" method="post">
-          <label class="modal-changes__label-box">
-            <span class="modal-changes__descr-input">Введите сумму:</span>
-            <input class="modal-changes__input-amount" type="text" name="balance" id="modal-changes__input-amount">
+          <label class="modal-changes__form-label-box">
+            <span class="modal-changes__form-descr-input">Введите сумму:</span>
+            <input class="modal-changes__form-input-amount" type="number" name="balance" id="modal-changes__input-amount">
           </label>
-          <button class="modal-changes__btn modal-changes__btn-plus btn"></button>
-          <button class="modal-changes__btn modal-changes__btn-minus btn"></button>
+          <button class="modal-changes__form-btn modal-changes__form-btn-plus btn" id="plus"></button>
+          <button class="modal-changes__form-btn modal-changes__form-btn-minus btn" id="minus"></button>
         </form>
         <div class="modal-changes__links-block">
-          <div class="modal-changes__link-section">
-            <div class="modal-changes__img-box"></div>
+          <div class="modal-changes__link-section modal-changes__link-section-mb">
+            <div class="modal-changes__img-box">
+              <img class="modal-changes__img" src="images/icons/settings.svg" alt="иконка обновить кошелёк">
+            </div>
             <div class="modal-changes__link-box">
               <a class="modal-changes__link" href="#">
                 Редактировать текущий кошелёк
@@ -89,7 +93,9 @@
             </div>
           </div>
           <div class="modal-changes__link-section">
-            <div class="modal-changes__img-box"></div>
+            <div class="modal-changes__img-box">
+              <img class="modal-changes__img" src="images/icons/wallet-new.svg" alt="иконка новый кошелёк">
+            </div>
             <div class="modal-changes__link-box">
               <a class="modal-changes__link" href="#">
                 Создать новый кошелёк

@@ -15,7 +15,6 @@ function viewBalance() {
 
 function createCards() {
   const data = getDataFromStorage();
-  console.log(data.length);
 
   if(data.length == 0) {
     return;
@@ -69,13 +68,15 @@ function createCards() {
     </div>
     `;
     card.addEventListener('click', (e) => {
-      console.log(e.target.id);
-    })
+      viewChanges(e.target.id);
+    });
     cardsList.insertAdjacentElement('beforeend', card);
   });
 }
 
-
+// функция перед открытием окна карт с балансом проверяет аутентификацию пользователя 
+// и наличие у него созданных карт,
+// и открывает окно показа баланса карт
 function openViewBalansWindow() {
   const userAuth = checkAuth();
   if(!userAuth) {
@@ -136,8 +137,6 @@ function openViewBalansWindow() {
     }
   }
 
-
-
   const openViewBalancePromise = new Promise(function(resolve) {
     createCards();
     openModalWindow(".modal-show");
@@ -145,4 +144,4 @@ function openViewBalansWindow() {
   }).then(value => value());
 }
 
-export {viewBalance, createCards};
+export {viewBalance, openViewBalansWindow, createCards};

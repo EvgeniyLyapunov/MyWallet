@@ -7,10 +7,7 @@ import formSubmitOff from "./modules/submitEvents/formSubmitOff";
 import regSubmit from "./modules/submitEvents/regSubmit";
 import logSubmit from "./modules/submitEvents/logSubmit";
 import newStorageSubmit from "./modules/submitEvents/newStorageSubmit";
-
-
 import {viewBalance} from "./modules/viewBalance";
-import viewChanges from "./modules/viewChanges";
 
 
 userNickOnMainScreen();
@@ -18,14 +15,6 @@ userNickOnMainScreen();
 burger();
 // открытие модального окна просмотра баланса
 viewBalance();
-// открытие модального окна внесения изменений
-// viewChanges("#addChanges");
-
-// viewChanges();
-// открытие модального окна создания нового хранилища
-// openModal(".modal-changes__new-storage-btn", ".new-storage");
-// открытие модального окна внесения изменений из окна создания нового хранилища
-//openModal(".new-storage__modal-changes-btn", ".modal-changes");
 // открытие модального окна входа/выхода в аккаунт
 openModal("#to-log-btn", ".modal-log", true);
 // открытие модального окна регистрации аккаунта

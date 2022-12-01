@@ -21,7 +21,6 @@
   if($result) {
     $querySelectAll = "SELECT * FROM `storages` WHERE (`userId` = '$userId')";
     $result = mysqli_query($connection, $querySelectAll);
-    // $record = mysqli_fetch_assoc($result);
 
     $data = array();
     $i = 0;
