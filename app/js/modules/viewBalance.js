@@ -42,7 +42,7 @@ function createCards() {
       bs = "нет";
     } else {
       bs = data.filter(u => {
-        u.id === item.baseStorageId;
+        return u.id == item.baseStorageId;
       })[0].name;
     }
     let imgClass;

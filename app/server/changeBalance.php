@@ -16,13 +16,13 @@ if($_POST["idBaseCard"]) {
   $idBaseCard = mysqli_real_escape_string($connection, "0");
 }
 
-$queryUpdate = "UPDATE `storages` SET `balance`='$balance',`lastModifiedDate`='$lastModifiedDate',
+$queryUpdate = "UPDATE `storages` SET `balance`='$balance',`lastModifiedDate`='$lastModifiedDate'
                    WHERE `id` = '$id'";
 $result = mysqli_query($connection, $queryUpdate);
 
 $statusBaseCard = '';
 if($idBaseCard) {
-  $queryUpdateBaseCard = "UPDATE `storages` SET `balance`='$baseCardBalance',`lastModifiedDate`='$baseCardLastModifiedDate',
+  $queryUpdateBaseCard = "UPDATE `storages` SET `balance`='$baseCardBalance',`lastModifiedDate`='$baseCardLastModifiedDate'
                     WHERE `id` = '$idBaseCard'";
   $resultBaseCard = mysqli_query($connection, $queryUpdateBaseCard);
   if($resultBaseCard) {
@@ -33,6 +33,7 @@ if($idBaseCard) {
 } else {
   $statusBaseCard = 'empty';
 }
+
 
 if($result && ($statusBaseCard == 'ok' || $statusBaseCard == 'empty')) {
   $querySelectAll = "SELECT * FROM `storages` WHERE (`userId` = '$userId')";

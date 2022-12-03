@@ -4,11 +4,11 @@
   $_POST = json_decode(file_get_contents('php://input'), true);
 
   $name = mysqli_real_escape_string($connection, $_POST["newStorageName"]);
-  $moneyType = mysqli_real_escape_string($connection, $_POST["moneyType"]);
+  $moneyType = mysqli_real_escape_string($connection, $_POST["money"]);
   $lastModifiedDate = mysqli_real_escape_string($connection, $_POST["lastModifiedDate"]);
   $userId = mysqli_real_escape_string($connection, $_POST["userId"]);
-  if($_POST["baseStorage"]) {
-    $baseStorage = mysqli_real_escape_string($connection, $_POST["baseStorage"]);
+  if($_POST["select"]) {
+    $baseStorage = mysqli_real_escape_string($connection, $_POST["select"]);
   } else {
     $baseStorage = mysqli_real_escape_string($connection, "0");
   }

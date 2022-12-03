@@ -79,5 +79,13 @@
   &__link {
     font-size: 18px;
     color:  #a0b1e1;
+    &:hover {
+      color:  #a0b1e1;
+      text-decoration: none;
+    }
+    &:active {
+      color:  #a0b1e1;
+      text-decoration: none;
+    }
   }
 }

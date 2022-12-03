@@ -78,16 +78,14 @@
             <span class="modal-changes__form-descr-input">Введите сумму:</span>
             <input class="modal-changes__form-input-amount" type="number" name="balance" id="modal-changes__input-amount">
           </label>
-          <button class="modal-changes__form-btn modal-changes__form-btn-plus btn" id="plus"></button>
-          <button class="modal-changes__form-btn modal-changes__form-btn-minus btn" id="minus"></button>
         </form>
         <div class="modal-changes__links-block">
           <div class="modal-changes__link-section modal-changes__link-section-mb">
             <div class="modal-changes__img-box">
               <img class="modal-changes__img" src="images/icons/settings.svg" alt="иконка обновить кошелёк">
             </div>
-            <div class="modal-changes__link-box">
-              <a class="modal-changes__link" href="#">
+            <div class="modal-changes__link-box" id="link-box-change">
+              <a class="modal-changes__link" href="#" id="link-change">
                 Редактировать текущий кошелёк
               </a>
             </div>
@@ -96,8 +94,8 @@
             <div class="modal-changes__img-box">
               <img class="modal-changes__img" src="images/icons/wallet-new.svg" alt="иконка новый кошелёк">
             </div>
-            <div class="modal-changes__link-box">
-              <a class="modal-changes__link" href="#">
+            <div class="modal-changes__link-box" id="link-box-create">
+              <a class="modal-changes__link" href="#" id="link-create">
                 Создать новый кошелёк
               </a>
             </div>

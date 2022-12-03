@@ -129,6 +129,7 @@ function newStorageSubmit() {
       minute: 'numeric',
     };
     newStorageData.lastModifiedDate = now.toLocaleString("ru", options).toString();
+    console.log(newStorageData);
     // Json для отправки на сервер в базу данных
     const json = JSON.stringify(newStorageData);
     // отправка на сервер и получение в ответ список всех хранилищ включая созданное
@@ -164,8 +165,19 @@ function newStorageSubmit() {
   }
 }
 
+
 function upsertSelectBaseStorage() {
   let data = [];
+
+  const optionEls = selectElem.querySelectorAll('option');
+  if(optionEls.length > 1) {
+    optionEls.forEach((item, i) => {
+      if(i > 0) {
+        item.remove();
+      }
+    });
+  }
+
   if(localStorage.getItem("userData")) {
     storage = 'localStorage';
     if(localStorage.getItem("balanceData")) {
@@ -175,17 +187,9 @@ function upsertSelectBaseStorage() {
     storage = 'sessionStorage';
     data = JSON.parse(sessionStorage.getItem("balanceData"));
   }
-  if((data.length != 0) && (data.length === 1)) {
+  if(data.length > 0) {
     const optionElemPlaceholder = selectElem.querySelector('option');
     optionElemPlaceholder.textContent = 'Выберите:';
-    data.forEach(item => {
-      const optionElem = document.createElement('option');
-      optionElem.setAttribute('value', `${item.id}`);
-      optionElem.textContent = `${item.name}`;
-      selectElem.insertAdjacentElement('beforeend', optionElem);
-    });
-  }
-  if((data.length > 1)) {
     data.forEach(item => {
       const optionElem = document.createElement('option');
       optionElem.setAttribute('value', `${item.id}`);
