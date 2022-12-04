@@ -7,14 +7,15 @@
   $moneyType = mysqli_real_escape_string($connection, $_POST["money"]);
   $lastModifiedDate = mysqli_real_escape_string($connection, $_POST["lastModifiedDate"]);
   $userId = mysqli_real_escape_string($connection, $_POST["userId"]);
+  $newStorageSum = mysqli_real_escape_string($connection, $_POST["newStorageSum"]);
   if($_POST["select"]) {
     $baseStorage = mysqli_real_escape_string($connection, $_POST["select"]);
   } else {
     $baseStorage = mysqli_real_escape_string($connection, "0");
   }
 
-  $queryInsert = "INSERT INTO `storages`(`name`, `moneyType`, `lastModifiedDate`, `userId`, `baseStorageId`)
-                    VALUES ('$name', '$moneyType', '$lastModifiedDate', '$userId', '$baseStorage')";
+  $queryInsert = "INSERT INTO `storages`(`name`, `moneyType`, `balance`, `lastModifiedDate`, `userId`, `baseStorageId`)
+                    VALUES ('$name', '$moneyType', '$newStorageSum', '$lastModifiedDate', '$userId', '$baseStorage')";
 
   $result = mysqli_query($connection, $queryInsert);
 

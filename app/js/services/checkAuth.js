@@ -1,5 +1,6 @@
 "use strict";
 
+// функция проверяет авторизован ли пользователь и если да - возвращает его ник
 function checkAuth() {
   let userNick;
   if(localStorage.getItem("userData")) {

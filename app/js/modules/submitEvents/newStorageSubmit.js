@@ -19,7 +19,6 @@ let storage;
 
 
 function newStorageSubmit() {
-
   tippy('#tippy-base-storage', {
     content: 'Не обязательная опция. Базовый кошелёк - кошелёк, на основе баланса которого вы создаёте новый кошелёк. При выборе этой опции, уменьшение суммы данного кошелька будет уменьшать сумму базового. Операции в базовом кошельке не будут влиять на сумму этого кошелька, пока сумма базового больше.'
   });
@@ -54,6 +53,12 @@ function newStorageSubmit() {
       errorMessage: 'Длина названия - максимум 15 букв'
     }
   ])
+  .addField("#newStorageSum", [
+    {
+      rule: 'required',
+      errorMessage: 'Обязательное поле'
+    }
+  ])
   .addRequiredGroup('#new-storage-radio-group', 'Нужно выбрать тип денег в кошельке');
  
   inputs.forEach(item => {
@@ -79,6 +84,14 @@ function newStorageSubmit() {
         });
         break;
       case 2:
+        validate.revalidateField('#newStorageName').then(isValid => {
+          if(!isValid) {
+            return;
+          }
+          stepByStep();
+        });
+        break;
+      case 3:
         validate.revalidate('#new-storage-radio-group').then(isValid => {
           if(!isValid) {
             return;
@@ -87,7 +100,7 @@ function newStorageSubmit() {
           stepByStep();
         });
         break;
-      case 3:
+      case 4:
         newStorageFormSubmit();
         break;
     }  
@@ -103,7 +116,7 @@ function newStorageSubmit() {
         item.classList.remove('visually-hidden');
       }
     });
-    if(currentStep === 3) {
+    if(currentStep === 4) {
       btn.textContent = 'Сохранить';
     }
   }
@@ -129,7 +142,6 @@ function newStorageSubmit() {
       minute: 'numeric',
     };
     newStorageData.lastModifiedDate = now.toLocaleString("ru", options).toString();
-    console.log(newStorageData);
     // Json для отправки на сервер в базу данных
     const json = JSON.stringify(newStorageData);
     // отправка на сервер и получение в ответ список всех хранилищ включая созданное
@@ -165,10 +177,12 @@ function newStorageSubmit() {
   }
 }
 
-
+// функция отвечает за актуальность данных в select выбора базового кошелька
 function upsertSelectBaseStorage() {
   let data = [];
 
+  // очищаем select от options
+  // оставляем только первый - placeholder
   const optionEls = selectElem.querySelectorAll('option');
   if(optionEls.length > 1) {
     optionEls.forEach((item, i) => {
@@ -178,6 +192,7 @@ function upsertSelectBaseStorage() {
     });
   }
 
+  // определяем где хранятся данные и получаем их
   if(localStorage.getItem("userData")) {
     storage = 'localStorage';
     if(localStorage.getItem("balanceData")) {
@@ -187,6 +202,7 @@ function upsertSelectBaseStorage() {
     storage = 'sessionStorage';
     data = JSON.parse(sessionStorage.getItem("balanceData"));
   }
+  // проверяем количество элементов в списке кошельков и устанавливаем адекватный placeholder
   if(data.length > 0) {
     const optionElemPlaceholder = selectElem.querySelector('option');
     optionElemPlaceholder.textContent = 'Выберите:';
@@ -202,6 +218,7 @@ function upsertSelectBaseStorage() {
   }
 }
 
+// функция сбрасывает flow interfece создания кошелька на начало
 function newStorageViewToStart() {
   currentStep = 1;
   const steps = document.querySelectorAll('.step');

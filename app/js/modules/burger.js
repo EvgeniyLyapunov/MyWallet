@@ -54,7 +54,7 @@ function burgerClose(closeBtnSelector, menuSelector) {
   }, 600);
 }
 
-// функция анимации поведения кнопки бургер меню при открытии и закрвтии
+// функция анимации поведения кнопки бургер меню при открытии и закрытии
 function burgerActive() {
   burgerStickTop.classList.toggle("hamburger__stick-top_active");
   burgerStickMiddle.classList.toggle("hamburger__stick-middle_active");

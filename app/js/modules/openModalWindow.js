@@ -5,6 +5,7 @@ const mainSection = document.querySelector("main"),
       toHomeBtn = document.querySelector(".btn-to-home"),
       modalWindows = document.querySelectorAll(".modal");
 
+// функция закрывает все открытые модальные окна и открывает одно нужное
 function openModalWindow(window) {
   const modal = document.querySelector(window);
 

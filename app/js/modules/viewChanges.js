@@ -7,15 +7,20 @@ import getDataFromStorage from "../services/getDataFromStorage";
 import {openViewBalansWindow} from './viewBalance';
 import {postData} from '../services/dataBaseQueries';
 
+// функция подготавливает и открывает окно изменения баланса выбранного кошелька
 function viewChanges(idCard) {
   const cards = getDataFromStorage();
   // текущая карта
-  let card = cards.filter(item => item.id == idCard)[0];
+  let card = cards.filter(item => (item.id == idCard))[0];
   // базовая карта, если назначена
   let baseCard;
   if(card.baseStorageId != 0) {
     baseCard = cards.filter(item => (item.id === card.baseStorageId))[0];
   }
+  // проверяем наличие привязанных виртуальных карт
+  let virtualCards = cards.filter(item => {
+    return item.baseStorageId == idCard;
+  });
 
   // выводим на экран имя карты, баланс когорой будем менять
   const cardNameElement = document.querySelector('.modal-changes__subtitle-current');
@@ -63,12 +68,14 @@ function viewChanges(idCard) {
     item.addEventListener('click', onChangeBalanceCard);
   });
 
+  // ссылка открывает окно редактирования выбранной карты
   const linkChange = document.querySelector('#link-change');
   linkChange.addEventListener('click', (e) => {
     e.preventDefault;
     // TODO => openChangeCard
   });
 
+  // ссылка открывает окно создания новой карты
   const linkCreate = document.querySelector('#link-create');
   linkCreate.addEventListener('click', (e) => {
     e.preventDefault;
@@ -78,7 +85,7 @@ function viewChanges(idCard) {
   // функция собирает объект с данными и отправляет на сервер
   async function onChangeBalanceCard(e) {
     e.preventDefault();
-  
+    // bigData - объект, который будет отправлен на сервер
     let bigData = {id: card.id};
 
     const formData = new FormData(form);
@@ -94,10 +101,12 @@ function viewChanges(idCard) {
     };
     bigData.lastModifiedDate = now.toLocaleString("ru", options).toString();
 
+    // здесь происходит изменение баланса кошелька, проверка базового кошелька
+    // и сообщения об ошибках 
     if(e.target.id === "plus") {
-      bigData.balance = +(card.balance) + +(data.balance);
+      bigData.balance = +card.balance + +data.balance;
       if(baseCard != undefined) {
-        if(baseCard.balance < bigData.balance) {
+        if(+baseCard.balance < +bigData.balance) {
           swal({
             title: 'Недопустимое значение',
             text: 'Сумма базового (реального) кошелька не может быть меньше, чем сумма виртуального.',
@@ -114,9 +123,25 @@ function viewChanges(idCard) {
         bigData.baseCardLastModifiedDate = now.toLocaleString("ru", options).toString();
       } 
     } else {
-      bigData.balance = +(card.balance) - +(data.balance);
+      bigData.balance = +card.balance - +data.balance;
+      if(virtualCards.length > 0) {
+        let sumVirtualBalances = 0;
+        virtualCards.forEach(item => {
+          sumVirtualBalances = sumVirtualBalances + +item.balance;
+        });
+        let rest = +card.balance - +data.balance;
+        if(rest < sumVirtualBalances) {
+        await swal({
+            title: "Важная информация",
+            text: "Баланс кошелька после данной операции будет меньше суммы его виртуальных кошельков. Пожалуйста, отредактируйте виртуальные кошельки в соответствии с вашими дальнейшими планами на использование этих кошельков.",
+            icon: "info",
+            buttons: 'ok'
+          });
+        }
+      }
+
       if(baseCard != undefined) {
-        if(baseCard.balance < data.balance) {
+        if(+baseCard.balance < +data.balance) {
           swal({
             title: 'Недопустимое значение',
             text: 'Сумма базового (реального) кошелька не может быть меньше, чем сумма расхода из виртуального.',

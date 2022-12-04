@@ -1,6 +1,7 @@
 "use strickt";
 import pressBtn from "./buttonPressAnim";
 
+// функция переключает показ модальных окон регистрации и входа друг из друга
 function logRegBtn(btnSelector, modalSelectorTo, modalSelectorFrom) {
   const btn = document.querySelector(btnSelector),
         modalTo = document.querySelector(modalSelectorTo),

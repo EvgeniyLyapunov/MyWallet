@@ -7,7 +7,7 @@ import {postData} from "../../services/dataBaseQueries";
 import {toMainScreen} from "./../modal";
 import {userNickOnMainScreen} from "./../userNickOnMainScreen";
 
-
+// функция обрабатывает нажатие на кнопку "зарегистрироваться"
 function regSubmit(formSelector, btnSelector, urlPath) {
   const form = document.querySelector(formSelector),
         submit = document.querySelector(btnSelector),
@@ -78,6 +78,7 @@ function regSubmit(formSelector, btnSelector, urlPath) {
     },
   ]);
 
+  // здесь событие потери фокуса с инпутов сбрасывает сообщения об ошибке ввода
   inputs.forEach(item => {
     item.addEventListener("blur", () => {
       validate.refresh();
@@ -89,7 +90,7 @@ function regSubmit(formSelector, btnSelector, urlPath) {
 
     
   submit.addEventListener("click", (e) =>  {
-
+    // если валидация успешна
     validate.onSuccess(async () => {
 
       e.preventDefault();

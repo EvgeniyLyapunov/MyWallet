@@ -1,4 +1,5 @@
 import swal from 'sweetalert';
+import tippy from 'tippy.js';
 
 import openModalWindow from "./openModalWindow";
 import checkAuth from "../services/checkAuth";
@@ -6,13 +7,24 @@ import {toMainScreen} from './modal';
 import getDataFromStorage from '../services/getDataFromStorage';
 import viewChanges from "./viewChanges";
 
+/* функция вызывается при открытии приложения,
+   вызывает функцию проверки и создания карт кошельков, 
+   навешивает обработчик на главную кнопку стартового экрана,
+   который открывает окно показа баланса кошельков */
 function viewBalance() {
   createCards();
+
+  tippy('#tippy-info-about-create-new-wallet', {
+    content: 'Для создания нового кошелька нажмите на любую карту, и в открывшемся окне перейдите по нужной ссылке.'
+  });
+
 
   const viewBalanceBtn = document.querySelector("#viewBalance");
   viewBalanceBtn.addEventListener("click", openViewBalansWindow);
 }
 
+// функция удаляет кошельки и создаёт их с актуальными данными
+// и гарантированно не задвоенным обработчиком событий
 function createCards() {
   const data = getDataFromStorage();
 
@@ -20,13 +32,14 @@ function createCards() {
     return;
   }
 
+  // здесь удаляются уже существующие карты кошельков
   const ul = document.querySelector(".balance__list");
   if(ul) {
     ul.remove();
   }
 
+  // создание новых карт кошельков
   const cardsWrapper = document.querySelector("#balance-wrapper");
-
   const newUl = document.createElement('ul');
   newUl.classList.add('balance__list');
   cardsWrapper.appendChild(newUl);
@@ -67,6 +80,7 @@ function createCards() {
       <div class="card__amount">${item.balance}</div>
     </div>
     `;
+    // навешивание обработчика, который открывает окно редактирования баланса выбранной карты
     card.addEventListener('click', (e) => {
       viewChanges(e.target.id);
     });

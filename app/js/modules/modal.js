@@ -3,18 +3,16 @@
 import pressBtn from "./buttonPressAnim";
 import {burgerClose} from "./burger";
 import { newStorageViewToStart } from "./submitEvents/newStorageSubmit";
-import checkAuth from "./../services/checkAuth";
-import createCards from "./viewBalance";
 
 
 const mainSection = document.querySelector("main"),
       footerSection = document.querySelector("#footer-container"),
       toHomeBtn = document.querySelector(".btn-to-home"),
       forms = document.querySelectorAll("form"),
-      modalWindows = document.querySelectorAll(".modal"),
-      modalNoAuth = document.querySelector(".modal-no-auth");
+      modalWindows = document.querySelectorAll(".modal");
 
 // функция открытия модального окна
+// на данный момент используется для открытия окон регистрации и входа
 function openModal(btn, modalW, ...close) {
   const button = document.querySelector(btn),
         modal = document.querySelector(modalW);

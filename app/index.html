@@ -47,6 +47,7 @@
     <section class="action">
       <div class="container action__container">
         <div class="action__block">
+          <span class="action__info" id="tippy-info-about-create-new-wallet"></span>
           <button class="btn action__btn action__btn-viewbalance" id="viewBalance">Кошелёк</button>
         </div>
       </div>
@@ -113,12 +114,17 @@
         <h2 class="new-storage__title">Новый кошелёк</h2>
         <form action="#" class="new-storage__form" id="newStorageForm">
 
-          <label class="new-storage__form-label-name step " data-step="1" >
+          <label class="new-storage__form-label-name step" data-step="1" >
             <span>Название кошелька:</span>
             <input class="new-storage__form-input-name" type="text" name="newStorageName" required id="newStorageName">
           </label>
 
-          <div class="new-storage__form-block-money step visually-hidden" id="new-storage-radio-group" data-step="2">
+          <label class="new-storage__form-label-sum step visually-hidden" data-step="2">
+            <span>Начальная сумма кошелька:</span>
+            <input class="new-storage__form-input-sum" type="number" name="newStorageSum" required id="newStorageSum">
+          </label>
+
+          <div class="new-storage__form-block-money step visually-hidden" id="new-storage-radio-group" data-step="3">
             <span class="new-storage__form-subtitle">Деньги: наличные или банк</span>
             <label class="new-storage__form-label-radio new-storage__form-label-radio">
               <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="cash">
@@ -130,7 +136,7 @@
             </label>
           </div>
 
-          <div class="new-storage__form-base-storage step visually-hidden" data-step="3">
+          <div class="new-storage__form-base-storage step visually-hidden" data-step="4">
             <span class="new-storage__form-bs-subtitle new-storage__form-subtitle" id="tippy-base-storage">Базовый кошелёк</span>
               <label class="new-storage__form-label-select">
                 <span class="new-storage__form-subtitle-select">Список ваших кошельков:</span>
