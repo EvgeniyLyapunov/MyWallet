@@ -1,0 +1,43 @@
+.edit-menu {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+  }
+  &__title {
+    width: 195px;
+    margin-bottom: 35px;
+		font-size: 30px;
+		text-align-last: left;
+		color: $title-color;
+		background-image: url("../../images/icons/edit-menu.svg");
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: contain;
+  }
+  &__subtitle {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: $element-title-color;
+    &-current {
+      text-transform: uppercase;
+      color: $element-subtitle-color;
+    }
+  }
+  &__name {
+    @include editViewLink;
+  }
+  &__balance {
+    @include editViewLink;
+  }
+  &__money {
+    @include editViewLink;
+  }
+  &__base {
+    @include editViewLink;
+  }
+  &__delete {
+    @include editViewLink;
+  }
+}

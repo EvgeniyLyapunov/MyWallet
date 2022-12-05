@@ -78,13 +78,13 @@
   }
   &__link {
     font-size: 18px;
-    color:  #a0b1e1;
+    color:  $link-color;
     &:hover {
-      color:  #a0b1e1;
+      color:  $link-color;
       text-decoration: none;
     }
     &:active {
-      color:  #a0b1e1;
+      color:  $link-color;
       text-decoration: none;
     }
   }

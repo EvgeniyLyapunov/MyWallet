@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 25px;
   }
   &__title {
 		width: 300px;
@@ -50,7 +50,7 @@
     &-money-name {
       position: relative;
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       align-items: center;
       width: 260px;
       height: 80px;

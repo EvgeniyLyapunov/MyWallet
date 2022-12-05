@@ -6,6 +6,7 @@ import openModalWindow from "./openModalWindow";
 import getDataFromStorage from "../services/getDataFromStorage";
 import {openViewBalansWindow} from './viewBalance';
 import {postData} from '../services/dataBaseQueries';
+import {openViewEditMenu} from './viewEditMenu';
 
 // функция подготавливает и открывает окно изменения баланса выбранного кошелька
 function viewChanges(idCard) {
@@ -72,7 +73,7 @@ function viewChanges(idCard) {
   const linkChange = document.querySelector('#link-change');
   linkChange.addEventListener('click', (e) => {
     e.preventDefault;
-    // TODO => openChangeCard
+    openViewEditMenu(card);
   });
 
   // ссылка открывает окно создания новой карты
