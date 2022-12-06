@@ -13,7 +13,7 @@ const mainSection = document.querySelector("main"),
 
 // функция открытия модального окна
 // на данный момент используется для открытия окон регистрации и входа
-function openModal(btn, modalW, ...close) {
+function openAuthModals(btn, modalW) {
   const button = document.querySelector(btn),
         modal = document.querySelector(modalW);
 
@@ -46,12 +46,12 @@ function openModal(btn, modalW, ...close) {
       toHomeBtn.classList.remove("hide");
     }, 300);
 
-    if(close.length != 0) {
-      forms.forEach(item => item.reset());
-      burgerClose(".header__menu-close", ".header__menu");
-    }
+    forms.forEach(item => item.reset());
+    burgerClose(".header__menu-close", ".header__menu");
   });
+}
 
+function backHomeByHomeButton() {
   //кнопка в футере - домой
   toHomeBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -82,6 +82,4 @@ function toMainScreen() {
   toHomeBtn.classList.add("hide");
 }
 
-
-
-export {openModal, toMainScreen};
+export {openAuthModals, toMainScreen, backHomeByHomeButton};

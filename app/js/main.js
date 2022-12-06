@@ -1,7 +1,7 @@
 "use strict";
 import {userNickOnMainScreen} from "./modules/userNickOnMainScreen";
 import burger from "./modules/burger";
-import {openModal} from "./modules/modal";
+import {openAuthModals, backHomeByHomeButton} from "./modules/modal";
 import logRegBtn from "./modules/logRegBtn";
 import formSubmitOff from "./modules/submitEvents/formSubmitOff";
 import regSubmit from "./modules/submitEvents/regSubmit";
@@ -16,9 +16,11 @@ burger();
 // открытие модального окна просмотра баланса
 viewBalance();
 // открытие модального окна входа/выхода в аккаунт
-openModal("#to-log-btn", ".modal-log", true);
+openAuthModals("#to-log-btn", ".modal-log");
 // открытие модального окна регистрации аккаунта
-openModal("#to-reg-btn", ".modal-reg", true);
+openAuthModals("#to-reg-btn", ".modal-reg");
+//кнопка в футере - домой
+backHomeByHomeButton();
 
 logRegBtn(".modal-log__modal-reg-btn", ".modal-reg", ".modal-log");
 logRegBtn(".modal-reg__modal-log-btn", ".modal-log", ".modal-reg");
