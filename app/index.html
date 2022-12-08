@@ -72,7 +72,7 @@
       <div class="modal-changes__wrapper">
         <h2 class="modal-changes__title">Изменить баланс</h2>
         <h3 class="modal-changes__subtitle">
-          кошелёк: <span class="modal-changes__subtitle-current">БЮДЖЕТ</span>
+          кошелёк:&nbsp;&nbsp; <span class="modal-changes__subtitle-current">БЮДЖЕТ</span>
         </h3>
         <form class="modal-changes__form" action="#" method="post">
           <label class="modal-changes__form-label-box">
@@ -158,7 +158,7 @@
       <div class="edit-menu__wrapper">
         <h2 class="edit-menu__title">Редактор</h2>
         <h3 class="edit-menu__subtitle">
-          кошелёк: <span class="edit-menu__subtitle-current">БЮДЖЕТ</span>
+          кошелёк:&nbsp;&nbsp; <span class="edit-menu__subtitle-current"></span>
         </h3>
         <div class="edit-menu__name">
           <img class="edit-menu__name-icon" src="images/icons/change-name.svg" alt="icon change name">
@@ -180,6 +180,46 @@
           <img class="edit-menu__delete-icon" src="images/icons/wallet-delete.svg" alt="icon wallet delete">
           <button class="edit-menu__delete-btn">Удалить кошелёк</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal change Wallet name -->
+
+  <div class="modal change-name-modal name">
+    <div class="container">
+      <div class="name__wrapper">
+        <h2 class="name__title">Имя кошелька</h2>
+        <h3 class="name__subtitle">
+          текущее имя:&nbsp;&nbsp; <span class="name__subtitle-current" id="edit-wallet-current-name">БЮДЖЕТ</span>
+        </h3>
+        <form class="name__form" id="edit-wallet-name-form">
+          <label class="name__label">
+            <span class="name__descr">Введите новое имя</span>
+            <input class="name__input" type="text" name="name" required id="edit-wallet-input-name">
+          </label>
+          <button class="name__btn btn" id="change-name-submit-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal change Wallet balance -->
+
+  <div class="modal change-balance-modal">
+    <div class="container">
+      <div class="change-balance-modal__wrapper">
+        <h2 class="change-balance-modal__title">Баланс</h2>
+        <h3 class="change-balance-modal__subtitle">
+          карта:&nbsp;&nbsp; <span class="change-balance-modal__subtitle-current" id="edit-wallet-current-name">БЮДЖЕТ</span>
+        </h3>
+        <form class="change-balance-modal__form" id="edit-wallet-balance-form">
+          <label class="change-balance-modal__label">
+            <span class="change-balance-modal__descr">Введите сумму:</span>
+            <input class="change-balance-modal__input" type="number" name="balance" required id="edit-wallet-input-balance">
+          </label>
+          <button class="change-balance-modal__btn btn" id="change-balance-submit-button">Сохранить</button>
+        </form>
       </div>
     </div>
   </div>

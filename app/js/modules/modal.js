@@ -11,8 +11,6 @@ const mainSection = document.querySelector("main"),
       forms = document.querySelectorAll("form"),
       modalWindows = document.querySelectorAll(".modal");
 
-// функция открытия модального окна
-// на данный момент используется для открытия окон регистрации и входа
 function openAuthModals(btn, modalW) {
   const button = document.querySelector(btn),
         modal = document.querySelector(modalW);

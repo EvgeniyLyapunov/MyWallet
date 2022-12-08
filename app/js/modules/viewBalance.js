@@ -2,6 +2,7 @@ import swal from 'sweetalert';
 import tippy from 'tippy.js';
 
 import openModalWindow from "./openModalWindow";
+import pressBtn from "./buttonPressAnim";
 import checkAuth from "../services/checkAuth";
 import {toMainScreen} from './modal';
 import getDataFromStorage from '../services/getDataFromStorage';
@@ -17,7 +18,6 @@ function viewBalance() {
   tippy('#tippy-info-about-create-new-wallet', {
     content: 'Для создания нового кошелька нажмите на любую карту, и в открывшемся окне перейдите по нужной ссылке.'
   });
-
 
   const viewBalanceBtn = document.querySelector("#viewBalance");
   viewBalanceBtn.addEventListener("click", openViewBalansWindow);
