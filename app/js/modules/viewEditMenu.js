@@ -1,13 +1,9 @@
 "use strict";
 
-import swal from 'sweetalert';
-
 import openModalWindow from "./openModalWindow";
-import getDataFromStorage from "../services/getDataFromStorage";
-import {openViewBalansWindow} from './viewBalance';
-import {postData} from '../services/dataBaseQueries';
-import {changeName, changeNameSubmit} from './submitEvents/update-wallet/changeNameSubmit';
-import {changeBalance, changeBalanceSubmit } from './submitEvents/update-wallet/changeBalanceSubmit'
+import {changeName, changeNameSubmit} from './submitEvents/update-wallet/updateNameSubmit';
+import {changeBalance, changeBalanceSubmit } from './submitEvents/update-wallet/updateBalanceSubmit';
+import {changeMoney, changeMoneySubmit} from './submitEvents/update-wallet/updateMoneySubmit';
 
 let currentWallet = {};
 
@@ -39,4 +35,14 @@ function editAmountBtn() {
   editBalanceSubmit.addEventListener('click', changeBalanceSubmit);
 }
 
-export {openViewEditMenu, editNameBtn, editAmountBtn};
+function editMoneyBtn() {
+  const toChangeMoneyBtn = document.querySelector('.edit-menu__money-btn'),
+        editMoneySubmit = document.querySelector('#change-money-submit-button');
+  toChangeMoneyBtn.addEventListener('click', () => {
+    changeMoney(currentWallet);
+    openModalWindow('.change-money-modal');
+  });
+  editMoneySubmit.addEventListener('click', changeMoneySubmit);
+}
+
+export {openViewEditMenu, editNameBtn, editAmountBtn, editMoneyBtn};

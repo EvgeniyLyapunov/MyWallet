@@ -13,7 +13,7 @@ let validate;
 
 function changeBalance(card) {
   currentCard = card;
-  const currentName = document.querySelector('#edit-wallet-current-name');
+  const currentName = document.querySelector('#edit-wallet-current-balance');
   currentName.textContent = `${currentCard.name}`;
 
   if(validate != undefined) {
