@@ -1,0 +1,85 @@
+.change-base-modal {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+  }
+  &__title {
+    width: 130px;
+    margin-bottom: 20px;
+		font-size: 30px;
+		text-align-last: left;
+		color: $title-color;
+		background-image: url("../../../images/icons/change-base.svg");
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: contain;
+  }
+  &__subtitle {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: $element-title-color;
+    &-current {
+      text-transform: uppercase;
+      color: $element-subtitle-color;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 180px;
+  }
+  &__descr {
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+    width: 320px;
+    font-size: 14px;
+    color: $input-label-text-color;
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      bottom: -45px;
+      right: 10px;
+      background-image: url('../../../images/icons/arrow_click.svg');
+      background-position: center;
+      background-size:contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &__select {
+    display: block;
+    width: 320px;
+    height: 50px;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 50px;
+    color: $input-text-color;
+    background-color: $input-bg-color;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.8s box-shadow ease-in-out;
+    
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  &__btn {
+    align-self: flex-end;
+    width: 150px;
+  }
+}

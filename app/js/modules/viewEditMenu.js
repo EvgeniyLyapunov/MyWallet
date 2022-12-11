@@ -4,6 +4,7 @@ import openModalWindow from "./openModalWindow";
 import {changeName, changeNameSubmit} from './submitEvents/update-wallet/updateNameSubmit';
 import {changeBalance, changeBalanceSubmit } from './submitEvents/update-wallet/updateBalanceSubmit';
 import {changeMoney, changeMoneySubmit} from './submitEvents/update-wallet/updateMoneySubmit';
+import {changeBase, changeBaseSubmit} from './submitEvents/update-wallet/updateBaseSubmit';
 
 let currentWallet = {};
 
@@ -45,4 +46,14 @@ function editMoneyBtn() {
   editMoneySubmit.addEventListener('click', changeMoneySubmit);
 }
 
-export {openViewEditMenu, editNameBtn, editAmountBtn, editMoneyBtn};
+function editBaseBtn() {
+  const toChangeBaseBtn = document.querySelector('.edit-menu__base-btn'),
+        editBaseSubmit = document.querySelector('#change-base-submit-button');
+  toChangeBaseBtn.addEventListener('click', () => {
+    changeBase(currentWallet);
+    openModalWindow('.change-base-modal');
+  });
+  editBaseSubmit.addEventListener('click', changeBaseSubmit);
+}
+
+export {openViewEditMenu, editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn};

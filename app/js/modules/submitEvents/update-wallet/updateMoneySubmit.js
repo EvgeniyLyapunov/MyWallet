@@ -11,8 +11,8 @@ let currentCard = {};
 
 function changeMoney(card) {
   currentCard = card;
-  const currentName = document.querySelector('#edit-wallet-current-money');
-  currentName.textContent = `${currentCard.name}`;
+  const currentMoney = document.querySelector('#edit-wallet-current-money');
+  currentMoney.textContent = `${currentCard.moneyType}`;
 }
 
 async function changeMoneySubmit(e) {

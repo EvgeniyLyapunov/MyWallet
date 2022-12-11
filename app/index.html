@@ -211,7 +211,7 @@
       <div class="change-balance-modal__wrapper">
         <h2 class="change-balance-modal__title">Баланс</h2>
         <h3 class="change-balance-modal__subtitle">
-          кошелёк:&nbsp;&nbsp; <span class="change-balance-modal__subtitle-current" id="edit-wallet-current-balance">БЮДЖЕТ</span>
+          текущий:&nbsp;&nbsp; <span class="change-balance-modal__subtitle-current" id="edit-wallet-current-balance"></span>
         </h3>
         <form class="change-balance-modal__form" id="edit-wallet-balance-form">
           <label class="change-balance-modal__label">
@@ -231,7 +231,7 @@
       <div class="change-money-modal__wrapper">
         <h2 class="change-money-modal__title">Тип денег</h2>
         <h3 class="change-money-modal__subtitle">
-          кошелёк:&nbsp;&nbsp;<span class="change-money-modal__subtitle-current" id="edit-wallet-current-money">БЮДЖЕТ</span>
+          текущий:&nbsp;&nbsp;<span class="change-money-modal__subtitle-current" id="edit-wallet-current-money"></span>
         </h3>
         <form class="change-money-modal__form" id="edit-wallet-money-form">
             <label class="change-money-modal__label-radio">
@@ -243,6 +243,28 @@
               <span class="change-money-modal__money-name change-money-modal__money-name-bank">банк</span>
             </label>
             <button class="change-money-modal__btn btn" id="change-money-submit-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal change Wallet base -->
+
+  <div class="modal change-base-modal">
+    <div class="container">
+      <div class="change-base-modal__wrapper">
+        <h2 class="change-base-modal__title">База</h2>
+        <h3 class="change-base-modal__subtitle">
+          базовый:&nbsp;&nbsp;<span class="change-base-modal__subtitle-current" id="edit-wallet-current-base"></span>
+        </h3>
+        <form class="change-base-modal__form" id="edit-wallet-base-form">
+          <label class="change-base-modal__label">
+            <span class="change-base-modal__descr">Список ваших кошельков:</span>
+            <select class="change-base-modal__select" name="select">
+              <option value="" selected disabled>Выберите:</option>
+            </select>
+          </label>
+          <button class="change-base-modal__btn btn" id="change-base-submit-button">Сохранить</button>
         </form>
       </div>
     </div>
