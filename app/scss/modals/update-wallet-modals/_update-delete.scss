@@ -1,0 +1,55 @@
+.delete-modal {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+  }
+  &__title {
+    width: 205px;
+    margin-bottom: 20px;
+		font-size: 30px;
+		text-align-last: left;
+		color: $title-color;
+		background-image: url("../../../images/icons/wallet-delete.svg");
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: contain;
+  }
+  &__subtitle {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: $element-title-color;
+    &-current {
+      text-transform: uppercase;
+      color: $element-subtitle-color;
+    }
+  }
+  &__warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 150px;
+   &-confirmation {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: $element-title-color;
+   }
+   &-irreversible {
+    color: $element-warning-text;
+   } 
+  }
+  &__btn-block {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__delete-btn, &__cancel-btn {
+    width: 145px;
+  }
+  &__delete-btn {
+    color: $element-warning-text;
+  }
+}

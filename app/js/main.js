@@ -8,7 +8,7 @@ import regSubmit from "./modules/submitEvents/regSubmit";
 import logSubmit from "./modules/submitEvents/logSubmit";
 import newStorageSubmit from "./modules/submitEvents/newStorageSubmit";
 import {viewBalance} from "./modules/viewBalance";
-import {editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn} from './modules/viewEditMenu';
+import {editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn, deleteWalletBtn} from './modules/viewEditMenu';
 
 
 userNickOnMainScreen();
@@ -42,3 +42,4 @@ editNameBtn();
 editAmountBtn();
 editMoneyBtn();
 editBaseBtn();
+deleteWalletBtn();

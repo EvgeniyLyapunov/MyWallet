@@ -5,6 +5,7 @@ import {changeName, changeNameSubmit} from './submitEvents/update-wallet/updateN
 import {changeBalance, changeBalanceSubmit } from './submitEvents/update-wallet/updateBalanceSubmit';
 import {changeMoney, changeMoneySubmit} from './submitEvents/update-wallet/updateMoneySubmit';
 import {changeBase, changeBaseSubmit} from './submitEvents/update-wallet/updateBaseSubmit';
+import {changeDelete, deleteSubmit, cancelSubmit} from './submitEvents/update-wallet/updateDelete';
 
 let currentWallet = {};
 
@@ -56,4 +57,16 @@ function editBaseBtn() {
   editBaseSubmit.addEventListener('click', changeBaseSubmit);
 }
 
-export {openViewEditMenu, editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn};
+function deleteWalletBtn() {
+  const toDeleteWalletBtn = document.querySelector('.edit-menu__delete-btn'),
+        deleteBtn = document.querySelector('#delete-submit-button'),
+        cancelBtn = document.querySelector('#cancel-submit-button');
+  toDeleteWalletBtn.addEventListener('click', () => {
+    changeDelete(currentWallet);
+    openModalWindow('.delete-modal');
+  });
+  deleteBtn.addEventListener('click', deleteSubmit);
+  cancelBtn.addEventListener('click', cancelSubmit);
+}
+
+export {openViewEditMenu, editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn, deleteWalletBtn};
