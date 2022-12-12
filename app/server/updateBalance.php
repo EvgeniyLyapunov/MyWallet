@@ -1,5 +1,5 @@
 <?php
-  $connection = mysqli_connect("136.243.14.123", "littl265_admin", "JayRadhaShyam", "littl265_mywallet");
+  $connection = mysqli_connect("136.243.14.123", "littl265_admin", "JayRadhaShyam", "littl265_storages_as_cards");
 
   $_POST = json_decode(file_get_contents('php://input'), true);
 
