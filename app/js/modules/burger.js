@@ -16,7 +16,7 @@ const menuOpen = document.querySelector(".hamburger"),
 function burger() {
   menuOpen.addEventListener("click", burgerMenuOpen);
   menuClose.addEventListener("click", () => {
-    burgerClose(".header__menu-close", ".header__menu");
+    burgerClose();
   });
 }
 
@@ -41,9 +41,9 @@ function burgerMenuOpen() {
 }
 
 // функция закрытия бургер меню
-function burgerClose(closeBtnSelector, menuSelector) {
-  const closeBtn = document.querySelector(closeBtnSelector);
-  const menu = document.querySelector(menuSelector);
+function burgerClose() {
+  const closeBtn = document.querySelector('.header__menu-close');
+  const menu = document.querySelector(".header__menu");
   setTimeout(() => {
     menu.classList.toggle("header__menu_active");
   }, 200);

@@ -28,7 +28,7 @@ function openAuthModals(btn, modalW) {
         div.remove();
       }
       forms.forEach(item => item.reset());
-      burgerClose(".header__menu-close", ".header__menu");
+      burgerClose();
       toMainScreen();
       return;
     }
@@ -45,7 +45,7 @@ function openAuthModals(btn, modalW) {
     }, 300);
 
     forms.forEach(item => item.reset());
-    burgerClose(".header__menu-close", ".header__menu");
+    burgerClose();
   });
 }
 

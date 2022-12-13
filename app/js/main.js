@@ -20,6 +20,8 @@ viewBalance();
 openAuthModals("#to-log-btn", ".modal-log");
 // открытие модального окна регистрации аккаунта
 openAuthModals("#to-reg-btn", ".modal-reg");
+// открытие модального окна о проекте
+openAuthModals(".header__btn-about", ".project-modal");
 //кнопка в футере - домой
 backHomeByHomeButton();
 
