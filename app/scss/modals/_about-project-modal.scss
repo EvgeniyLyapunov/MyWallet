@@ -18,7 +18,8 @@
   }
   &__author {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     width: 300px;
     margin-bottom: 10px;
     &-subtitle {
@@ -27,15 +28,37 @@
       font-size: 13px;
       color: $element-title-color;
     }
+    &-name-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 300px;
+    }
     &-name {
-      font-size: 14px;
+      padding-bottom: 9px;
+      font-size: 13px;
       color: $title-color;
+    }
+    &-ampersand {
+      display: block;
+      width: 20px;
+      height: 30px;
+      background-image: url('../../images/icons/ampersand.png');
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &-studio {
+      width: 150px;
+      min-height: 35px;
+      object-fit: contain;
     }
   }
   &__contacts {
     display: flex;
     flex-direction: column;
     width: 300px;
+    margin-top: -20px;
     &-links-box {
       display: flex;
       align-items: center;
