@@ -9,6 +9,7 @@ import logSubmit from "./modules/submitEvents/logSubmit";
 import newStorageSubmit from "./modules/submitEvents/newStorageSubmit";
 import {viewBalance} from "./modules/viewBalance";
 import {editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn, deleteWalletBtn} from './modules/viewEditMenu';
+import slider from './modules/slider';
 
 
 userNickOnMainScreen();
@@ -45,3 +46,14 @@ editAmountBtn();
 editMoneyBtn();
 editBaseBtn();
 deleteWalletBtn();
+
+slider({
+  container: ".project-modal__slider",
+  nextArrow: ".project-modal__slider-next",
+  prevArrow: ".project-modal__slider-prev",
+  slide: ".project-modal__slider-slide",
+  totalCounter: "#total",
+  currentCounter: "#current",
+  wrapper: ".project-modal__slider-wrapper",
+  field: ".project-modal__slider-inner"
+});
