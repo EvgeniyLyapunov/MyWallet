@@ -11,7 +11,6 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
         slidesField = document.querySelector(field),
         width = window.getComputedStyle(slidesWrapper).width;
 
-        console.log(width);
   let slideIndex = 1;
   let offset = 0;
 

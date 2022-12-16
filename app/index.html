@@ -1,239 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyWallet</title>
-  <link rel="stylesheet" href="css/tippy.css">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container header__container">
-      <img class="header__logo" src="images/img/wallet_logo-1.png" alt="cash-wallet">
-      <div class="header__hamburger-icon hamburger">
-        <span class="hamburger__stick hamburger__stick-top"></span>
-        <span class="hamburger__stick hamburger__stick-middle"></span>
-        <span class="hamburger__stick hamburger__stick-bottom"></span>
-      </div>
-      <div class="header__menu header__menu_active">
-        <div class="header__menu-close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </div>
-        <div class="header__btn-wrapper">
-          <button class="btn header__btn header__btn-login" id="to-log-btn">Вход / выход</button>
-          <button class="btn header__btn header__btn-registration" id="to-reg-btn">Создать аккаунт</button>
-          <div class="header__btn-divider"></div>
-          <button class="btn header__btn-about">О проекте</button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="container hero__container">
-        <h1 class="hero__title">My Wallet</h1>
-        <span class="hero__by">by</span>
-        <div class="hero__logo">
-          <img class="hero__logo-lws" src="./images/img/little-wing-studio.svg" alt="логотип студии">
-        </div>
-        <div class="hero__icon">
-          <img class="hero__img" src="images/img/main-bg.png" alt="картинка блокнота для записи">
-        </div>
-      </div>
-    </section>
 
-    <section class="action">
-      <div class="container action__container">
-        <div class="action__block">
-          <span class="action__info" id="tippy-info-about-create-new-wallet"></span>
-          <button class="btn action__btn action__btn-viewbalance" id="viewBalance">Кошелёк</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWallet</title>
+    <link rel="stylesheet" href="css/tippy.css">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <img class="header__logo" src="images/img/wallet_logo-1.png" alt="cash-wallet">
+        <div class="header__hamburger-icon hamburger">
+          <span class="hamburger__stick hamburger__stick-top"></span>
+          <span class="hamburger__stick hamburger__stick-middle"></span>
+          <span class="hamburger__stick hamburger__stick-bottom"></span>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- modal-show -->
-
-  <div class="modal modal-show">
-    <div class="container">
-      <div class="modal__balance balance">
-        <div class="balance__wrapper" id="balance-wrapper">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal-changes -->
-
-  <div class="modal modal-changes">
-    <div class="container">
-      <div class="modal-changes__wrapper">
-        <h2 class="modal-changes__title">Изменить баланс</h2>
-        <h3 class="modal-changes__subtitle">
-          кошелёк:&nbsp;&nbsp; <span class="modal-changes__subtitle-current">БЮДЖЕТ</span>
-        </h3>
-        <form class="modal-changes__form" action="#" method="post">
-          <label class="modal-changes__form-label-box">
-            <span class="modal-changes__form-descr-input">Введите сумму:</span>
-            <input class="modal-changes__form-input-amount" type="number" name="balance" id="modal-changes__input-amount">
-          </label>
-        </form>
-        <div class="modal-changes__links-block">
-          <div class="modal-changes__link-section modal-changes__link-section-mb">
-            <div class="modal-changes__img-box">
-              <img class="modal-changes__img" src="images/icons/settings.svg" alt="иконка обновить кошелёк">
-            </div>
-            <div class="modal-changes__link-box" id="link-box-change">
-              <a class="modal-changes__link" href="#" id="link-change">
-                Редактировать текущий кошелёк
-              </a>
-            </div>
+        <div class="header__menu header__menu_active">
+          <div class="header__menu-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
           </div>
-          <div class="modal-changes__link-section">
-            <div class="modal-changes__img-box">
-              <img class="modal-changes__img" src="images/icons/wallet-new.svg" alt="иконка новый кошелёк">
-            </div>
-            <div class="modal-changes__link-box" id="link-box-create">
-              <a class="modal-changes__link" href="#" id="link-create">
-                Создать новый кошелёк
-              </a>
-            </div>
+          <div class="header__btn-wrapper">
+            <button class="btn header__btn header__btn-login" id="to-log-btn">Вход / выход</button>
+            <button class="btn header__btn header__btn-registration" id="to-reg-btn">Создать аккаунт</button>
+            <div class="header__btn-divider"></div>
+            <button class="btn header__btn-about">О проекте</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container hero__container">
+          <h1 class="hero__title">My Wallet</h1>
+          <span class="hero__by">by</span>
+          <div class="hero__logo">
+            <img class="hero__logo-lws" src="./images/img/little-wing-studio.svg" alt="логотип студии">
+          </div>
+          <div class="hero__icon">
+            <img class="hero__img" src="images/img/main-bg.png" alt="картинка блокнота для записи">
+          </div>
+        </div>
+      </section>
+
+      <section class="action">
+        <div class="container action__container">
+          <div class="action__block">
+            <span class="action__info" id="tippy-info-about-create-new-wallet"></span>
+            <button class="btn action__btn action__btn-viewbalance" id="viewBalance">Кошелёк</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- modal-show -->
+
+    <div class="modal modal-show">
+      <div class="container">
+        <div class="modal__balance balance">
+          <div class="balance__wrapper" id="balance-wrapper">
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal-new-storage -->
+    <!-- modal-changes -->
 
-  <div class="modal new-storage">
-    <div class="container">
-      <div class="new-storage__wrapper">
-        <h2 class="new-storage__title">Новый кошелёк</h2>
-        <form action="#" class="new-storage__form" id="newStorageForm">
-
-          <label class="new-storage__form-label-name step" data-step="1" >
-            <span>Название кошелька:</span>
-            <input class="new-storage__form-input-name" type="text" name="newStorageName" required id="newStorageName">
-          </label>
-
-          <label class="new-storage__form-label-sum step visually-hidden" data-step="2">
-            <span>Начальная сумма кошелька:</span>
-            <input class="new-storage__form-input-sum" type="number" name="newStorageSum" required id="newStorageSum">
-          </label>
-
-          <div class="new-storage__form-block-money step visually-hidden" id="new-storage-radio-group" data-step="3">
-            <span class="new-storage__form-subtitle">Деньги: наличные или банк</span>
-            <label class="new-storage__form-label-radio new-storage__form-label-radio">
-              <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="cash">
-              <span class="new-storage__form-money-name new-storage__form-money-name-cash">наличные</span>
+    <div class="modal modal-changes">
+      <div class="container">
+        <div class="modal-changes__wrapper">
+          <h2 class="modal-changes__title">Изменить баланс</h2>
+          <h3 class="modal-changes__subtitle">
+            кошелёк:&nbsp;&nbsp; <span class="modal-changes__subtitle-current">БЮДЖЕТ</span>
+          </h3>
+          <form class="modal-changes__form" action="#" method="post">
+            <label class="modal-changes__form-label-box">
+              <span class="modal-changes__form-descr-input">Введите сумму:</span>
+              <input class="modal-changes__form-input-amount" type="number" name="balance"
+                id="modal-changes__input-amount">
             </label>
-            <label class="new-storage__form-label-radio new-storage__form-label-radio-mb">
-              <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="bank">
-              <span class="new-storage__form-money-name new-storage__form-money-name-bank">банк</span>
-            </label>
+          </form>
+          <div class="modal-changes__links-block">
+            <div class="modal-changes__link-section modal-changes__link-section-mb">
+              <div class="modal-changes__img-box">
+                <img class="modal-changes__img" src="images/icons/settings.svg" alt="иконка обновить кошелёк">
+              </div>
+              <div class="modal-changes__link-box" id="link-box-change">
+                <a class="modal-changes__link" href="#" id="link-change">
+                  Редактировать текущий кошелёк
+                </a>
+              </div>
+            </div>
+            <div class="modal-changes__link-section">
+              <div class="modal-changes__img-box">
+                <img class="modal-changes__img" src="images/icons/wallet-new.svg" alt="иконка новый кошелёк">
+              </div>
+              <div class="modal-changes__link-box" id="link-box-create">
+                <a class="modal-changes__link" href="#" id="link-create">
+                  Создать новый кошелёк
+                </a>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="new-storage__form-base-storage step visually-hidden" data-step="4">
-            <span class="new-storage__form-bs-subtitle new-storage__form-subtitle" id="tippy-base-storage">Базовый кошелёк</span>
+    <!-- modal-new-storage -->
+
+    <div class="modal new-storage">
+      <div class="container">
+        <div class="new-storage__wrapper">
+          <h2 class="new-storage__title">Новый кошелёк</h2>
+          <form action="#" class="new-storage__form" id="newStorageForm">
+
+            <label class="new-storage__form-label-name step" data-step="1">
+              <span>Название кошелька:</span>
+              <input class="new-storage__form-input-name" type="text" name="newStorageName" required id="newStorageName">
+            </label>
+
+            <label class="new-storage__form-label-sum step visually-hidden" data-step="2">
+              <span>Начальная сумма кошелька:</span>
+              <input class="new-storage__form-input-sum" type="number" name="newStorageSum" required id="newStorageSum">
+            </label>
+
+            <div class="new-storage__form-block-money step visually-hidden" id="new-storage-radio-group" data-step="3">
+              <span class="new-storage__form-subtitle">Деньги: наличные или банк</span>
+              <label class="new-storage__form-label-radio new-storage__form-label-radio">
+                <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="cash">
+                <span class="new-storage__form-money-name new-storage__form-money-name-cash">наличные</span>
+              </label>
+              <label class="new-storage__form-label-radio new-storage__form-label-radio-mb">
+                <input class="new-storage__form-radio-money visually-hidden" type="radio" name="money" value="bank">
+                <span class="new-storage__form-money-name new-storage__form-money-name-bank">банк</span>
+              </label>
+            </div>
+
+            <div class="new-storage__form-base-storage step visually-hidden" data-step="4">
+              <span class="new-storage__form-bs-subtitle new-storage__form-subtitle" id="tippy-base-storage">Базовый
+                кошелёк</span>
               <label class="new-storage__form-label-select">
                 <span class="new-storage__form-subtitle-select">Список ваших кошельков:</span>
                 <select class="new-storage__form-select" name="select">
                   <option value="" selected disabled>Выберите:</option>
                 </select>
               </label>
+            </div>
+            <button class="new-storage__form-btn btn" id="new-storage-flow-btn">Дальше</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal wallet edit menu -->
+
+    <div class="modal edit-menu">
+      <div class="container">
+        <div class="edit-menu__wrapper">
+          <h2 class="edit-menu__title">Редактор</h2>
+          <h3 class="edit-menu__subtitle">
+            кошелёк:&nbsp;&nbsp; <span class="edit-menu__subtitle-current"></span>
+          </h3>
+          <div class="edit-menu__name">
+            <img class="edit-menu__name-icon" src="images/icons/change-name.svg" alt="icon change name">
+            <button class="edit-menu__name-btn">Изменить имя кошелька</button>
           </div>
-          <button class="new-storage__form-btn btn" id="new-storage-flow-btn">Дальше</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal wallet edit menu -->
-
-  <div class="modal edit-menu">
-    <div class="container">
-      <div class="edit-menu__wrapper">
-        <h2 class="edit-menu__title">Редактор</h2>
-        <h3 class="edit-menu__subtitle">
-          кошелёк:&nbsp;&nbsp; <span class="edit-menu__subtitle-current"></span>
-        </h3>
-        <div class="edit-menu__name">
-          <img class="edit-menu__name-icon" src="images/icons/change-name.svg" alt="icon change name">
-          <button class="edit-menu__name-btn">Изменить имя кошелька</button>
-        </div>
-        <div class="edit-menu__balance">
-          <img class="edit-menu__balance-icon" src="images/icons/change-balance.svg" alt="icon change balance">
-          <button class="edit-menu__balance-btn">Изменить баланс кошелька</button>
-        </div>
-        <div class="edit-menu__money">
-          <img class="edit-menu__money-icon" src="images/icons/change-money-type.svg" alt="icon change money type">
-          <button class="edit-menu__money-btn">Изменить тип денег кошелька</button>
-        </div>
-        <div class="edit-menu__base">
-          <img class="edit-menu__base-icon" src="images/icons/change-base.svg" alt="icon change base">
-          <button class="edit-menu__base-btn">Изменить базовый кошелёк</button>
-        </div>
-        <div class="edit-menu__delete">
-          <img class="edit-menu__delete-icon" src="images/icons/wallet-delete.svg" alt="icon wallet delete">
-          <button class="edit-menu__delete-btn">Удалить кошелёк</button>
+          <div class="edit-menu__balance">
+            <img class="edit-menu__balance-icon" src="images/icons/change-balance.svg" alt="icon change balance">
+            <button class="edit-menu__balance-btn">Изменить баланс кошелька</button>
+          </div>
+          <div class="edit-menu__money">
+            <img class="edit-menu__money-icon" src="images/icons/change-money-type.svg" alt="icon change money type">
+            <button class="edit-menu__money-btn">Изменить тип денег кошелька</button>
+          </div>
+          <div class="edit-menu__base">
+            <img class="edit-menu__base-icon" src="images/icons/change-base.svg" alt="icon change base">
+            <button class="edit-menu__base-btn">Изменить базовый кошелёк</button>
+          </div>
+          <div class="edit-menu__delete">
+            <img class="edit-menu__delete-icon" src="images/icons/wallet-delete.svg" alt="icon wallet delete">
+            <button class="edit-menu__delete-btn">Удалить кошелёк</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal change Wallet name -->
+    <!-- modal change Wallet name -->
 
-  <div class="modal change-name-modal name">
-    <div class="container">
-      <div class="name__wrapper">
-        <h2 class="name__title">Имя кошелька</h2>
-        <h3 class="name__subtitle">
-          текущее имя:&nbsp;&nbsp; <span class="name__subtitle-current" id="edit-wallet-current-name">БЮДЖЕТ</span>
-        </h3>
-        <form class="name__form" id="edit-wallet-name-form">
-          <label class="name__label">
-            <span class="name__descr">Введите новое имя</span>
-            <input class="name__input" type="text" name="name" required id="edit-wallet-input-name">
-          </label>
-          <button class="name__btn btn" id="change-name-submit-button">Сохранить</button>
-        </form>
+    <div class="modal change-name-modal name">
+      <div class="container">
+        <div class="name__wrapper">
+          <h2 class="name__title">Имя кошелька</h2>
+          <h3 class="name__subtitle">
+            текущее имя:&nbsp;&nbsp; <span class="name__subtitle-current" id="edit-wallet-current-name">БЮДЖЕТ</span>
+          </h3>
+          <form class="name__form" id="edit-wallet-name-form">
+            <label class="name__label">
+              <span class="name__descr">Введите новое имя</span>
+              <input class="name__input" type="text" name="name" required id="edit-wallet-input-name">
+            </label>
+            <button class="name__btn btn" id="change-name-submit-button">Сохранить</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal change Wallet balance -->
+    <!-- modal change Wallet balance -->
 
-  <div class="modal change-balance-modal">
-    <div class="container">
-      <div class="change-balance-modal__wrapper">
-        <h2 class="change-balance-modal__title">Баланс</h2>
-        <h3 class="change-balance-modal__subtitle">
-          текущий:&nbsp;&nbsp; <span class="change-balance-modal__subtitle-current" id="edit-wallet-current-balance"></span>
-        </h3>
-        <form class="change-balance-modal__form" id="edit-wallet-balance-form">
-          <label class="change-balance-modal__label">
-            <span class="change-balance-modal__descr">Введите сумму:</span>
-            <input class="change-balance-modal__input" type="number" name="balance" required id="edit-wallet-input-balance">
-          </label>
-          <button class="change-balance-modal__btn btn" id="change-balance-submit-button">Сохранить</button>
-        </form>
+    <div class="modal change-balance-modal">
+      <div class="container">
+        <div class="change-balance-modal__wrapper">
+          <h2 class="change-balance-modal__title">Баланс</h2>
+          <h3 class="change-balance-modal__subtitle">
+            текущий:&nbsp;&nbsp; <span class="change-balance-modal__subtitle-current"
+              id="edit-wallet-current-balance"></span>
+          </h3>
+          <form class="change-balance-modal__form" id="edit-wallet-balance-form">
+            <label class="change-balance-modal__label">
+              <span class="change-balance-modal__descr">Введите сумму:</span>
+              <input class="change-balance-modal__input" type="number" name="balance" required
+                id="edit-wallet-input-balance">
+            </label>
+            <button class="change-balance-modal__btn btn" id="change-balance-submit-button">Сохранить</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal change Wallet money -->
+    <!-- modal change Wallet money -->
 
-  <div class="modal change-money-modal">
-    <div class="container">
-      <div class="change-money-modal__wrapper">
-        <h2 class="change-money-modal__title">Тип денег</h2>
-        <h3 class="change-money-modal__subtitle">
-          текущий:&nbsp;&nbsp;<span class="change-money-modal__subtitle-current" id="edit-wallet-current-money"></span>
-        </h3>
-        <form class="change-money-modal__form" id="edit-wallet-money-form">
+    <div class="modal change-money-modal">
+      <div class="container">
+        <div class="change-money-modal__wrapper">
+          <h2 class="change-money-modal__title">Тип денег</h2>
+          <h3 class="change-money-modal__subtitle">
+            текущий:&nbsp;&nbsp;<span class="change-money-modal__subtitle-current" id="edit-wallet-current-money"></span>
+          </h3>
+          <form class="change-money-modal__form" id="edit-wallet-money-form">
             <label class="change-money-modal__label-radio">
               <input class="change-money-modal__radio-money visually-hidden" type="radio" name="money" value="cash">
               <span class="change-money-modal__money-name change-money-modal__money-name-cash">наличные</span>
@@ -243,196 +252,221 @@
               <span class="change-money-modal__money-name change-money-modal__money-name-bank">банк</span>
             </label>
             <button class="change-money-modal__btn btn" id="change-money-submit-button">Сохранить</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal change Wallet base -->
-
-  <div class="modal change-base-modal">
-    <div class="container">
-      <div class="change-base-modal__wrapper">
-        <h2 class="change-base-modal__title">База</h2>
-        <h3 class="change-base-modal__subtitle">
-          базовый:&nbsp;&nbsp;<span class="change-base-modal__subtitle-current" id="edit-wallet-current-base"></span>
-        </h3>
-        <form class="change-base-modal__form" id="edit-wallet-base-form">
-          <label class="change-base-modal__label">
-            <span class="change-base-modal__descr">Список ваших кошельков:</span>
-            <select class="change-base-modal__select" name="select">
-              <option value="" selected disabled>Выберите:</option>
-            </select>
-          </label>
-          <button class="change-base-modal__btn btn" id="change-base-submit-button">Сохранить</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal delete Wallet -->
-
-  <div class="modal delete-modal">
-    <div class="container">
-      <div class="delete-modal__wrapper">
-        <h2 class="delete-modal__title">Удаление</h2>
-        <h3 class="delete-modal__subtitle">
-          кошелёк:&nbsp;&nbsp; <span class="name__subtitle-current" id="delete-wallet-current-name"></span>
-        </h3>
-        <div class="delete-modal__warning">
-          <span class="delete-modal__warning-infoAboutVirts"></span>
-          <span class="delete-modal__warning-confirmation">Подтвердите удаление кошелька.</span>
-          <span class="delete-modal__warning-irreversible">Эта операция необратима.</span>
-        </div>
-        <div class="delete-modal__btn-block">
-          <button class="delete-modal__delete-btn btn" id="delete-submit-button">Удалить</button>
-          <button class="delete-modal__cancel-btn btn" id="cancel-submit-button">Отмена</button>
+          </form>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal login - logout -->
+    <!-- modal change Wallet base -->
 
-  <div class="modal modal-log">
-    <div class="container">
-      <div class="modal-log__wrapper">
-        <h2 class="modal-log__title">Вход</h2>
-        <form class="modal-log__form" action="#" method="post">
-          <label class="modal-log__label-name">
-            <span class="modal-log__element-title">Ваш nickname</span>
-            <input class="modal-log__input-name" type="text" name="nick" required placeholder="Введите ваш nickname" id="log-name">
-          </label>
-          <label class="modal-log__label-name">
-            <span class="modal-log__element-title">Ваш пароль</span>
-            <input class="modal-log__input-name" type="password" name="pass" required placeholder="Введите ваш пароль" id="log-pass">
-          </label>
-          <label class="modal-log__label-check">
-            <input class="modal-log__checkbox visually-hidden" type="checkbox" name="rememberMeCheck">
-            <span class="modal-log__checkbox-span">Запомнить меня?</span>
-          </label>
-          <!-- submit buttons block -->
-          <div class="modal-log__submit-block">
-            <button class="modal-log__btn modal-log__btn-enter  btn">Войти</button>
-            <input class="modal-log__btn modal-log__btn-reset btn" type="reset">
-          </div>
-        </form>
-        <button class="modal-log__modal-reg-btn btn ">У меня пока нет аккаунта</button>
+    <div class="modal change-base-modal">
+      <div class="container">
+        <div class="change-base-modal__wrapper">
+          <h2 class="change-base-modal__title">База</h2>
+          <h3 class="change-base-modal__subtitle">
+            базовый:&nbsp;&nbsp;<span class="change-base-modal__subtitle-current" id="edit-wallet-current-base"></span>
+          </h3>
+          <form class="change-base-modal__form" id="edit-wallet-base-form">
+            <label class="change-base-modal__label">
+              <span class="change-base-modal__descr">Список ваших кошельков:</span>
+              <select class="change-base-modal__select" name="select">
+                <option value="" selected disabled>Выберите:</option>
+              </select>
+            </label>
+            <button class="change-base-modal__btn btn" id="change-base-submit-button">Сохранить</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal registration --> 
+    <!-- modal delete Wallet -->
 
-  <div class="modal modal-reg">
-    <div class="container">
-      <div class="modal-reg__wrapper">
-        <h2 class="modal-reg__title">Регистрация</h2>
-        <form action="#" method="post" class="modal-reg__form" id="reg-form">
-          <label class="modal-reg__input-label" for="reg-name">
-            <input class="modal-reg__input-name" type="text" name="nickname" required placeholder="Введите ваш nickname" id="reg-name">
-          </label>
-          <label class="modal-reg__input-label" for="reg-pass">
-            <input class="modal-reg__input-name" type="password" name="pass" required placeholder="Введите ваш пароль" id="reg-pass">
-          </label>
-          <label class="modal-reg__input-label" for="reg-confirm-pass">
-            <input class="modal-reg__input-name modal-reg__input-name_mb" type="password" name="confirmPass" required placeholder="Повторите ваш пароль" id="reg-confirm-pass">
-          </label>
-          <label class="modal-reg__label-check">
-            <input class="modal-reg__checkbox visually-hidden" type="checkbox" name="rememberMeCheck" id="reg-check">
-            <span class="modal-reg__checkbox-span">Запомнить меня?</span>
-          </label>
-          <!-- submit buttons block -->
-          <div class="modal-reg__submit-block">
-            <button class="modal-reg__btn modal-reg__btn-enter  btn">Регистрация</button>
-            <input class="modal-reg__btn modal-reg__btn-reset btn" type="reset">
+    <div class="modal delete-modal">
+      <div class="container">
+        <div class="delete-modal__wrapper">
+          <h2 class="delete-modal__title">Удаление</h2>
+          <h3 class="delete-modal__subtitle">
+            кошелёк:&nbsp;&nbsp; <span class="name__subtitle-current" id="delete-wallet-current-name"></span>
+          </h3>
+          <div class="delete-modal__warning">
+            <span class="delete-modal__warning-infoAboutVirts"></span>
+            <span class="delete-modal__warning-confirmation">Подтвердите удаление кошелька.</span>
+            <span class="delete-modal__warning-irreversible">Эта операция необратима.</span>
           </div>
-        </form>
-        <button class="modal-reg__modal-log-btn btn ">У меня уже есть аккаунт</button>
+          <div class="delete-modal__btn-block">
+            <button class="delete-modal__delete-btn btn" id="delete-submit-button">Удалить</button>
+            <button class="delete-modal__cancel-btn btn" id="cancel-submit-button">Отмена</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- modal about project -->
+    <!-- modal login - logout -->
 
-  <div class="modal project-modal">
-    <div class="container">
-      <div class="project-modal__wrapper">
-        <h2 class="project-modal__title">My Wallet</h2>
-        <div class="project-modal__author">
-          <h3 class="project-modal__author-subtitle">Концепция, разработка и дизайн:</h3>
-          <div class="project-modal__author-name-box">
-            <span class="project-modal__author-name">Евгений Ляпунов</span>
-            <span class="project-modal__author-ampersand"></span>
-            <img class="project-modal__author-studio" src="./images/img/little-wing-studio.svg" alt="логотип студии">
-          </div>
-          
+    <div class="modal modal-log">
+      <div class="container">
+        <div class="modal-log__wrapper">
+          <h2 class="modal-log__title">Вход</h2>
+          <form class="modal-log__form" action="#" method="post">
+            <label class="modal-log__label-name">
+              <span class="modal-log__element-title">Ваш nickname</span>
+              <input class="modal-log__input-name" type="text" name="nick" required placeholder="Введите ваш nickname"
+                id="log-name">
+            </label>
+            <label class="modal-log__label-name">
+              <span class="modal-log__element-title">Ваш пароль</span>
+              <input class="modal-log__input-name" type="password" name="pass" required placeholder="Введите ваш пароль"
+                id="log-pass">
+            </label>
+            <label class="modal-log__label-check">
+              <input class="modal-log__checkbox visually-hidden" type="checkbox" name="rememberMeCheck">
+              <span class="modal-log__checkbox-span">Запомнить меня?</span>
+            </label>
+            <!-- submit buttons block -->
+            <div class="modal-log__submit-block">
+              <button class="modal-log__btn modal-log__btn-enter  btn">Войти</button>
+              <input class="modal-log__btn modal-log__btn-reset btn" type="reset">
+            </div>
+          </form>
+          <button class="modal-log__modal-reg-btn btn ">У меня пока нет аккаунта</button>
         </div>
-        <div class="project-modal__contacts">
-          <h3 class="project-modal__contacts-subtitle">Контакты:</h3>
-          <div class="project-modal__contacts-links-box">
-            <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
-              <span class="project-modal__contacts-icon project-modal__contacts-icon-github"></span>
-              github</a>
-            <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
-              <span class="project-modal__contacts-icon project-modal__contacts-icon-site"></span>
-              site</a>
-            <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
-              <span class="project-modal__contacts-icon project-modal__contacts-icon-mail"></span>
-              e-mail</a>
-            <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
-              <span class="project-modal__contacts-icon project-modal__contacts-icon-telegram"></span>
-              telegram</a>
-          </div>
-        </div>
-        <div class="project-modal__contacts-divider"></div>
+      </div>
+    </div>
 
-        <div class="project-modal__slider">
-          <div class="project-modal__slider-prev">
+    <!-- modal registration -->
+
+    <div class="modal modal-reg">
+      <div class="container">
+        <div class="modal-reg__wrapper">
+          <h2 class="modal-reg__title">Регистрация</h2>
+          <form action="#" method="post" class="modal-reg__form" id="reg-form">
+            <label class="modal-reg__input-label" for="reg-name">
+              <input class="modal-reg__input-name" type="text" name="nickname" required placeholder="Введите ваш nickname"
+                id="reg-name">
+            </label>
+            <label class="modal-reg__input-label" for="reg-pass">
+              <input class="modal-reg__input-name" type="password" name="pass" required placeholder="Введите ваш пароль"
+                id="reg-pass">
+            </label>
+            <label class="modal-reg__input-label" for="reg-confirm-pass">
+              <input class="modal-reg__input-name modal-reg__input-name_mb" type="password" name="confirmPass" required
+                placeholder="Повторите ваш пароль" id="reg-confirm-pass">
+            </label>
+            <label class="modal-reg__label-check">
+              <input class="modal-reg__checkbox visually-hidden" type="checkbox" name="rememberMeCheck" id="reg-check">
+              <span class="modal-reg__checkbox-span">Запомнить меня?</span>
+            </label>
+            <!-- submit buttons block -->
+            <div class="modal-reg__submit-block">
+              <button class="modal-reg__btn modal-reg__btn-enter  btn">Регистрация</button>
+              <input class="modal-reg__btn modal-reg__btn-reset btn" type="reset">
+            </div>
+          </form>
+          <button class="modal-reg__modal-log-btn btn ">У меня уже есть аккаунт</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal about project -->
+
+    <div class="modal project-modal">
+      <div class="container">
+        <div class="project-modal__wrapper">
+          <h2 class="project-modal__title">My Wallet</h2>
+          <div class="project-modal__author">
+            <h3 class="project-modal__author-subtitle">Концепция, разработка и дизайн:</h3>
+            <div class="project-modal__author-name-box">
+              <span class="project-modal__author-name">Евгений Ляпунов</span>
+              <span class="project-modal__author-ampersand"></span>
+              <img class="project-modal__author-studio" src="./images/img/little-wing-studio.svg" alt="логотип студии">
+            </div>
+
+          </div>
+          <div class="project-modal__contacts">
+            <h3 class="project-modal__contacts-subtitle">Контакты:</h3>
+            <div class="project-modal__contacts-links-box">
+              <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
+                <span class="project-modal__contacts-icon project-modal__contacts-icon-github"></span>
+                github</a>
+              <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
+                <span class="project-modal__contacts-icon project-modal__contacts-icon-site"></span>
+                site</a>
+              <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
+                <span class="project-modal__contacts-icon project-modal__contacts-icon-mail"></span>
+                e-mail</a>
+              <a class="project-modal__contacts-link" href="https://github.com/EvgeniyLyapunov">
+                <span class="project-modal__contacts-icon project-modal__contacts-icon-telegram"></span>
+                telegram</a>
+            </div>
+          </div>
+          <div class="project-modal__contacts-divider"></div>
+
+          <div class="project-modal__slider">
+            <div class="project-modal__slider-prev">
               <img src="images/icons/arrow_left.svg" alt="prev">
-          </div>
-          <div class="project-modal__slider-counter">
-            <span id="current">03</span>
-            /
-            <span id="total">04</span>
-          </div>
-          <div class="project-modal__slider-next">
+            </div>
+            <div class="project-modal__slider-counter">
+              <span id="current">03</span>
+              /
+              <span id="total">04</span>
+            </div>
+            <div class="project-modal__slider-next">
               <img src="images/icons/arrow_right.svg" alt="next">
-          </div>
-          <div class="project-modal__slider-wrapper">
-            <div class="project-modal__slider-inner">
-              <div class="project-modal__slider-slide">
-                  fvdxdf
+            </div>
+            <div class="project-modal__slider-wrapper">
+              <div class="project-modal__slider-inner">
+
+                <div class="project-modal__slider-slide slide">
+                  <div class="slide__item">
+                    <h2 class="slide__item-title">Привет!</h2>
+                    <p class="slide__item-text">
+                      Рад возможности рассказать вам о&nbsp;проекте My&nbsp;Wallet. Это приложение я&nbsp;писал
+                      с&nbsp;чётким пониманием каким функционалом оно должно обладать.
+                    </p>
+                    <div class="slide__divider"></div>
+                  </div>
+                </div>
+
+                <div class="project-modal__slider-slide slide">
+                  <div class="slide__item">
+                    <p class="slide__item-text slide__item-text_m">
+                      Это понимание&nbsp;&mdash; результат многолетнего опыта использования exele и&nbsp;google-sheets для
+                      учёта личных финансов, а&nbsp;так же нескольких попыток использовать специальные приложения.
+                    </p>
+                    <div class="slide__divider"></div>
+                  </div>
+                </div>
+
+                <div class="project-modal__slider-slide slide">
+                  <div class="slide__item">
+                    <p class="slide__item-text slide__item-text_m">
+                      Эти приложения всегда были перегружены функционалом, количество которого сначало завораживало и&nbsp;вдохновляло, а&nbsp;вскоре напрягало и&nbsp;отталкивало.
+                    </p>
+                    <div class="slide__divider"></div>
+                  </div>
+                </div>
+
+                <div class="project-modal__slider-slide slide">
+                  aaaaaaaaaa
+                </div>
+                <div class="project-modal__slider-slide slide">
+                  aaaaaaaaaaa
+                </div>
               </div>
-              <div class="project-modal__slider-slide">
-                  ffdrtghhjmhk,,b,b,k
-              </div>
-              <div class="project-modal__slider-slide">
-                  qqqqqqqqqqqqqqqqqqqqqq
-              </div>
-              <div class="project-modal__slider-slide">
-                  zzzzzzzzzzzzzzzzzzzzzzz
             </div>
           </div>
         </div>
-
-
-        </div>
-
-
       </div>
     </div>
-  </div>
 
+    <footer class="footer">
+      <div class="container" id="footer-container">
+        <span class="footer__text">Jay Radha Shyam!</span>
+        <button class="footer__btn btn btn-to-home hide">back Home</button>
+      </div>
+    </footer>
 
+    <script src="js/main.min.js"></script>
+  </body>
 
-  <footer class="footer">
-    <div class="container" id="footer-container">
-      <span class="footer__text">Jay Radha Shyam!</span>
-      <button class="footer__btn btn btn-to-home hide">back Home</button>
-    </div>
-  </footer>
-
-  <script src="js/main.min.js"></script>
-</body>
 </html>
