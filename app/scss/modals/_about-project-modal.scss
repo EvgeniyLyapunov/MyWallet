@@ -7,7 +7,7 @@
   }
   &__title {
     width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 		font-size: 30px;
 		text-align-last: left;
 		color: $title-color;
@@ -21,13 +21,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 300px;
-    margin-bottom: 10px;
-    &-subtitle {
-      margin: 0 20px 0 0;
-      padding: 0;
-      font-size: 13px;
-      color: $element-title-color;
-    }
+    margin-bottom: 16px;
     &-name-box {
       display: flex;
       justify-content: space-between;
@@ -35,7 +29,7 @@
       width: 300px;
     }
     &-name {
-      padding-bottom: 9px;
+      padding-bottom: 11px;
       font-size: 13px;
       color: $title-color;
     }
@@ -124,7 +118,7 @@
   &__slider {
     width: 310px;
     height: 250px;
-    margin-top: 20px;
+    margin-bottom: 38px;
     &-wrapper {
       width: 310px;
       height: 100%;
@@ -155,6 +149,7 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      color: $title-color;
     }
   }
 }
@@ -208,17 +203,25 @@
       color: $title-color;
       margin-bottom: 15px;
     }
+    &-subtitle {
+      color: $title-color;
+      margin-bottom: 5px;
+    }
     &-text {
       margin: 0;
       text-indent: 15px;
       text-align: justify;
-      &_m {
+      &_mt18 {
         margin-top: 18px;
+      }
+      &_mt50 {
+        margin-top: 50px;
       }
     }
     &-text::first-letter {
       font-family: 'Pattaya';
       font-size: 24px;
+      line-height: 16px;
       color: $element-warning-text;
       margin-right: 1px;
     }

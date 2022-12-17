@@ -207,10 +207,12 @@ function upsertSelectBaseStorage() {
     const optionElemPlaceholder = selectElem.querySelector('option');
     optionElemPlaceholder.textContent = 'Выберите:';
     data.forEach(item => {
-      const optionElem = document.createElement('option');
-      optionElem.setAttribute('value', `${item.id}`);
-      optionElem.textContent = `${item.name}`;
-      selectElem.insertAdjacentElement('beforeend', optionElem);
+      if(item.baseStorageId == 0 ) {
+        const optionElem = document.createElement('option');
+        optionElem.setAttribute('value', `${item.id}`);
+        optionElem.textContent = `${item.name}`;
+        selectElem.insertAdjacentElement('beforeend', optionElem);
+      }
     });
   } else {
     const optionElemPlaceholder = selectElem.querySelector('option');
