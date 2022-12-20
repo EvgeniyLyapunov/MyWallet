@@ -59,6 +59,8 @@
     min-width: 205px;
     margin-bottom: 100px;
     font-size: 20px;
+    color: #fff;
+    border: 1px solid #ffc88d;
     &:last-child {
       margin-bottom: 0;
     }
@@ -93,10 +95,6 @@
         background-size: cover;
         background-position: center;
       }
-    }
-    &-about {
-      color:  $button-color;
-      background-color: $btn-text-color;
     }
   }
   &

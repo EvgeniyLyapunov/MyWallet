@@ -37,9 +37,10 @@ body {
   display: block;
   padding: 15px 25px;
   font-size: 20px;
-  color: $btn-text-color;
-  background-color: $button-color;
-  border-radius: 8px;
+  color: $button-color;
+  background-color: transparent;
+  border: 1px solid $button-color;
+  border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.2s box-shadow ease-in-out;
   &_active {
@@ -56,6 +57,10 @@ body {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+}
+
+.landscape {
+  display: none;
 }
 
 .container {
