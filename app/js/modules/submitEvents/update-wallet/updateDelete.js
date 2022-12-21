@@ -6,6 +6,7 @@ import {postData} from "../../../services/dataBaseQueries";
 import pressBtn from "../../buttonPressAnim";
 import { openViewBalansWindow } from '../../viewBalance';
 import getDataFromStorage from '../../../services/getDataFromStorage';
+import {toMainScreen} from '../../modal';
 
 let currentCard = {};
 let data = [];
@@ -59,10 +60,6 @@ async function deleteSubmit(e) {
       icon: "success",
     });
 
-    currentCard = {};
-    data = [];
-    virtCard = [];
-
     if(localStorage.getItem("balanceData")) {
       localStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
     } else  {
@@ -78,7 +75,20 @@ async function deleteSubmit(e) {
       icon: "error",
     });
   }
-  openViewBalansWindow();
+
+  data = getDataFromStorage();
+
+  if(data.length > 0) {
+    currentCard = {};
+    data = [];
+    virtCard = [];
+    openViewBalansWindow();
+  } else {
+    currentCard = {};
+    data = [];
+    virtCard = [];
+    toMainScreen();
+  }
 }
 
 function cancelSubmit(e) {
