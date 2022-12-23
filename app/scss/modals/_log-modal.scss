@@ -36,7 +36,6 @@
 	}
 	&__label-check {
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 25px;
@@ -44,6 +43,7 @@
 	&__checkbox-span {
 		display: block;
 		width:170px;
+		margin-right: 15px;
 		color: $radio-btn-color;
 		text-align: right;
 		background-image: url("../../images/icons/checkbox-passive.svg");
@@ -53,6 +53,15 @@
 	}
 	&__checkbox:checked + &__checkbox-span {
 		background-image: url("../../images/icons/checkbox-active.svg");
+	}
+	&__checkbox-info {
+		display: block;
+    width: 24px;
+    height: 25px;
+    background-image: url('../../images/icons/i.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
 	}
 	&__submit-block {
 		display: flex;

@@ -50,7 +50,7 @@ function cleanDist() {
 }
 
 function images() {
-  return src("app/imagin/**/*")
+  return src("app/images/**/*")
   .pipe(imagemin([
     imagemin.gifsicle({interlaced: true}),
     imagemin.mozjpeg({quality: 75, progressive: true}),

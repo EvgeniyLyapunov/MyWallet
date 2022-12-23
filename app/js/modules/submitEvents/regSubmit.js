@@ -1,5 +1,6 @@
 "use strickt";
 
+import tippy from 'tippy.js';
 import JustValidate from 'just-validate';
 import swal from 'sweetalert';
 
@@ -13,6 +14,10 @@ function regSubmit(formSelector, btnSelector, urlPath) {
         submit = document.querySelector(btnSelector),
         inputs = form.querySelectorAll("input");
 
+  tippy('#modalRegCheckboxInfo', {
+    content: 'Усли вы выбираете "Запомнить меня", ваша авторизация сохраняется даже при закрытии страницы и браузера, до тех пор пока вы не выйдете из аккаунта. Если вы снимите галочку, то ваш вход будет сохраняться до закрытия страницы.'
+  });
+      
   const validate = new JustValidate(formSelector, {
     errorFieldCssClass: 'is-invalid',
     errorFieldStyle: {
