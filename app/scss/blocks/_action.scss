@@ -1,5 +1,4 @@
 .action {
-  padding-top: 0px;
   &__block {
     display: flex;
     flex-direction: column;
@@ -21,4 +20,25 @@
     width: 70%;
   }
 
+}
+
+@media (max-height: 480px) and (max-width: 320px) {
+  .action {
+    &__info {
+      display: block;
+      align-self: flex-end;
+      margin-right: 68px;
+      width: 20px;
+      height: 20px;
+      margin-bottom: 10px;
+      background-image: url('../../images/icons/i.svg');
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &__btn {
+      width: 170px;
+    }
+  
+  }
 }

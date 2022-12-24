@@ -24,3 +24,18 @@
     color: #1E387F;
   }
 }
+
+@media (max-height: 480px) and (max-width: 320px) {
+  .footer {
+    line-height: 8vh;
+    &__text {
+      font-size: 14px;
+    }
+    &__btn {
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 14px;
+      color: #1E387F;
+    }
+  }
+}

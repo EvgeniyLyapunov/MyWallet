@@ -40,7 +40,7 @@ body {
   color: $button-color;
   background-color: transparent;
   border: 1px solid $button-color;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.2s box-shadow ease-in-out;
   &_active {
@@ -60,10 +60,6 @@ body {
   clip: rect(0 0 0 0);
 }
 
-.landscape {
-  display: none;
-}
-
 .container {
   width: 100vw;
   padding: 0 15px;
@@ -75,4 +71,22 @@ body {
     margin: 0 auto;
     padding: 0 15px;
   }
+}
+
+@media (max-height: 480px) and (max-width: 320px) {
+  body {
+    margin-bottom: 8vh;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+
+  
 }

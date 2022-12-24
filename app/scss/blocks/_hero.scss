@@ -40,3 +40,30 @@
     object-fit: contain;
   }
 }
+
+@media (max-height: 480px) and (max-width: 320px) {
+  .hero {
+    padding-top: 15px;
+    &__title {
+      font-size: 30px;
+      line-height: 30px;
+    }
+    &__by {
+      width: 20px;
+      height: 18px;
+      margin-bottom: 5px;
+      font-size: 18px;
+      line-height: 18px;
+    }
+    &__logo {
+      width: 120px;
+      min-height: 30px;
+      margin-bottom: 30px;
+    }
+    &__icon {
+      width: 130px;
+      height: 130px;
+      margin-bottom: 20px;
+    }
+  }
+}

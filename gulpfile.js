@@ -86,6 +86,13 @@ function styles() {
           .pipe(browserSync.stream());
 }
 
+function styleCss() {
+  return src('app/css/**/*')
+  .pipe(concat("style.min.css"))
+  .pipe(dest("app/css"))
+  .pipe(browserSync.stream());
+}
+
 function build() {
   return src([
     "app/css/style.min.css",
@@ -103,6 +110,7 @@ function watching() {
 }
 
 exports.styles = styles;
+exports.styleCss = styleCss;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
@@ -110,4 +118,4 @@ exports.cleanDist = cleanDist;
 exports.images = images;
 
 exports.build = series(cleanDist, images, build); // запускать когда проект готов, для создания папки dist - gulp build
-exports.default = parallel(styles, scripts, browsersync, watching); // запускать для работы с проектом gulp
+exports.default = parallel(styles, styleCss, scripts, browsersync, watching); // запускать для работы с проектом gulp

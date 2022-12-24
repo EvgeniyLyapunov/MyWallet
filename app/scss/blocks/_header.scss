@@ -97,7 +97,6 @@
       }
     }
   }
-  &
   &__btn-divider {
     position: relative;
     margin-top: auto;
@@ -156,4 +155,68 @@
 .nickname-style {
   font-size: 20px;
   color: $title-color;
+}
+
+@media (max-height: 480px) and (max-width: 320px) {
+  .header {
+    &__container {
+      padding: 5px 30px;
+    }
+    &__logo {
+      width: 45px;
+      height: 45px;
+    }
+    &__menu-close {
+      width: 45px;
+      height: 45px;
+      margin-bottom: 30px;
+    }
+    &__btn-wrapper {
+      height: unset;
+    }
+    &__btn {
+      min-width: 160px;
+      margin-bottom: 100px;
+      font-size: 14px;
+      &-login {
+        &::before {
+          width: 30px;
+          height: 30px;
+          top: -40px;
+        }
+      }
+      &-registration {
+        &::before {
+          width: 35px;
+          height: 35px;
+          top: -45px;
+        }
+      }
+    }
+    &__btn-divider {
+      margin-bottom: 15px;
+      width: 85%;
+      height: 2px;
+      background-color: $footer-bg;
+      &::before {
+        width: 45px;
+        height: 45px;
+        top: -45px;
+      }
+    }
+  }
+
+  .hamburger {
+    height: 27px;
+    width: 45px;
+    &__stick {
+      width: 45px;
+      height: 5px;
+    }
+  }
+
+  .nickname-style {
+    font-size: 14px;
+    color: $title-color;
+  }
 }
