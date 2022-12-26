@@ -47,3 +47,40 @@
     width: 150px;
   }
 }
+
+// media
+
+@media (max-width: 320px) and (max-height: 480px) {
+  .name {
+    &__wrapper {
+      padding-top: 10px;
+    }
+    &__title {
+      width: 210px;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    &__subtitle {
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+    &__label {
+      margin-bottom: 116px;
+    }
+    &__descr {
+      font-size: 12px;
+    }
+    &__input {
+      height: 35px;
+      margin-bottom: 0;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 35px;
+			&::placeholder {
+				font-weight: 500;
+				font-size: 14px;
+				transform: translateY(-1px);
+			}
+    }
+  }
+}

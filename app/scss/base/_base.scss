@@ -27,7 +27,7 @@ html {
 
 body {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 8vh;
 
   font-family: "San-Francisco", sans-serif;
   background-color: $main-bg;
@@ -40,7 +40,7 @@ body {
   color: $button-color;
   background-color: transparent;
   border: 1px solid $button-color;
-  border-radius: 4px;
+  border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.2s box-shadow ease-in-out;
   &_active {
@@ -73,7 +73,7 @@ body {
   }
 }
 
-@media (max-height: 480px) and (max-width: 320px) {
+@media (max-width: 360px) and (max-height: 640px) {
   body {
     margin-bottom: 8vh;
   }
@@ -87,6 +87,4 @@ body {
     padding: 9px 18px;
     font-size: 14px;
   }
-
-  
 }

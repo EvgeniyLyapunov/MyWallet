@@ -50,15 +50,15 @@ function viewChanges(idCard) {
 
   const linkBoxChange = document.querySelector('#link-box-change');
   linkBoxChange.innerHTML = `
-                            <a class="modal-changes__link" href="#" id="link-change">
+                            <button class="modal-changes__link" id="link-change">
                               Редактировать текущий кошелёк
-                            </a>
+                            </button>
                           `;
   const linkBoxCreate = document.querySelector('#link-box-create');
   linkBoxCreate.innerHTML = `
-                            <a class="modal-changes__link" href="#" id="link-create">
+                            <button class="modal-changes__link" id="link-create">
                               Создать новый кошелёк
-                            </a>
+                            </button>
                           `;
 
   // переходим в окно изменеия баланса

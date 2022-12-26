@@ -69,14 +69,116 @@
 	}
 	&__btn {
 		min-width: 160px;
-		&-reset {
-			border: none;
-		}
 	}
 	&__modal-reg-btn {
 		text-decoration: underline;
 		color:  #a0b1e1;
     background-color: transparent;
 		box-shadow: none;
+	}
+}
+
+// media 
+
+@media (max-width: 360px) and (max-height: 640px) {
+	.modal-log {
+		&__wrapper {
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+		&__title {
+			width: 120px;
+			font-size: 28px;
+			margin-bottom: 30px;
+		}
+		&__input-label {
+			width: 95%;
+		}
+		&__form {
+			width: 90%;
+			margin-bottom: 30px;
+		}
+		&__element-title {
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+		&__input-name {
+			margin-bottom: 25px;
+			height: 40px;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 40px;
+			&::placeholder {
+				font-weight: 500;
+				font-size: 16px;
+				transform: translateY(-1px);
+			}
+			&_mb {
+				margin-bottom: 35px;
+			}
+		}
+		&__label-check {
+			margin-bottom: 75px;
+		}
+		&__checkbox-span {
+			width:140px;
+			font-size: 14px;
+			margin-right: 10px;
+			background-size:20px 20px;
+		}
+		&__checkbox-info {
+			width: 19px;
+			height: 18px;
+		} 
+		&__btn {
+			min-width: 120px;
+			padding: 5px 10px;
+		}
+		&__modal-reg-btn {
+			padding: 5px 10px;
+		}
+	}
+}
+
+@media (max-width: 320px) and (max-height: 480px) {
+	.modal-log {
+		&__wrapper {
+			padding-top: 10px;
+		}
+		&__title {
+			width: 100px;
+			margin-bottom: 15px;
+			font-size: 24px;
+		}
+		&__form {
+			margin-bottom: 20px;
+		}
+		&__label-name {
+			width: 100%;
+		}
+		&__element-title {
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+		&__input-name {
+			margin-bottom: 20px;
+			height: 35px;
+			font-size: 18px;
+			line-height: 35px;
+			&::placeholder {
+				color: $input-placeholder-bg-color;
+				font-size: 14px;
+			}
+			&_mb {
+				margin-bottom: 20px;
+			}
+		}
+		&__label-check {
+			margin-bottom: 20px;
+		} 
+		&__checkbox-span {
+			width:130px;
+			font-size: 13px;
+		}
 	}
 }

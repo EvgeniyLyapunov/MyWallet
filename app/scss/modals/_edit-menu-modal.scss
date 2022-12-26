@@ -40,4 +40,66 @@
   &__delete {
     @include editViewLink;
   }
+
+  // media
+
+  @media(max-width: 360px) and (max-height: 640px) {
+    .edit-menu {
+      &__title {
+        margin-bottom: 20px;
+      }
+      &__subtitle {
+        margin-bottom: 60px;
+      }
+      &__name {
+        margin-left: 25px;
+      }
+      &__balance {
+        margin-left: 25px;
+      }
+      &__money {
+        margin-left: 25px;
+      }
+      &__base {
+        margin-left: 25px;
+      }
+      &__delete {
+        margin-left: 25px;
+      }
+
+    }
+  }
+
+  @media(max-width: 320px) and (max-height: 480px) {
+    .edit-menu {
+      &__wrapper {
+        padding-top: 10px;
+      }
+      &__title {
+        width: 155px;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      &__subtitle {
+        margin-bottom: 45px;
+        font-size: 16px;
+        color: $element-title-color;
+      }
+      &__name {
+        @include  editViewLinkMedia320;
+      }
+      &__balance {
+        @include  editViewLinkMedia320;
+      }
+      &__money {
+        @include  editViewLinkMedia320;
+      }
+      &__base {
+        @include  editViewLinkMedia320;
+      }
+      &__delete {
+        @include  editViewLinkMedia320;
+      }
+    }
+  }
 }

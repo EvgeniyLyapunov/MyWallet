@@ -147,5 +147,80 @@
   }
 }
 
+// media
+
+@media (max-width: 320px) and (max-height: 480px) {
+  .new-storage {
+    &__wrapper {
+      padding-top: 10px;
+    }
+    &__title {
+      width: 225px;
+      margin-bottom: 45px;
+      font-size: 24px;
+    }
+    &__form {
+      height: 50vh;
+      &-label-name, &-label-sum {
+        align-self: center;
+        width: 80%;
+        font-size: 12px;
+      }
+      &-input-name, &-input-sum {
+        height: 35px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 35px;
+        &::placeholder {
+          font-weight: 500;
+          font-size: 14px;
+          transform: translateY(-1px);
+        }
+      }
+      &-subtitle {
+        font-size: 15px;
+        margin-bottom: 25px;
+      }
+      &-label-radio {
+        margin-bottom: 10px;
+      }
+      &-money-name {
+        width: 190px;
+        height: 66px;
+        font-size: 18px;
+      }
+      &-bs-subtitle {
+        width: 155px;
+      }
+      &-btn {
+        width: 160px;
+        align-self: end;
+      }
+      &-label-select {
+        width: 100%;
+      }
+      &-subtitle-select {
+        width: 280px;
+        font-size: 14px;
+        &::after {
+          width: 25px;
+          height: 25px;
+          bottom: -35px;
+          right: 20px;
+        }
+      }
+      &-select {
+        width: 280px;
+        height: 35px;
+        padding: 0 15px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 35px;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
 
 

@@ -62,3 +62,39 @@
     color: $element-warning-text;
   }
 }
+
+// media
+
+@media (max-width: 320px) and (max-height: 480px) {
+  .delete-modal {
+    &__wrapper {
+      padding-top: 10px;
+    }
+    &__title {
+      width: 155px;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    &__subtitle {
+      margin-bottom: 0px;
+      font-size: 14px;
+    }
+    &__warning {
+      margin-top: 25px;
+      margin-bottom: 76px;
+      &-confirmation {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+    }
+    &__btn-block {
+      width: 240px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__delete-btn, &__cancel-btn {
+      width: 110px;
+    }
+  }
+}

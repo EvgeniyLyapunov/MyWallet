@@ -35,7 +35,7 @@
   &__menu-close {
     width: 70px;
     height: 70px;
-    margin-bottom: 100px;
+    margin-bottom: 8vh;
     transition: 0.7s transform ease-in-out;
     svg {
       width: 100%;
@@ -50,22 +50,21 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: calc(100% - 250px);
     align-items: center;
-    justify-content: center;
-    text-align: center;
+  }
+  &__auth-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 23vh;
   }
   &__btn {
     min-width: 205px;
-    margin-bottom: 100px;
     font-size: 20px;
     color: #fff;
     border: 1px solid #ffc88d;
-    &:last-child {
-      margin-bottom: 0;
-    }
     &-login {
       position: relative;
+      margin-bottom: 12vh;
       &::before {
         position: absolute;
         content: "";
@@ -99,7 +98,6 @@
   }
   &__btn-divider {
     position: relative;
-    margin-top: auto;
     margin-bottom: 15px;
     width: 85%;
     height: 2px;
@@ -119,7 +117,6 @@
     }
   }
 }
-
 .hamburger {
   position: relative;
   height: 40px;
@@ -151,13 +148,13 @@
     }
   }
 }
-
 .nickname-style {
   font-size: 20px;
-  color: $title-color;
 }
 
-@media (max-height: 480px) and (max-width: 320px) {
+// media
+
+@media (max-width: 360px) and (max-height: 640px) {
   .header {
     &__container {
       padding: 5px 30px;
@@ -169,14 +166,13 @@
     &__menu-close {
       width: 45px;
       height: 45px;
-      margin-bottom: 30px;
+      margin-bottom: 10vh;
     }
-    &__btn-wrapper {
-      height: unset;
+    &__auth-box {
+      margin-bottom: 29vh;
     }
     &__btn {
       min-width: 160px;
-      margin-bottom: 100px;
       font-size: 14px;
       &-login {
         &::before {
@@ -194,10 +190,6 @@
       }
     }
     &__btn-divider {
-      margin-bottom: 15px;
-      width: 85%;
-      height: 2px;
-      background-color: $footer-bg;
       &::before {
         width: 45px;
         height: 45px;
@@ -205,7 +197,6 @@
       }
     }
   }
-
   .hamburger {
     height: 27px;
     width: 45px;
@@ -214,9 +205,15 @@
       height: 5px;
     }
   }
-
   .nickname-style {
     font-size: 14px;
-    color: $title-color;
+  }
+}
+
+@media (max-width: 320px) and (max-height: 480px) {
+  .header {
+    &__auth-box {
+      margin-bottom: 25vh;
+    }
   }
 }

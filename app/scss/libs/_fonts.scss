@@ -16,6 +16,25 @@
   font-display: swap;
 }
 
+
+@font-face {
+  font-family: 'San-Francisco';
+  src: url('../../fonts/SFProDisplay-Thin.woff2') format('woff2'),
+      url('../../fonts/SFProDisplay-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'San-Francisco';
+  src: url('../../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+      url('../../fonts/SFProDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Pattaya';
   src: url('../../fonts/Pattaya-Regular.woff2') format('woff2'),

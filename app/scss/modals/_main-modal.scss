@@ -7,14 +7,20 @@
   min-height: 74vh;
   overflow: auto;
   display: none;
-  &__close {
-    position: absolute;
-  }
 }
 .hide {
   display: none;
 }
 .visible {
   display: block;
+}
+
+// media
+
+@media (max-width: 360px) and (max-height: 640px) {
+  .modal {
+    top: 60px;
+    min-height: 78vh
+  }
 }
 

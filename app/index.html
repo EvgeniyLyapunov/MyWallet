@@ -28,8 +28,10 @@
             </svg>
           </div>
           <div class="header__btn-wrapper">
-            <button class="btn header__btn header__btn-login" id="to-log-btn">Вход / выход</button>
-            <button class="btn header__btn header__btn-registration" id="to-reg-btn">Создать аккаунт</button>
+            <div class="header__auth-box">
+              <button class="btn header__btn header__btn-login" id="to-log-btn">Вход / выход</button>
+              <button class="btn header__btn header__btn-registration" id="to-reg-btn">Создать аккаунт</button>
+            </div>
             <div class="header__btn-divider"></div>
             <button class="btn header__btn header__btn-about">О проекте</button>
           </div>
@@ -93,9 +95,9 @@
                 <img class="modal-changes__img" src="images/icons/settings.svg" alt="иконка обновить кошелёк">
               </div>
               <div class="modal-changes__link-box" id="link-box-change">
-                <a class="modal-changes__link" href="#" id="link-change">
+                <button class="modal-changes__link" id="link-change">
                   Редактировать текущий кошелёк
-                </a>
+                </button>
               </div>
             </div>
             <div class="modal-changes__link-section">
@@ -103,9 +105,9 @@
                 <img class="modal-changes__img" src="images/icons/wallet-new.svg" alt="иконка новый кошелёк">
               </div>
               <div class="modal-changes__link-box" id="link-box-create">
-                <a class="modal-changes__link" href="#" id="link-create">
+                <button class="modal-changes__link" id="link-create">
                   Создать новый кошелёк
-                </a>
+                </button>
               </div>
             </div>
           </div>
