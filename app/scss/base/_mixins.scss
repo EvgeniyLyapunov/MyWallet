@@ -5,7 +5,7 @@
   height: 50px;
   padding: 0 15px;
   margin-bottom: 25px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 24px;
   line-height: 50px;
   color: $input-text-color;
@@ -20,9 +20,9 @@
   }
   &::placeholder {
     color: $input-placeholder-bg-color;
-    font-weight: 500;
-    font-size: 24px;
-    transform: translateY(-3px);
+    font-weight: 400;
+    font-size: 18px;
+    transform: translateY(-1px);
   }
 }
 

@@ -27,6 +27,7 @@
 	&__input-label {
 		display: flex;
 		flex-direction: column-reverse;
+		width: 100%;
 	}
   &__input-name {
 		@include baseInput;
@@ -65,16 +66,19 @@
     background-size: contain;
 	}
 	&__submit-block {
+		width: 77%;
 		display: flex;
 		justify-content: space-around;
 	}
 	&__btn {
-		min-width: 160px;
+		min-width: 140px;
+		font-size: 16px;
 	}
 	&__modal-log-btn {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 45px;
+    padding-right: 45px;
 		text-decoration: underline;
+		font-size: 16px;
 		color:  #a0b1e1;
     background-color: transparent;
 		box-shadow: none;
