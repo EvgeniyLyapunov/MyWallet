@@ -175,6 +175,14 @@
   }
 }
 
+@media (max-width: 377px) and (max-height: 670px) {
+  .project-modal {
+    &__title {
+      margin-bottom: 42px;
+    }
+  }
+}
+
 // modal
 @media (max-width: 360px) and (max-height: 640px) {
   .project-modal {

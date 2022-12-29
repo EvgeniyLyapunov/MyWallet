@@ -16,6 +16,12 @@
 }
 
 // media
+@media (max-width: 376px) and (max-height: 668px) {
+  .modal {
+    top: 90px;
+    min-height: 77vh
+  }
+}
 
 @media (max-width: 360px) and (max-height: 640px) {
   .modal {
