@@ -147,6 +147,22 @@
 	}
 }
 
+@media (max-width: 320px) and (max-height: 575px) {
+	.modal-log {
+		&__wrapper {
+			padding-top: 10px;
+		}
+		&__title {
+			width: 100px;
+			margin-bottom: 15px;
+			font-size: 24px;
+		}
+		&__label-check {
+			margin-bottom: 60px;
+		} 
+	}
+}
+
 @media (max-width: 320px) and (max-height: 480px) {
 	.modal-log {
 		&__wrapper {

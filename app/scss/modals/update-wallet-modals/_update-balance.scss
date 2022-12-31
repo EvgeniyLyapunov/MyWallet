@@ -49,6 +49,16 @@
 }
 
 // media
+@media (max-width: 325px) and (max-height: 580px) {
+  .change-balance-modal {
+    &__subtitle {
+      margin-bottom: 40px;
+    }
+    &__label {
+      margin-bottom: 100px;
+    }
+  }
+}
 
 @media (max-width: 320px) and (max-height: 480px) {
   .change-balance-modal {
@@ -61,7 +71,6 @@
       font-size: 24px;
     }
     &__subtitle {
-      margin-bottom: 40px;
       font-size: 14px;
     }
     &__label {

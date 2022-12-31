@@ -77,7 +77,7 @@ function scripts() {
 function styles() {
   return src("app/scss/style.scss")
           .pipe(scss({outputStyle: "compressed"}))
-          .pipe(concat("style.min.css"))
+          .pipe(concat("style.css"))
           .pipe(autoprefixer({
             overrideBrowserslist: ["last 10 version"],
             grid: true
@@ -87,7 +87,7 @@ function styles() {
 }
 
 function styleCss() {
-  return src('app/css/**/*')
+  return src(['app/css/tippy.css', 'app/css/style.css'])
   .pipe(concat("style.min.css"))
   .pipe(dest("app/css"))
   .pipe(browserSync.stream());
@@ -105,6 +105,7 @@ function build() {
 
 function watching() {
   watch(["app/scss/**/*.scss"], styles);
+  watch(['app/css/**/*.css'], styleCss);
   watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
   watch(["app/*.html"]).on("change", browserSync.reload);
 }
@@ -118,4 +119,4 @@ exports.cleanDist = cleanDist;
 exports.images = images;
 
 exports.build = series(cleanDist, images, build); // запускать когда проект готов, для создания папки dist - gulp build
-exports.default = parallel(styles, styleCss, scripts, browsersync, watching); // запускать для работы с проектом gulp
+exports.default = series(styles, styleCss, browsersync, watching), parallel(scripts, browsersync, watching); // запускать для работы с проектом gulp

@@ -108,22 +108,19 @@
   }
 }
 
-@media (max-width: 320px) and (max-height: 480px) {
+@media (max-width: 320px) and (max-height: 570px) {
   .modal-changes {
-    &__wrapper {
-      padding-top: 10px;
-    }
     &__title {
       width: 245px;
       margin-bottom: 15px;
       font-size: 24px;
     }
     &__subtitle {
-      margin-bottom: 15px;
+      margin-bottom: 35px;
       font-size: 16px;
     }
     &__form {
-      margin-bottom: 10px;
+      margin-bottom: 60px;
       &-descr-input {
         font-size: 12px;
       }
@@ -159,6 +156,17 @@
     }
     &__link {
       font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 320px) and (max-height: 480px) {
+  .modal-changes {
+    &__wrapper {
+      padding-top: 10px;
+    }
+    &__form {
+      margin-bottom: 10px;
     }
   }
 }

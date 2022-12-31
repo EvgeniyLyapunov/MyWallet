@@ -70,6 +70,45 @@
     }
   }
 
+  @media (max-width: 320px) and (max-height: 570px) {
+    .edit-menu {
+      &__wrapper {
+        padding-top: 10px;
+      }
+      &__title {
+        width: 155px;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      &__subtitle {
+        margin-bottom: 60px;
+        font-size: 16px;
+        color: $element-title-color;
+      }
+      &__name {
+        @include  editViewLinkMedia320;
+        margin-bottom: 20px;
+      }
+      &__balance {
+        @include  editViewLinkMedia320;
+        margin-bottom: 20px;
+      }
+      &__money {
+        @include  editViewLinkMedia320;
+        margin-bottom: 20px;
+      }
+      &__base {
+        @include  editViewLinkMedia320;
+        margin-bottom: 20px;
+      }
+      &__delete {
+        @include  editViewLinkMedia320;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  
+
   @media(max-width: 320px) and (max-height: 480px) {
     .edit-menu {
       &__wrapper {

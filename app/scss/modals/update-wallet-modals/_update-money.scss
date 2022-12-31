@@ -73,6 +73,18 @@
 }
 
 // modal 
+@media (max-width: 325px) and (max-height: 580px) {
+  .change-money-modal {
+    &__subtitle {
+      margin-bottom: 15px;
+    }
+    &__label-radio {
+      &-mb {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
 
 @media (max-width: 320px) and (max-height: 480px) {
   .change-money-modal {

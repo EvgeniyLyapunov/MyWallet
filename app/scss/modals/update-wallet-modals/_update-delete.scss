@@ -64,6 +64,22 @@
 }
 
 // media
+@media (max-width: 325px) and (max-height: 580px) {
+  .delete-modal {
+    &__subtitle {
+      margin-bottom: 10px;
+    }
+    &__warning {
+      margin-bottom: 90px;
+    }
+    &__btn-block {
+      width: 280px;
+    }
+    &__delete-btn, &__cancel-btn {
+      width: 130px;
+    }
+  }
+}
 
 @media (max-width: 320px) and (max-height: 480px) {
   .delete-modal {
