@@ -175,15 +175,52 @@ function viewChanges(idCard) {
         icon: "success",
       });
 
-      form.reset();
-      bigData = null;
-
       if(localStorage.getItem("balanceData")) {
         localStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
+        // записываем операцию в log
+        if(localStorage.getItem('log')) {
+          let log = JSON.parse(localStorage.getItem('log'));
+          log.push({
+            date: bigData.lastModifiedDate,
+            operation: e.target.id,
+            amount: data.balance
+          });
+          localStorage.setItem('log', `${JSON.stringify(log)}`);
+        } else {
+          let log = [];
+          const operation = {
+            date: bigData.lastModifiedDate,
+            operation: e.target.id,
+            amount: data.balance
+          }
+          log.push(operation);
+          localStorage.setItem('log', `${JSON.stringify(log)}`);
+        }
       } else  {
         sessionStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
+        // записываем операцию в log
+        if(sessionStorage.getItem('log')) {
+          let log = JSON.parse(sessionStorage.getItem('log'));
+          log.push({
+            date: bigData.lastModifiedDate,
+            operation: e.target.id,
+            amount: data.balance
+          });
+          sessionStorage.setItem('log', `${JSON.stringify(log)}`);
+        } else {
+          let log = [];
+          const operation = {
+            date: bigData.lastModifiedDate,
+            operation: e.target.id,
+            amount: data.balance
+          }
+          log.push(operation);
+          sessionStorage.setItem('log', `${JSON.stringify(log)}`);
+        }
       }
 
+      form.reset();
+      bigData = null;
     } else {
       // модальное окошко что всё неуспешно
       swal({

@@ -10,6 +10,7 @@ import newStorageSubmit from "./modules/submitEvents/newStorageSubmit";
 import {viewBalance} from "./modules/viewBalance";
 import {editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn, deleteWalletBtn} from './modules/viewEditMenu';
 import slider from './modules/slider';
+import {logging} from './modules/logging';
 
 
 userNickOnMainScreen();
@@ -57,3 +58,5 @@ slider({
   wrapper: ".project-modal__slider-wrapper",
   field: ".project-modal__slider-inner"
 });
+
+logging();

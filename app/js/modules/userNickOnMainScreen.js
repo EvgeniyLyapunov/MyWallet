@@ -1,4 +1,6 @@
 "use strict";
+import openModalWindow from './openModalWindow';
+import {log} from './logging';
 
 function userNickOnMainScreen() {
   if(localStorage.getItem("userData")) {
@@ -18,6 +20,10 @@ function createNickElement(nickname) {
   const nickElem = document.createElement("div");
   nickElem.textContent = `${nickname}`;
   nickElem.classList.add("nickname-style");
+  nickElem.addEventListener('click', () => {
+    log();
+    openModalWindow('.logging-modal');
+  });
   document.querySelector(".header__logo").insertAdjacentElement("afterend", nickElem);
 }
 
