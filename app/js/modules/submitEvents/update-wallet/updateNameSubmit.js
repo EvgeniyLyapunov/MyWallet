@@ -52,6 +52,8 @@ function changeNameSubmit(e) {
 
   validate.onSuccess(async () =>{
     e.preventDefault();
+    e.target.disabled = true;
+    e.target.classList.add('name__btn-disable');
 
     const formData = new FormData(form);
     // обЪект  для дополнения к данным из формы 
@@ -72,6 +74,8 @@ function changeNameSubmit(e) {
       });
 
       form.reset();
+      e.target.disabled = false;
+      e.target.classList.remove('name__btn-disable');
       currentCard = {};
 
       if(localStorage.getItem("balanceData")) {
@@ -88,7 +92,10 @@ function changeNameSubmit(e) {
         timer: 1500,
         icon: "error",
       });
+      
       form.reset();
+      e.target.disabled = false;
+      e.target.classList.remove('name__btn-disable');
     }
     openViewBalansWindow();
   });

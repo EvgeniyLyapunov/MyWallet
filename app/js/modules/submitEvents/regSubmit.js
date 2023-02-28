@@ -99,6 +99,8 @@ function regSubmit(formSelector, btnSelector, urlPath) {
     validate.onSuccess(async () => {
 
       e.preventDefault();
+      submit.desabled = true;
+      submit.classList.add('modal-reg__btn-disable');
 
       const formData = new FormData(form);
       const json = JSON.stringify(Object.fromEntries(formData.entries()));
@@ -115,12 +117,19 @@ function regSubmit(formSelector, btnSelector, urlPath) {
       if(answer.status === "ok") {
         if(rememberMe) {
           localStorage.setItem("userData", `${JSON.stringify(answer)}`);
+
           form.reset();
+          submit.desabled = false;
+          submit.classList.remove('modal-reg__btn-disable');
+
           userNickOnMainScreen();
           toMainScreen();
         } else {
           sessionStorage.setItem("userData", `${JSON.stringify(answer)}`);
+
           form.reset();
+          submit.desabled = false;
+          submit.classList.remove('modal-reg__btn-disable');
           userNickOnMainScreen();
           toMainScreen();
         }
@@ -130,6 +139,8 @@ function regSubmit(formSelector, btnSelector, urlPath) {
           icon: 'error',
         }).then((value) => {
           form.reset();
+          submit.desabled = false;
+          submit.classList.remove('modal-reg__btn-disable');
           toMainScreen();
         });
       }

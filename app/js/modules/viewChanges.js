@@ -86,6 +86,8 @@ function viewChanges(idCard) {
   // функция собирает объект с данными и отправляет на сервер
   async function onChangeBalanceCard(e) {
     e.preventDefault();
+    e.target.disabled = true;
+    e.target.classList.add('modal-changes__form-btn-disable');
     // bigData - объект, который будет отправлен на сервер
     let bigData = {id: card.id};
 
@@ -221,6 +223,8 @@ function viewChanges(idCard) {
 
       form.reset();
       bigData = null;
+      e.target.disabled = false;
+      e.target.classList.remove('modal-changes__form-btn-disable');
     } else {
       // модальное окошко что всё неуспешно
       swal({
@@ -229,8 +233,10 @@ function viewChanges(idCard) {
         timer: 1500,
         icon: "error",
       });
-
+      
       form.reset();
+      e.target.disabled = false;
+      e.target.classList.remove('modal-changes__form-btn-disable');
     }
     openViewBalansWindow();
   }

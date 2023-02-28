@@ -42,6 +42,8 @@ function changeDelete(card) {
 
 async function deleteSubmit(e) {
   pressBtn(e.target);
+  e.target.disabled = true;
+  e.target.classList.add('delete-modal__delete-btn-disable');
 
   let walletDelete = {id: currentCard.id, userId: currentCard.userId};
 
@@ -66,6 +68,9 @@ async function deleteSubmit(e) {
       sessionStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
     }
 
+    e.target.disabled = false;
+    e.target.classList.remove('delete-modal____delete-btn-disable');
+
   } else {
   // модальное окошко что всё неуспешно
     swal({
@@ -74,6 +79,10 @@ async function deleteSubmit(e) {
       timer: 1500,
       icon: "error",
     });
+
+    e.target.disabled = false;
+    e.target.classList.remove('delete-modal__delete-btn-disable');
+
   }
 
   data = getDataFromStorage();

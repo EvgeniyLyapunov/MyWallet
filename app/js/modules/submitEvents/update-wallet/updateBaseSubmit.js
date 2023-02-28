@@ -55,6 +55,8 @@ async function changeBaseSubmit(e) {
   pressBtn(e.target);
 
   e.preventDefault();
+  e.target.disabled = true;
+  e.target.classList.add('change-base-modal__btn-disable');
 
   const formData = new FormData(form);
   // обЪект  для дополнения к данным из формы 
@@ -80,6 +82,8 @@ async function changeBaseSubmit(e) {
     });
 
     form.reset();
+    e.target.disabled = false;
+    e.target.classList.remove('change-base-modal__btn-disable');
     currentCard = {};
 
     if(localStorage.getItem("balanceData")) {
@@ -96,7 +100,10 @@ async function changeBaseSubmit(e) {
       timer: 1500,
       icon: "error",
     });
+    
     form.reset();
+    e.target.disabled = false;
+    e.target.classList.remove('change-base-modal__btn-disable');
   }
   openViewBalansWindow();
 }

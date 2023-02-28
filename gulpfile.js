@@ -119,4 +119,4 @@ exports.cleanDist = cleanDist;
 exports.images = images;
 
 exports.build = series(cleanDist, images, build); // запускать когда проект готов, для создания папки dist - gulp build
-exports.default = series(styles, styleCss, scripts, browsersync, watching); // запускать для работы с проектом gulp
+exports.default = series(styles, styleCss, scripts, parallel(watching, browsersync)); // запускать для работы с проектом gulp

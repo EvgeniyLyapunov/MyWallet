@@ -81,6 +81,9 @@
   &__btn {
     align-self: flex-end;
     width: 150px;
+    &-disable {
+      background-color: gray;
+    }
   }
 }
 

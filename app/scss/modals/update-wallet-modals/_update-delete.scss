@@ -60,6 +60,9 @@
   }
   &__delete-btn {
     color: $element-warning-text;
+    &-disable {
+      background-color: gray;
+    }
   }
 }
 

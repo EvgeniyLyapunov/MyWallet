@@ -45,6 +45,10 @@
   &__btn {
     align-self: flex-end;
     width: 150px;
+    transition: 0.3s all ease-in-out;
+    &-disable {
+      background-color: gray;
+    }
   }
 }
 

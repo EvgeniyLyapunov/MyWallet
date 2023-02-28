@@ -50,11 +50,16 @@
       background-position: center;
       background-size: 30px 30px;
       background-repeat: no-repeat;
+      transition: 0.3s all ease-in-out;
       &-plus {
         background-image: url('../../images/icons/plus.svg');
       }
       &-minus {
         background-image: url('../../images/icons/minus.svg');
+      }
+      &-disable {
+        background-image: unset;
+        background-color: gray;
       }
     }
   }

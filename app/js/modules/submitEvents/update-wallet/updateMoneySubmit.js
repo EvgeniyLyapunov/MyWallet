@@ -19,6 +19,8 @@ async function changeMoneySubmit(e) {
   pressBtn(e.target);
 
   e.preventDefault();
+  e.target.disabled = true;
+  e.target.classList.add('change-money-modal__btn-disable');
 
   const formData = new FormData(form);
   // обЪект  для дополнения к данным из формы 
@@ -46,6 +48,8 @@ async function changeMoneySubmit(e) {
     });
 
     form.reset();
+    e.target.disabled = false;
+    e.target.classList.remove('change-money-modal__btn-disable');
     currentCard = {};
 
     if(localStorage.getItem("balanceData")) {
@@ -62,7 +66,10 @@ async function changeMoneySubmit(e) {
       timer: 1500,
       icon: "error",
     });
+    
     form.reset();
+    e.target.disabled = false;
+    e.target.classList.remove('change-money-modal__btn-disable');
   }
   openViewBalansWindow();
 }

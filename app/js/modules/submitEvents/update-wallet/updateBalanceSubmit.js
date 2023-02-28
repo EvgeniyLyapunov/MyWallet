@@ -43,10 +43,12 @@ function changeBalance(card) {
 
 function changeBalanceSubmit(e) {
   pressBtn(e.target);
-
+  
   validate.onSuccess(async () =>{
     e.preventDefault();
-
+    e.target.disabled = true;
+    e.target.classList.add('change-balance-modal__btn-disable');
+    
     const formData = new FormData(form);
     // обЪект  для дополнения к данным из формы 
     let balanceUpdate = Object.fromEntries(formData.entries());
@@ -66,6 +68,8 @@ function changeBalanceSubmit(e) {
       });
 
       form.reset();
+      e.target.disabled = false;
+      e.target.classList.remove('change-balance-modal__btn-disable');
       currentCard = {};
 
       if(localStorage.getItem("balanceData")) {
@@ -82,7 +86,10 @@ function changeBalanceSubmit(e) {
         timer: 1500,
         icon: "error",
       });
+
       form.reset();
+      e.target.disabled = false;
+      e.target.classList.remove('change-balance-modal__btn-disable');
     }
     openViewBalansWindow();
   });

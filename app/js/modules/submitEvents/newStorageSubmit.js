@@ -74,6 +74,7 @@ function newStorageSubmit() {
   function newStorageFlow(e) {
     e.preventDefault();
     pressBtn(e.target);
+
     switch(currentStep) {
       case 1:
         validate.revalidateField('#newStorageName').then(isValid => {
@@ -123,6 +124,9 @@ function newStorageSubmit() {
 
   // функция принимает данные формы и взаимодействует с сервером и бд по созданию нового кошелька
   async function newStorageFormSubmit() {
+    btn.disabled = true;
+    btn.classList.add('new-storage__form-btn-disable');
+
     const formData = new FormData(form);
     // обЪект нового хранилища для дополнения данных из формы 
     let newStorageData = Object.fromEntries(formData.entries());
@@ -157,6 +161,8 @@ function newStorageSubmit() {
       });
 
       form.reset();
+      btn.disabled = false;
+      btn.classList.remove('new-storage__form-btn-disable');
 
       if(storage === 'localStorage') {
         localStorage.setItem("balanceData", `${JSON.stringify(answer.data)}`);
@@ -171,6 +177,8 @@ function newStorageSubmit() {
         timer: 1500,
         icon: "error",
       });
+      btn.disabled = false;
+      btn.classList.remove('new-storage__form-btn-disable');
     }
     newStorageViewToStart();
     toMainScreen();

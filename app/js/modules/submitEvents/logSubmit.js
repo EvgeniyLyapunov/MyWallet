@@ -17,6 +17,8 @@ function logSubmit(formSelector, btnSelector, urlPath) {
 
   submit.addEventListener("click", async (e) => {
     e.preventDefault();
+    submit.desabled = true;
+    submit.classList.add('modal-log__btn-disable');
 
     const formData = new FormData(form);
     const json = JSON.stringify(Object.fromEntries(formData.entries()));
@@ -35,14 +37,22 @@ function logSubmit(formSelector, btnSelector, urlPath) {
       if(rememberMe) {
         localStorage.setItem("userData", `${JSON.stringify(answer)}`);
         data.data.length > 0 ? localStorage.setItem("balanceData", `${JSON.stringify(data.data)}`) : false;
+
         form.reset();
+        submit.desabled = false;
+        submit.classList.remove('modal-log__btn-disable');
+        
         userNickOnMainScreen();
         toMainScreen();
         createCards();
       } else {
         sessionStorage.setItem("userData", `${JSON.stringify(answer)}`);
         data.data.length > 0 ? sessionStorage.setItem("balanceData", `${JSON.stringify(data.data)}`): false;
+
         form.reset();
+        submit.desabled = false;
+        submit.classList.remove('modal-log__btn-disable');
+
         userNickOnMainScreen();
         toMainScreen();
         createCards();
@@ -53,6 +63,8 @@ function logSubmit(formSelector, btnSelector, urlPath) {
         icon: 'error',
       }).then((value) => {
         form.reset();
+        submit.desabled = false;
+        submit.classList.remove('modal-log__btn-disable');
         toMainScreen();
       });
     }

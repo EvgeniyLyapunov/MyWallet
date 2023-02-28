@@ -143,6 +143,10 @@
     &-btn {
       width: 200px;
       align-self: end;
+      transition: 0.3s all ease-in-out;
+      &-disable {
+        background-color: gray;
+      }
     }
   }
 }
