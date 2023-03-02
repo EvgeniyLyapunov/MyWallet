@@ -1,8 +1,8 @@
 import swal from 'sweetalert';
 import tippy from 'tippy.js';
 
+import pressBtn from './buttonPressAnim';
 import openModalWindow from "./openModalWindow";
-import pressBtn from "./buttonPressAnim";
 import checkAuth from "../services/checkAuth";
 import {toMainScreen} from './modal';
 import getDataFromStorage from '../services/getDataFromStorage';
@@ -20,13 +20,19 @@ function viewBalance() {
   });
 
   const viewBalanceBtn = document.querySelector("#viewBalance");
-  viewBalanceBtn.addEventListener("click", openViewBalansWindow);
+  viewBalanceBtn.addEventListener("click", () => {
+    pressBtn(viewBalanceBtn);
+
+    setTimeout(openViewBalansWindow, 300);
+  });
 }
 
 // функция удаляет кошельки и создаёт их с актуальными данными
 // и гарантированно не задвоенным обработчиком событий
 function createCards() {
   const data = getDataFromStorage();
+  data.sort((a, b) => a.position - b.position);
+
 
   if(data.length == 0) {
     return;
@@ -82,7 +88,12 @@ function createCards() {
     `;
     // навешивание обработчика, который открывает окно редактирования баланса выбранной карты
     card.addEventListener('click', (e) => {
-      viewChanges(e.target.id);
+      e.target.classList.add('card_active');
+
+      setTimeout(() => {
+        e.target.classList.remove('card_active');
+        viewChanges(e.target.id);
+      }, 800)
     });
     cardsList.insertAdjacentElement('beforeend', card);
   });

@@ -7,9 +7,11 @@ import getDataFromStorage from "../services/getDataFromStorage";
 import {openViewBalansWindow} from './viewBalance';
 import {postData} from '../services/dataBaseQueries';
 import {openViewEditMenu} from './viewEditMenu';
+import {setIdCard} from './position';
 
 // функция подготавливает и открывает окно изменения баланса выбранного кошелька
 function viewChanges(idCard) {
+  setIdCard(idCard);
   const cards = getDataFromStorage();
   // текущая карта
   let card = cards.filter(item => (item.id == idCard))[0];

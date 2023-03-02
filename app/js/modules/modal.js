@@ -58,11 +58,12 @@ function backHomeByHomeButton() {
     setTimeout(() => {
       modalWindows.forEach(window => {
         window.classList.add("hide");
-        window.classList.remove("visible");
+        window.classList.remove("visible", "animate__animated", "animate__fadeIn");
       });
       forms.forEach(item => item.reset());
       newStorageViewToStart();
       mainSection.classList.remove("hide");
+      mainSection.classList.add("animate__animated", "animate__fadeIn");
       footerSection.classList.remove("footer__container");
       toHomeBtn.classList.add("hide");
     }, 300);
@@ -72,10 +73,11 @@ function backHomeByHomeButton() {
 function toMainScreen() {
   modalWindows.forEach(window => {
     window.classList.add("hide");
-    window.classList.remove("visible");
+    window.classList.remove("visible", "animate__animated", "animate__fadeIn");
   });
   forms.forEach(item => item.reset());
   mainSection.classList.remove("hide");
+  mainSection.classList.add("animate__animated", "animate__fadeIn");
   footerSection.classList.remove("footer__container");
   toHomeBtn.classList.add("hide");
 }

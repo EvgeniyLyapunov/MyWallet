@@ -7,7 +7,7 @@
   }
   &__title {
 		width: 310px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 		font-size: 30px;
 		text-align-last: left;
 		color: $title-color;
@@ -30,7 +30,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     &-label-box {
       display: flex;
       flex-direction: column;
@@ -41,11 +41,13 @@
     }
     &-input-amount {
       @include baseInput;
-      width: 200px;
+      width: 180px;
+      height: 45px;
+      margin-bottom: 15px;
     }
     &-btn {
-      height: 50px;
-      width: 65px;
+      height: 45px;
+      width: 60px;
       padding: 0;
       background-position: center;
       background-size: 30px 30px;
@@ -61,6 +63,35 @@
         background-image: unset;
         background-color: gray;
       }
+    }
+  }
+  &__position-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  &__position-label {
+    display: block;
+    font-size: 14px;
+    color: $input-label-text-color;
+    text-align: center;
+  }
+  &__position-block-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__position-btn {
+    margin-right: 20px;
+    font-size: 14px;
+    padding: 7px 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-disable {
+      background-color: gray;
     }
   }
   &__links-block {
@@ -100,7 +131,7 @@
 @media (max-width: 360px) and (max-height: 640px) {
   .modal-changes {
     &__form {
-      margin-bottom: 60px;
+      margin-bottom: 20px;
       &-input-amount {
         width: 170px;
       }
@@ -121,11 +152,11 @@
       font-size: 24px;
     }
     &__subtitle {
-      margin-bottom: 35px;
+      margin-bottom: 20px;
       font-size: 16px;
     }
     &__form {
-      margin-bottom: 60px;
+      margin-bottom: 30px;
       &-descr-input {
         font-size: 12px;
       }
@@ -151,7 +182,7 @@
     }
     &__link-section {
       &-mb {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
     }
     &__img-box {
@@ -171,7 +202,7 @@
       padding-top: 10px;
     }
     &__form {
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
   }
 }

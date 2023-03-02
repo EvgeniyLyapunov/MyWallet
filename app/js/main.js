@@ -11,6 +11,7 @@ import {viewBalance} from "./modules/viewBalance";
 import {editNameBtn, editAmountBtn, editMoneyBtn, editBaseBtn, deleteWalletBtn} from './modules/viewEditMenu';
 import slider from './modules/slider';
 import {logging} from './modules/logging';
+import {changePosition} from './modules/position';
 
 
 userNickOnMainScreen();
@@ -18,6 +19,10 @@ userNickOnMainScreen();
 burger();
 // открытие модального окна просмотра баланса
 viewBalance();
+// кнопка изменить позицию карты на 1 вверх
+changePosition('#position-up');
+// кнопка изменить позицию карты на 1 вниз
+changePosition('#position-down');
 // открытие модального окна входа/выхода в аккаунт
 openAuthModals("#to-log-btn", ".modal-log");
 // открытие модального окна регистрации аккаунта

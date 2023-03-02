@@ -11,11 +11,12 @@ function openModalWindow(window) {
 
   modalWindows.forEach(item => {
     item.classList.add("hide");
-    item.classList.remove("visible");
+    item.classList.remove("visible", "animate__animated", "animate__fadeIn");
   });
 
-  modal.classList.add("visible");
+  modal.classList.add("visible", "animate__animated", "animate__fadeIn");
   mainSection.classList.add("hide");
+  mainSection.classList.remove("animate__animated", "animate__fadeIn");
   footerSection.classList.add("footer__container");
   toHomeBtn.classList.remove("hide");
 }

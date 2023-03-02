@@ -14,7 +14,8 @@ const form = document.querySelector(".new-storage__form"),
       btn = document.querySelector('#new-storage-flow-btn'),
       selectElem = document.querySelector('.new-storage__form-select');
 let currentStep = 1;
-let storage;
+let storage; // сюда запишется тип хранилища в браузере - local или session
+let data = []; // сюда запишется массив данных уже созданных кошельков из storage браузера
 
 
 
@@ -146,6 +147,8 @@ function newStorageSubmit() {
       minute: 'numeric',
     };
     newStorageData.lastModifiedDate = now.toLocaleString("ru", options).toString();
+    // записываем позицию кошелька в списке
+    newStorageData.position = data.length + 1;
     // Json для отправки на сервер в базу данных
     const json = JSON.stringify(newStorageData);
     // отправка на сервер и получение в ответ список всех хранилищ включая созданное
@@ -187,8 +190,6 @@ function newStorageSubmit() {
 
 // функция отвечает за актуальность данных в select выбора базового кошелька
 function upsertSelectBaseStorage() {
-  let data = [];
-
   // очищаем select от options
   // оставляем только первый - placeholder
   const optionEls = selectElem.querySelectorAll('option');
