@@ -162,11 +162,9 @@ function openViewBalansWindow() {
     }
   }
 
-  const openViewBalancePromise = new Promise(function(resolve) {
-    createCards();
-    openModalWindow(".modal-show");
-    resolve(viewBalanceInfo);
-  }).then(value => value());
+  createCards();
+  openModalWindow(".modal-show");
+  viewBalanceInfo();
 }
 
 export {viewBalance, openViewBalansWindow, createCards};
